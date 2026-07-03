@@ -1118,6 +1118,201 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 100%;
 }
 
+/* --- TRENDING DESIGNS SECTION --- */
+.trending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.trending-header-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.trending-header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+.trending-header-link:hover { opacity: 0.8; }
+.trending-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.trending-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  flex: 1;
+  scrollbar-width: none;
+}
+.trending-carousel::-webkit-scrollbar { display: none; }
+.trending-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(220,179,96,0.3);
+  background: rgba(220,179,96,0.05);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.trending-nav-btn:hover {
+  background: rgba(220,179,96,0.15);
+  border-color: var(--color-primary);
+}
+.trending-card {
+  min-width: 220px;
+  background: #0a1f10;
+  border: 1px solid rgba(220,179,96,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.trending-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(220,179,96,0.1);
+}
+.trending-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--color-primary);
+  color: #000;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+.trending-fav {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.trending-fav:hover { background: rgba(220,179,96,0.3); }
+.trending-fav svg { width: 16px; height: 16px; color: #fff; }
+.trending-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.trending-card-content {
+  padding: 1rem;
+}
+.trending-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.trending-prices {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.trending-price {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.trending-old-price {
+  color: rgba(255,255,255,0.4);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+}
+.trending-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.trending-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem;
+}
+.trending-add-btn {
+  background: linear-gradient(145deg, #d4a840 0%, #a67c1a 100%);
+  color: #3a2800;
+  border: none;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.trending-add-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(220,179,96,0.3);
+}
+.trending-features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.trending-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+.trending-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(220,179,96,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.trending-feature-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+}
+.trending-feature-text h5 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.trending-feature-text p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
 /* --- ROYAL PROMISE SECTION --- */
 .royal-promise-section {
   display: flex;
