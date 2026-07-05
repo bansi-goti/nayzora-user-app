@@ -386,28 +386,26 @@ export default function Home() {
               </div>
 
               <h2 className="bs-section-title font-serif">
-                <svg className="bs-swirl left-swirl" viewBox="0 0 160 50" fill="none">
+                <svg className="bs-swirl left-swirl" viewBox="0 0 200 60" fill="none">
                   <defs>
-                    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="2" result="blur" />
+                    <filter id="gold-glow-heavy" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="1.2" result="blur" />
                       <feComposite in="SourceGraphic" in2="blur" operator="over" />
                     </filter>
                   </defs>
-                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
-                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
+                  <path d="M 28 42 C 32 38, 34 32, 30 30 C 26 28, 22 34, 28 42 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 64 30 C 68 29, 72 34, 68 38 C 64 42, 57 40, 54 36 C 48 27, 52 18, 62 14 C 74 9, 90 14, 96 26 C 102 40, 92 56, 76 59 C 58 62, 40 50, 36 35 C 32 23, 40 11, 52 7 C 56 6, 56 8, 52 9 C 42 13, 36 24, 40 35 C 44 48, 58 58, 74 55 C 88 52, 98 38, 92 25 C 87 15, 75 10, 64 14 C 56 17, 53 25, 57 31 C 60 35, 64 34, 66 31 C 67 29, 65 26, 64 30 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 45 44 C 65 30, 75 46, 95 38 L 180 37.5 L 180 38.5 L 95 39 C 75 47, 65 31, 45 45 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 180 33 L 181.5 36.5 L 185 38 L 181.5 39.5 L 180 43 L 178.5 39.5 L 175 38 L 178.5 36.5 Z" fill="#fff" filter="drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #dcb360)" />
                 </svg>
                 
                 <span className="bs-title-text">Best Sellers</span>
                 
-                <svg className="bs-swirl right-swirl" viewBox="0 0 160 50" fill="none" style={{ transform: 'scaleX(-1)' }}>
-                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
-                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
-                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
+                <svg className="bs-swirl right-swirl" viewBox="0 0 200 60" fill="none" style={{ transform: 'scaleX(-1)' }}>
+                  <path d="M 28 42 C 32 38, 34 32, 30 30 C 26 28, 22 34, 28 42 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 64 30 C 68 29, 72 34, 68 38 C 64 42, 57 40, 54 36 C 48 27, 52 18, 62 14 C 74 9, 90 14, 96 26 C 102 40, 92 56, 76 59 C 58 62, 40 50, 36 35 C 32 23, 40 11, 52 7 C 56 6, 56 8, 52 9 C 42 13, 36 24, 40 35 C 44 48, 58 58, 74 55 C 88 52, 98 38, 92 25 C 87 15, 75 10, 64 14 C 56 17, 53 25, 57 31 C 60 35, 64 34, 66 31 C 67 29, 65 26, 64 30 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 45 44 C 65 30, 75 46, 95 38 L 180 37.5 L 180 38.5 L 95 39 C 75 47, 65 31, 45 45 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
+                  <path d="M 180 33 L 181.5 36.5 L 185 38 L 181.5 39.5 L 180 43 L 178.5 39.5 L 175 38 L 178.5 36.5 Z" fill="#fff" filter="drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #dcb360)" />
                 </svg>
               </h2>
               

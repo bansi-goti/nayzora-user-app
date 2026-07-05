@@ -36,7 +36,18 @@ export default function PillTrace({ className = '' }: { className?: string }) {
   return (
     <div className={`${styles.container} ${className}`} ref={containerRef}>
       <svg className={styles.svg} width="100%" height="100%">
-        {pathD && <path d={pathD} pathLength="100" />}
+        <defs>
+          <linearGradient id="trace-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(220, 179, 96, 0)" />
+            <stop offset="25%" stopColor="rgba(220, 179, 96, 0.4)" />
+            <stop offset="45%" stopColor="#fbe09e" />
+            <stop offset="50%" stopColor="#ffffff" />
+            <stop offset="55%" stopColor="#fbe09e" />
+            <stop offset="75%" stopColor="rgba(220, 179, 96, 0.4)" />
+            <stop offset="100%" stopColor="rgba(220, 179, 96, 0)" />
+          </linearGradient>
+        </defs>
+        {pathD && <path d={pathD} pathLength="100" stroke="url(#trace-gradient)" />}
       </svg>
       <span className={styles.star}>✦</span>
     </div>
