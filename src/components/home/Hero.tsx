@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import styles from './HeroSlider.module.css';
+import styles from './Hero.module.css';
 
 const SLIDES = [
   {
@@ -24,7 +24,7 @@ const SLIDES = [
   }
 ];
 
-export default function HeroSlider() {
+export default function Hero() {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {

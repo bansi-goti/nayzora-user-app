@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -19,8 +21,6 @@ export const metadata: Metadata = {
   description: "Premium handcrafted jewellery collection.",
 };
 
-import Header from '@/components/Header';
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,6 +31,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

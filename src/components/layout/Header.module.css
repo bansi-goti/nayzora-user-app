@@ -6,9 +6,7 @@
   top: 16px;
   z-index: 100;
   width: 100%;
-  /* Removed max-width to allow the bars to stretch full width across any screen */
   padding: 0 24px;
-  /* Keeps the uniform gap on the extreme left and right */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

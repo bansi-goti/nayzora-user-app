@@ -250,7 +250,7 @@ div.hero-subtitle .subtitle-line:last-child {
 /* ---------- DOTS ---------- */
 .slider-dots {
   position: absolute;
-  bottom: 85px; /* Sits perfectly above the bottom bar */
+  bottom: 85px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -275,19 +275,6 @@ div.hero-subtitle .subtitle-line:last-child {
   box-shadow: 0 0 8px #d4af37;
 }
 
-/* ---------- FEATURE BAR WRAPPER ---------- */
-.hero-bottom-bar-container {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 24px;
-  z-index: 15;
-  box-sizing: border-box;
-}
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
   .hero {
@@ -306,7 +293,7 @@ div.hero-subtitle .subtitle-line:last-child {
     width: 60px;
   }
   .slider-arrow {
-    display: none; /* Hide arrows on touch devices to avoid clutter */
+    display: none;
   }
   .slider-dots {
     bottom: 75px;

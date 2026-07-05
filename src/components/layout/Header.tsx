@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PillTrace from './PillTrace';
+import PillTrace from '../PillTrace';
 import styles from './Header.module.css';
 import HeaderBottomBar from './HeaderBottomBar';
 

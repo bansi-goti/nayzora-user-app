@@ -1,5 +1,5 @@
 import React from 'react';
-import PillTrace from './PillTrace';
+import PillTrace from '../PillTrace';
 import styles from './Header.module.css';
 
 export default function HeaderBottomBar() {
