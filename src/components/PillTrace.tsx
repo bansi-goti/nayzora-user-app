@@ -3,7 +3,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './PillTrace.module.css';
 
-export default function PillTrace({ className = '' }: { className?: string }) {
+interface PillTraceProps {
+  className?: string;
+  borderRadius?: number;
+}
+
+export default function PillTrace({ className = '', borderRadius }: PillTraceProps) {
   const [pathD, setPathD] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -13,7 +18,7 @@ export default function PillTrace({ className = '' }: { className?: string }) {
       for (let entry of entries) {
         const { width, height } = entry.contentRect;
         if (width === 0 || height === 0) continue;
-        const r = Math.min(height / 2, 50);
+        const r = borderRadius !== undefined ? borderRadius : Math.min(height / 2, 50);
         
         // Exact pill shape path starting perfectly at the bottom center
         const d = `M ${width/2} ${height} 
@@ -31,7 +36,7 @@ export default function PillTrace({ className = '' }: { className?: string }) {
     });
     observer.observe(containerRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [borderRadius]);
 
   return (
     <div className={`${styles.container} ${className}`} ref={containerRef}>

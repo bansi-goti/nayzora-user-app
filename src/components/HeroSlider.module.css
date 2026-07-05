@@ -1,0 +1,341 @@
+/* =========================================================
+   NAYZORA JEWELLERY — Premium Hero Slider Styles
+   ========================================================= */
+.hero {
+  position: relative;
+  height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #010a07; /* Dark deep emerald fallback */
+}
+
+/* Slides Background */
+.slides-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out, transform 8s ease;
+  transform: scale(1.04);
+}
+
+.slide-bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark Ambient Overlay to maintain rich emeralds & contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.55) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Slide Content Container */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 850px;
+  padding: 0 24px;
+  margin-top: -40px; /* Slight offset to account for bottom features bar space */
+}
+
+.slide-content-item {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-content-item.active-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: slideUpFade 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- PREMIUM TAG ---------- */
+.hero-tag {
+  position: relative;
+  padding: 8px 24px;
+  color: #ffe8b1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  border: 1px solid #d4af37;
+  background: rgba(1, 10, 7, 0.65);
+  margin-bottom: 24px;
+  display: inline-block;
+  border-radius: 4px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* Luxury Overlapping Corner Brackets */
+.hero-tag::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: 6px;
+  right: 6px;
+  border-left: 1px solid #d4af37;
+  border-right: 1px solid #d4af37;
+  pointer-events: none;
+}
+
+.hero-tag::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 6px;
+  bottom: 6px;
+  border-top: 1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
+  pointer-events: none;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.hero-title {
+  font-size: 5rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #d4af37;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.subtitle-line {
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37);
+}
+
+div.hero-subtitle .subtitle-line:last-child {
+  background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+.subtitle-diamond {
+  font-size: 10px;
+  color: #d4af37;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.subtitle-text {
+  font-size: 2.4rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-desc {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  font-size: 1.05rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- PREMIUM BUTTON ---------- */
+.btn-primary {
+  background: rgba(1, 10, 7, 0.65);
+  border: 1px solid #d4af37;
+  color: #ffe8b1;
+  padding: 12px 36px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #d4af37;
+  color: #010a07;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* ---------- ARROWS ---------- */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffe8b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 12;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.15);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.arrow-left {
+  left: 40px;
+}
+
+.arrow-right {
+  right: 40px;
+}
+
+/* ---------- DOTS ---------- */
+.slider-dots {
+  position: absolute;
+  bottom: 85px; /* Sits perfectly above the bottom bar */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 12;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slider-dot.active-dot {
+  background: #d4af37;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px #d4af37;
+}
+
+/* ---------- FEATURE BAR WRAPPER ---------- */
+.hero-bottom-bar-container {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 24px;
+  z-index: 15;
+  box-sizing: border-box;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    height: 600px;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-subtitle {
+    margin-bottom: 16px;
+  }
+  .subtitle-text {
+    font-size: 2rem;
+  }
+  .subtitle-line {
+    width: 60px;
+  }
+  .slider-arrow {
+    display: none; /* Hide arrows on touch devices to avoid clutter */
+  }
+  .slider-dots {
+    bottom: 75px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    height: 520px;
+  }
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .subtitle-text {
+    font-size: 1.4rem;
+  }
+  .subtitle-line {
+    width: 30px;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .btn-primary {
+    padding: 10px 28px;
+    font-size: 13px;
+  }
+  .slider-dots {
+    bottom: 70px;
+  }
+}

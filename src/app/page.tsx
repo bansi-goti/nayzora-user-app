@@ -1,38 +1,14 @@
 import Link from "next/link";
 import PillTrace from "../components/PillTrace";
+import HeroSlider from "../components/HeroSlider";
 
 export default function Home() {
   return (
     <>
-      
+
       <main>
         {/* HERO SECTION */}
-        <section className="hero">
-          <div className="hero-content">
-            <span className="hero-tag">PURELY HAND-CRAFTED</span>
-            <h1 className="hero-title font-serif">TIMELESS ELEGANCE</h1>
-            <div className="hero-subtitle font-serif">
-              <svg width="80" height="15" viewBox="0 0 80 15" fill="none">
-                <path d="M0 7.5h65" stroke="#dcb360" strokeWidth="1"/>
-                <path d="M70 4L75 7.5L70 11L65 7.5L70 4Z" stroke="#dcb360" strokeWidth="1"/>
-                <circle cx="70" cy="7.5" r="1.5" fill="#dcb360"/>
-              </svg>
-              <span>Premium Collection</span>
-              <svg width="80" height="15" viewBox="0 0 80 15" fill="none">
-                <path d="M15 7.5h65" stroke="#dcb360" strokeWidth="1"/>
-                <path d="M10 4L15 7.5L10 11L5 7.5L10 4Z" stroke="#dcb360" strokeWidth="1"/>
-                <circle cx="10" cy="7.5" r="1.5" fill="#dcb360"/>
-              </svg>
-            </div>
-            <p className="hero-desc">
-              Experience luxury with our handcrafted jewelry pieces.<br/>Each piece is a masterpiece of artistry.
-            </p>
-            <button className="btn-primary">
-              Explore Collection
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </button>
-          </div>
-        </section>
+        <HeroSlider />
 
         {/* CATEGORIES SECTION */}
         <section className="section container" style={{ paddingBottom: '2rem' }}>
@@ -40,31 +16,31 @@ export default function Home() {
             <h2 className="section-title font-serif">Shop by Category</h2>
             <div className="section-title-ornament">
               <svg width="250" height="15" viewBox="0 0 250 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 7.5h100M150 7.5h100" stroke="#dcb360" strokeWidth="1" strokeOpacity="0.6"/>
-                <path d="M125 1L132 7.5L125 14L118 7.5L125 1Z" stroke="#dcb360" strokeWidth="1"/>
-                <circle cx="125" cy="7.5" r="2" fill="#dcb360"/>
-                <path d="M112 5 Q115 7.5 112 10" stroke="#dcb360" strokeWidth="1" fill="none"/>
-                <path d="M138 5 Q135 7.5 138 10" stroke="#dcb360" strokeWidth="1" fill="none"/>
-                <circle cx="106" cy="7.5" r="1.5" fill="#dcb360"/>
-                <circle cx="144" cy="7.5" r="1.5" fill="#dcb360"/>
+                <path d="M0 7.5h100M150 7.5h100" stroke="#dcb360" strokeWidth="1" strokeOpacity="0.6" />
+                <path d="M125 1L132 7.5L125 14L118 7.5L125 1Z" stroke="#dcb360" strokeWidth="1" />
+                <circle cx="125" cy="7.5" r="2" fill="#dcb360" />
+                <path d="M112 5 Q115 7.5 112 10" stroke="#dcb360" strokeWidth="1" fill="none" />
+                <path d="M138 5 Q135 7.5 138 10" stroke="#dcb360" strokeWidth="1" fill="none" />
+                <circle cx="106" cy="7.5" r="1.5" fill="#dcb360" />
+                <circle cx="144" cy="7.5" r="1.5" fill="#dcb360" />
               </svg>
             </div>
           </div>
-          
+
           <div className="categories-slider">
             <button className="slider-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m15 18-6-6 6-6"></path></svg>
             </button>
-            
+
             <div className="category-list">
               {[
-                { name: 'RINGS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><g transform="translate(-4, 0)"><circle cx="28" cy="38" r="14"/><path d="M22 24h12l-2-6h-8z"/><path d="M20 24h16"/></g><g transform="translate(14, -6) rotate(20, 28, 38)"><circle cx="28" cy="38" r="14"/><path d="M22 24h12l-2-6h-8z"/><path d="M20 24h16"/></g></svg> },
-                { name: 'BRACELETS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M26 16 A 18 18 0 1 0 38 16"/><circle cx="26" cy="16" r="4"/><circle cx="38" cy="16" r="4"/><path d="M12 32l4-2 M52 32l-4-2 M32 50l0-4 M20 46l3-3 M44 46l-3-3 M16 22l4 2 M48 22l-4 2"/></svg> },
-                { name: 'NECKLACES', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 20 Q 32 64 48 20" strokeDasharray="4 6" strokeWidth="6" strokeLinecap="round"/><circle cx="32" cy="45" r="3" fill="currentColor"/></svg> },
-                { name: 'PENDANTS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M32 16 C 16 32 16 52 32 56 C 48 52 48 32 32 16 Z"/><path d="M32 16 V 56 M 22 36 H 42 M 25 25 L 39 47 M 25 47 L 39 25"/><circle cx="32" cy="8" r="4"/></svg> },
-                { name: 'CUFFLINKS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="26" cy="30" r="10"/><path d="M22 28 A 2 2 0 0 1 26 26 A 2 2 0 0 1 30 28 Q 26 32 26 34 Q 22 32 22 28 Z" fill="currentColor"/><circle cx="44" cy="36" r="8"/><circle cx="44" cy="36" r="2"/><path d="M20 38 L 12 46 M 38 42 L 32 48"/></svg> },
-                { name: 'EARRINGS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 32 C 16 42 16 52 22 56 C 28 52 28 42 22 32 Z"/><path d="M42 32 C 36 42 36 52 42 56 C 48 52 48 42 42 32 Z"/><path d="M22 32 C 22 20 28 16 28 10"/><path d="M42 32 C 42 20 48 16 48 10"/><path d="M22 40 V 48 M 42 40 V 48"/></svg> },
-                { name: 'GEMSTONES', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="32 12 12 28 32 56 52 28 32 12"/><polygon points="32 12 22 28 32 56 42 28 32 12"/><line x1="12" y1="28" x2="52" y2="28"/><line x1="22" y1="28" x2="28" y2="44"/><line x1="42" y1="28" x2="36" y2="44"/></svg> }
+                { name: 'RINGS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><g transform="translate(-4, 0)"><circle cx="28" cy="38" r="14" /><path d="M22 24h12l-2-6h-8z" /><path d="M20 24h16" /></g><g transform="translate(14, -6) rotate(20, 28, 38)"><circle cx="28" cy="38" r="14" /><path d="M22 24h12l-2-6h-8z" /><path d="M20 24h16" /></g></svg> },
+                { name: 'BRACELETS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M26 16 A 18 18 0 1 0 38 16" /><circle cx="26" cy="16" r="4" /><circle cx="38" cy="16" r="4" /><path d="M12 32l4-2 M52 32l-4-2 M32 50l0-4 M20 46l3-3 M44 46l-3-3 M16 22l4 2 M48 22l-4 2" /></svg> },
+                { name: 'NECKLACES', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 20 Q 32 64 48 20" strokeDasharray="4 6" strokeWidth="6" strokeLinecap="round" /><circle cx="32" cy="45" r="3" fill="currentColor" /></svg> },
+                { name: 'PENDANTS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M32 16 C 16 32 16 52 32 56 C 48 52 48 32 32 16 Z" /><path d="M32 16 V 56 M 22 36 H 42 M 25 25 L 39 47 M 25 47 L 39 25" /><circle cx="32" cy="8" r="4" /></svg> },
+                { name: 'CUFFLINKS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="26" cy="30" r="10" /><path d="M22 28 A 2 2 0 0 1 26 26 A 2 2 0 0 1 30 28 Q 26 32 26 34 Q 22 32 22 28 Z" fill="currentColor" /><circle cx="44" cy="36" r="8" /><circle cx="44" cy="36" r="2" /><path d="M20 38 L 12 46 M 38 42 L 32 48" /></svg> },
+                { name: 'EARRINGS', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 32 C 16 42 16 52 22 56 C 28 52 28 42 22 32 Z" /><path d="M42 32 C 36 42 36 52 42 56 C 48 52 48 42 42 32 Z" /><path d="M22 32 C 22 20 28 16 28 10" /><path d="M42 32 C 42 20 48 16 48 10" /><path d="M22 40 V 48 M 42 40 V 48" /></svg> },
+                { name: 'GEMSTONES', icon: <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="32 12 12 28 32 56 52 28 32 12" /><polygon points="32 12 22 28 32 56 42 28 32 12" /><line x1="12" y1="28" x2="52" y2="28" /><line x1="22" y1="28" x2="28" y2="44" /><line x1="42" y1="28" x2="36" y2="44" /></svg> }
               ].map((cat, i) => (
                 <div key={cat.name} className="category-card">
                   <div className="category-icon">
@@ -73,14 +49,14 @@ export default function Home() {
                   <span className="category-name">{cat.name}</span>
                   <div className="category-diamond">
                     <svg width="50" height="8" viewBox="0 0 50 8" fill="none">
-                      <path d="M0 4h20M30 4h20" stroke="currentColor" strokeWidth="1" opacity="0.4"/>
-                      <path d="M25 1L28 4L25 7L22 4L25 1Z" fill="currentColor"/>
+                      <path d="M0 4h20M30 4h20" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+                      <path d="M25 1L28 4L25 7L22 4L25 1Z" fill="currentColor" />
                     </svg>
                   </div>
                 </div>
               ))}
             </div>
-            
+
             <button className="slider-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m9 18 6-6-6-6"></path></svg>
             </button>
@@ -88,16 +64,16 @@ export default function Home() {
 
           <div className="features-banner">
             <PillTrace />
-            
+
             <div className="feature-item">
               <div className="feature-icon-wrapper">
                 <PillTrace />
                 <div className="feature-icon">
                   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="M22 43 L16 60 L26 54 L32 60 L38 54 L48 60 L42 43" fill="currentColor" stroke="none"/>
-                    <path d="M32 4 L37 9 L44 6 L47 13 L54 14 L53 21 L58 26 L53 31 L54 38 L47 39 L44 46 L37 43 L32 48 L27 43 L20 46 L17 39 L10 38 L11 31 L6 26 L11 21 L10 14 L17 13 L20 6 L27 9 Z" strokeLinejoin="round"/>
-                    <circle cx="32" cy="26" r="14" strokeWidth="2"/>
-                    <path d="M32 17 l2.5 6 6.5 1 -5 4.5 1.5 6.5 -5.5 -3.5 -5.5 3.5 1.5 -6.5 -5 -4.5 6.5 -1 Z" fill="currentColor" stroke="none"/>
+                    <path d="M22 43 L16 60 L26 54 L32 60 L38 54 L48 60 L42 43" fill="currentColor" stroke="none" />
+                    <path d="M32 4 L37 9 L44 6 L47 13 L54 14 L53 21 L58 26 L53 31 L54 38 L47 39 L44 46 L37 43 L32 48 L27 43 L20 46 L17 39 L10 38 L11 31 L6 26 L11 21 L10 14 L17 13 L20 6 L27 9 Z" strokeLinejoin="round" />
+                    <circle cx="32" cy="26" r="14" strokeWidth="2" />
+                    <path d="M32 17 l2.5 6 6.5 1 -5 4.5 1.5 6.5 -5.5 -3.5 -5.5 3.5 1.5 -6.5 -5 -4.5 6.5 -1 Z" fill="currentColor" stroke="none" />
                   </svg>
                 </div>
               </div>
@@ -105,26 +81,26 @@ export default function Home() {
                 <h4>Certified Jewellery</h4>
                 <div className="title-ornament">
                   <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
-                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
-                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5" />
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360" />
                   </svg>
                 </div>
                 <p>100% Hallmarked</p>
               </div>
             </div>
-            
+
             <div className="feature-divider"></div>
-            
+
             <div className="feature-item">
               <div className="feature-icon-wrapper">
                 <PillTrace />
                 <div className="feature-icon">
                   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="M32 6 L12 14 V30 C12 44 20 54 32 60 C36 58 40 55 43 51" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M52 30 V14 L32 6" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M20 22 L32 30 L44 22" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="44" cy="44" r="14" fill="currentColor" stroke="none"/>
-                    <path d="M38 45 l4 4 l8 -8" stroke="#030f0c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M32 6 L12 14 V30 C12 44 20 54 32 60 C36 58 40 55 43 51" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M52 30 V14 L32 6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M20 22 L32 30 L44 22" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="44" cy="44" r="14" fill="currentColor" stroke="none" />
+                    <path d="M38 45 l4 4 l8 -8" stroke="#030f0c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
@@ -132,33 +108,33 @@ export default function Home() {
                 <h4>Secure Payments</h4>
                 <div className="title-ornament">
                   <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
-                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
-                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5" />
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360" />
                   </svg>
                 </div>
                 <p>100% Protected</p>
               </div>
             </div>
-            
+
             <div className="feature-divider"></div>
-            
+
             <div className="feature-item">
               <div className="feature-icon-wrapper">
                 <PillTrace />
                 <div className="feature-icon">
                   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
-                    <rect x="6" y="16" width="34" height="26" rx="2" strokeLinejoin="round"/>
-                    <path d="M40 26 H48 L56 32 V42 H40" strokeLinejoin="round"/>
-                    <path d="M42 28 H46 L51 32 H42 V28 Z" fill="currentColor" stroke="none"/>
-                    <circle cx="16" cy="46" r="6"/>
-                    <circle cx="16" cy="46" r="2" fill="currentColor" stroke="none"/>
-                    <circle cx="48" cy="46" r="6"/>
-                    <circle cx="48" cy="46" r="2" fill="currentColor" stroke="none"/>
-                    <line x1="22" y1="42" x2="42" y2="42" strokeLinecap="round"/>
-                    <path d="M16 22 L28 22 L32 28 L22 36 L12 28 Z" strokeWidth="2" strokeLinejoin="round"/>
-                    <line x1="16" y1="22" x2="22" y2="36" strokeWidth="2"/>
-                    <line x1="28" y1="22" x2="22" y2="36" strokeWidth="2"/>
-                    <line x1="12" y1="28" x2="32" y2="28" strokeWidth="2"/>
+                    <rect x="6" y="16" width="34" height="26" rx="2" strokeLinejoin="round" />
+                    <path d="M40 26 H48 L56 32 V42 H40" strokeLinejoin="round" />
+                    <path d="M42 28 H46 L51 32 H42 V28 Z" fill="currentColor" stroke="none" />
+                    <circle cx="16" cy="46" r="6" />
+                    <circle cx="16" cy="46" r="2" fill="currentColor" stroke="none" />
+                    <circle cx="48" cy="46" r="6" />
+                    <circle cx="48" cy="46" r="2" fill="currentColor" stroke="none" />
+                    <line x1="22" y1="42" x2="42" y2="42" strokeLinecap="round" />
+                    <path d="M16 22 L28 22 L32 28 L22 36 L12 28 Z" strokeWidth="2" strokeLinejoin="round" />
+                    <line x1="16" y1="22" x2="22" y2="36" strokeWidth="2" />
+                    <line x1="28" y1="22" x2="22" y2="36" strokeWidth="2" />
+                    <line x1="12" y1="28" x2="32" y2="28" strokeWidth="2" />
                   </svg>
                 </div>
               </div>
@@ -166,25 +142,25 @@ export default function Home() {
                 <h4>Free Shipping</h4>
                 <div className="title-ornament">
                   <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
-                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
-                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5" />
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360" />
                   </svg>
                 </div>
                 <p>On Orders Over $500</p>
               </div>
             </div>
-            
+
             <div className="feature-divider"></div>
-            
+
             <div className="feature-item">
               <div className="feature-icon-wrapper">
                 <PillTrace />
                 <div className="feature-icon">
                   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="M32 6 A 26 26 0 1 1 12 16" strokeLinecap="round"/>
-                    <path d="M12 4 V16 H24" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M32 22 L44 28 L44 42 L32 48 L20 42 L20 28 Z" fill="currentColor" stroke="none"/>
-                    <path d="M32 35 L44 28 M32 35 L20 28 M32 35 L32 48" stroke="#030f0c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M32 6 A 26 26 0 1 1 12 16" strokeLinecap="round" />
+                    <path d="M12 4 V16 H24" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M32 22 L44 28 L44 42 L32 48 L20 42 L20 28 Z" fill="currentColor" stroke="none" />
+                    <path d="M32 35 L44 28 M32 35 L20 28 M32 35 L32 48" stroke="#030f0c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
@@ -192,8 +168,8 @@ export default function Home() {
                 <h4>Easy Returns</h4>
                 <div className="title-ornament">
                   <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
-                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
-                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5" />
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360" />
                   </svg>
                 </div>
                 <p>15-Day Returns</p>
@@ -208,23 +184,23 @@ export default function Home() {
             <h2 className="section-title font-serif">Trending Designs</h2>
             <div className="section-title-ornament">
               <svg width="250" height="15" viewBox="0 0 250 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 7.5h100M150 7.5h100" stroke="#dcb360" strokeWidth="1" strokeOpacity="0.6"/>
-                <path d="M125 1L132 7.5L125 14L118 7.5L125 1Z" stroke="#dcb360" strokeWidth="1"/>
-                <circle cx="125" cy="7.5" r="2" fill="#dcb360"/>
-                <path d="M112 5 Q115 7.5 112 10" stroke="#dcb360" strokeWidth="1" fill="none"/>
-                <path d="M138 5 Q135 7.5 138 10" stroke="#dcb360" strokeWidth="1" fill="none"/>
-                <circle cx="106" cy="7.5" r="1.5" fill="#dcb360"/>
-                <circle cx="144" cy="7.5" r="1.5" fill="#dcb360"/>
+                <path d="M0 7.5h100M150 7.5h100" stroke="#dcb360" strokeWidth="1" strokeOpacity="0.6" />
+                <path d="M125 1L132 7.5L125 14L118 7.5L125 1Z" stroke="#dcb360" strokeWidth="1" />
+                <circle cx="125" cy="7.5" r="2" fill="#dcb360" />
+                <path d="M112 5 Q115 7.5 112 10" stroke="#dcb360" strokeWidth="1" fill="none" />
+                <path d="M138 5 Q135 7.5 138 10" stroke="#dcb360" strokeWidth="1" fill="none" />
+                <circle cx="106" cy="7.5" r="1.5" fill="#dcb360" />
+                <circle cx="144" cy="7.5" r="1.5" fill="#dcb360" />
               </svg>
             </div>
           </div>
-          
+
           <div className="products-grid">
             {[
-              {name: 'Golden Teardrop Pendant', price: '$1,299.00', img: '/product1.png'},
-              {name: 'Classic Diamond Necklace', price: '$2,599.00', img: '/product2.png'},
-              {name: 'Luxury Diamond Ring', price: '$1,999.00', img: '/product3.png'},
-              {name: 'Emerald Grace Bracelet', price: '$1,799.00', img: '/product4.png'}
+              { name: 'Golden Teardrop Pendant', price: '$1,299.00', img: '/product1.png' },
+              { name: 'Classic Diamond Necklace', price: '$2,599.00', img: '/product2.png' },
+              { name: 'Luxury Diamond Ring', price: '$1,999.00', img: '/product3.png' },
+              { name: 'Emerald Grace Bracelet', price: '$1,799.00', img: '/product4.png' }
             ].map((product) => (
               <div key={product.name} className="product-card">
                 <div className="product-img-wrapper">
@@ -244,7 +220,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
+
           <div className="carousel-dots">
             <span className="dot active"></span>
             <span className="dot"></span>
@@ -256,7 +232,7 @@ export default function Home() {
 
         {/* ROYAL PROMISE SECTION */}
         <section className="section container royal-promise-section" style={{ paddingTop: '2rem' }}>
-          
+
           <div className="rp-banner">
             <div className="rp-banner-border-ornament">
               <svg viewBox="0 0 100 20" width="80" height="16">
@@ -265,14 +241,14 @@ export default function Home() {
                 <circle cx="50" cy="15" r="1.5" fill="currentColor" />
               </svg>
             </div>
-            
+
             <div className="rp-content">
               <div className="rp-crown">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" /></svg>
               </div>
               <div className="rp-kicker">THE ROYAL PROMISE</div>
               <h2 className="rp-heading font-serif">
-                Enjoy all the benefits of<br/> The <span className="text-primary">Royal Promise</span>
+                Enjoy all the benefits of<br /> The <span className="text-primary">Royal Promise</span>
               </h2>
               <div className="rp-heading-ornament">
                 <svg viewBox="0 0 100 15" width="80" height="12">
@@ -286,7 +262,7 @@ export default function Home() {
                 At Nayzora Jewellery, every piece comes with trust, quality, and a promise that lasts forever.
               </p>
             </div>
-            
+
             <div className="rp-image-wrapper">
               <img src="/royal_promise.png" alt="The Royal Promise" className="rp-image" />
             </div>
@@ -296,9 +272,9 @@ export default function Home() {
             <div className="rp-feature-card">
               <div className="rp-icon-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="M12 8v4l3 3"/>
-                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M12 8v4l3 3" />
+                  <circle cx="12" cy="12" r="3" />
                 </svg>
               </div>
               <h3 className="font-serif">Certificate</h3>
@@ -314,7 +290,7 @@ export default function Home() {
             <div className="rp-feature-card">
               <div className="rp-icon-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                 </svg>
               </div>
               <h3 className="font-serif">Customization Options</h3>
@@ -330,8 +306,8 @@ export default function Home() {
             <div className="rp-feature-card">
               <div className="rp-icon-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                  <path d="M3 3v5h5"/>
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
                 </svg>
               </div>
               <h3 className="font-serif">100% Refund</h3>
@@ -347,11 +323,11 @@ export default function Home() {
             <div className="rp-feature-card">
               <div className="rp-icon-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polyline points="16 3 21 3 21 8"/>
-                  <line x1="4" y1="20" x2="21" y2="3"/>
-                  <polyline points="21 16 21 21 16 21"/>
-                  <line x1="15" y1="15" x2="21" y2="21"/>
-                  <line x1="4" y1="4" x2="9" y2="9"/>
+                  <polyline points="16 3 21 3 21 8" />
+                  <line x1="4" y1="20" x2="21" y2="3" />
+                  <polyline points="21 16 21 21 16 21" />
+                  <line x1="15" y1="15" x2="21" y2="21" />
+                  <line x1="4" y1="4" x2="9" y2="9" />
                 </svg>
               </div>
               <h3 className="font-serif">Lifetime Exchange</h3>
@@ -372,17 +348,17 @@ export default function Home() {
             <div className="bs-header-border-top"></div>
             <div className="bs-header-content">
               <div className="bs-crown-wrapper">
-                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360"/></svg>
+                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360" /></svg>
                 <div className="bs-crown">
                   <svg width="46" height="46" viewBox="0 0 64 64" fill="#dcb360">
-                    <path d="M10 44 L16 22 L24 34 L32 16 L40 34 L48 22 L54 44 Z"/>
-                    <rect x="14" y="48" width="36" height="3" rx="1"/>
-                    <path d="M32 4 L36 10 L32 16 L28 10 Z"/>
-                    <path d="M16 10 L19 15 L16 20 L13 15 Z"/>
-                    <path d="M48 10 L51 15 L48 20 L45 15 Z"/>
+                    <path d="M10 44 L16 22 L24 34 L32 16 L40 34 L48 22 L54 44 Z" />
+                    <rect x="14" y="48" width="36" height="3" rx="1" />
+                    <path d="M32 4 L36 10 L32 16 L28 10 Z" />
+                    <path d="M16 10 L19 15 L16 20 L13 15 Z" />
+                    <path d="M48 10 L51 15 L48 20 L45 15 Z" />
                   </svg>
                 </div>
-                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360"/></svg>
+                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360" /></svg>
               </div>
 
               <h2 className="bs-section-title font-serif">
@@ -393,35 +369,37 @@ export default function Home() {
                       <feComposite in="SourceGraphic" in2="blur" operator="over" />
                     </filter>
                   </defs>
-                  <path d="M 28 42 C 32 38, 34 32, 30 30 C 26 28, 22 34, 28 42 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 64 30 C 68 29, 72 34, 68 38 C 64 42, 57 40, 54 36 C 48 27, 52 18, 62 14 C 74 9, 90 14, 96 26 C 102 40, 92 56, 76 59 C 58 62, 40 50, 36 35 C 32 23, 40 11, 52 7 C 56 6, 56 8, 52 9 C 42 13, 36 24, 40 35 C 44 48, 58 58, 74 55 C 88 52, 98 38, 92 25 C 87 15, 75 10, 64 14 C 56 17, 53 25, 57 31 C 60 35, 64 34, 66 31 C 67 29, 65 26, 64 30 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 45 44 C 65 30, 75 46, 95 38 L 180 37.5 L 180 38.5 L 95 39 C 75 47, 65 31, 45 45 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 180 33 L 181.5 36.5 L 185 38 L 181.5 39.5 L 180 43 L 178.5 39.5 L 175 38 L 178.5 36.5 Z" fill="#fff" filter="drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #dcb360)" />
+                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
+                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
                 </svg>
-                
+
                 <span className="bs-title-text">Best Sellers</span>
                 
-                <svg className="bs-swirl right-swirl" viewBox="0 0 200 60" fill="none" style={{ transform: 'scaleX(-1)' }}>
-                  <path d="M 28 42 C 32 38, 34 32, 30 30 C 26 28, 22 34, 28 42 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 64 30 C 68 29, 72 34, 68 38 C 64 42, 57 40, 54 36 C 48 27, 52 18, 62 14 C 74 9, 90 14, 96 26 C 102 40, 92 56, 76 59 C 58 62, 40 50, 36 35 C 32 23, 40 11, 52 7 C 56 6, 56 8, 52 9 C 42 13, 36 24, 40 35 C 44 48, 58 58, 74 55 C 88 52, 98 38, 92 25 C 87 15, 75 10, 64 14 C 56 17, 53 25, 57 31 C 60 35, 64 34, 66 31 C 67 29, 65 26, 64 30 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 45 44 C 65 30, 75 46, 95 38 L 180 37.5 L 180 38.5 L 95 39 C 75 47, 65 31, 45 45 Z" fill="#dcb360" filter="url(#gold-glow-heavy)" />
-                  <path d="M 180 33 L 181.5 36.5 L 185 38 L 181.5 39.5 L 180 43 L 178.5 39.5 L 175 38 L 178.5 36.5 Z" fill="#fff" filter="drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #dcb360)" />
+                <svg className="bs-swirl right-swirl" viewBox="0 0 160 50" fill="none" style={{ transform: 'scaleX(-1)' }}>
+                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
+                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
                 </svg>
               </h2>
-              
+
               <p className="bs-subtitle">Handpicked favorites loved by our customers</p>
-              
+
               <div className="bs-bottom-ornament">
                 <div className="bs-line"></div>
                 <svg className="bs-star" width="16" height="16" viewBox="0 0 24 24" fill="#dcb360">
-                   <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/>
+                  <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
                 </svg>
                 <div className="bs-line"></div>
               </div>
             </div>
             <div className="bs-header-border-bottom"></div>
           </div>
-          
+
           <div className="bs-carousel">
             <button className="bs-nav-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m15 18-6-6 6-6"></path></svg>
@@ -429,36 +407,36 @@ export default function Home() {
 
             <div className="bs-grid">
               {[
-                {name: 'Gold Diamond Ring', price: '$15.59', oldPrice: '$19.48', img: '/arrival_1.png', rating: '4.8 (50)', likes: '128', badge: 'BESTSELLER', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>},
-                {name: 'Pearl Chain', price: '$10.79', oldPrice: '$13.48', img: '/arrival_2.png', rating: '4.9 (25)', likes: '96', badge: 'BESTSELLER', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>},
-                {name: 'Silver Earrings', price: '$7.19', oldPrice: '$8.98', img: '/arrival_3.png', rating: '4.7 (21)', likes: '76', badge: 'TRENDING', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c0 0-5 6.5-5 11a5 5 0 0 0 10 0c0-4.5-5-11-5-11zm0 14.5a3.5 3.5 0 0 1-3.5-3.5c0-1.7 1.5-3.8 2.2-4.8.6 1.4 1.8 2.8 1.8 4.3 0 1.9-1.5 3.5-3.5 3.5z"/></svg>},
-                {name: 'Rose Gold Bracelet', price: '$9.59', oldPrice: '$11.98', img: '/arrival_4.png', rating: '4.6 (12)', likes: '64', badge: 'NEW ARRIVAL', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>}
+                { name: 'Gold Diamond Ring', price: '$15.59', oldPrice: '$19.48', img: '/arrival_1.png', rating: '4.8 (50)', likes: '128', badge: 'BESTSELLER', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" /></svg> },
+                { name: 'Pearl Chain', price: '$10.79', oldPrice: '$13.48', img: '/arrival_2.png', rating: '4.9 (25)', likes: '96', badge: 'BESTSELLER', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" /></svg> },
+                { name: 'Silver Earrings', price: '$7.19', oldPrice: '$8.98', img: '/arrival_3.png', rating: '4.7 (21)', likes: '76', badge: 'TRENDING', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c0 0-5 6.5-5 11a5 5 0 0 0 10 0c0-4.5-5-11-5-11zm0 14.5a3.5 3.5 0 0 1-3.5-3.5c0-1.7 1.5-3.8 2.2-4.8.6 1.4 1.8 2.8 1.8 4.3 0 1.9-1.5 3.5-3.5 3.5z" /></svg> },
+                { name: 'Rose Gold Bracelet', price: '$9.59', oldPrice: '$11.98', img: '/arrival_4.png', rating: '4.6 (12)', likes: '64', badge: 'NEW ARRIVAL', badgeIcon: <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg> }
               ].map((product) => (
                 <div key={product.name} className="bs-card">
                   <div className="bs-img-container">
                     <div className="bs-badge">{product.badgeIcon} {product.badge}</div>
-                    <div className="bs-fav"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <div className="bs-fav"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg></div>
                     <img src={product.img} alt={product.name} className="bs-img" />
                     <svg className="bs-curve" viewBox="0 0 100 20" preserveAspectRatio="none">
                       <path d="M0,20 L0,0 Q50,25 100,0 L100,20 Z" fill="#000" />
                       <path d="M0,0 Q50,25 100,0" fill="none" stroke="#dcb360" strokeWidth="0.8" opacity="0.8" />
                     </svg>
                     <div className="bs-curve-icon">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21l-4-12m8 0-4 12m-6-12 3-6m6 0 3 6"/></svg>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 3h12l4 6-10 12L2 9l4-6z" /><path d="M2 9h20M12 21l-4-12m8 0-4 12m-6-12 3-6m6 0 3 6" /></svg>
                     </div>
                     <div className="bs-discount">25% OFF</div>
                   </div>
-                  
+
                   <div className="bs-content">
                     <h3 className="bs-title font-serif">{product.name}</h3>
                     <div className="bs-meta">
                       <div className="bs-meta-item">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                         {product.rating}
                       </div>
                       <div className="bs-divider"></div>
                       <div className="bs-meta-item">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
                         {product.likes}
                       </div>
                     </div>
@@ -466,14 +444,14 @@ export default function Home() {
                       <span className="bs-current-price">{product.price}</span>
                       <span className="bs-old-price">{product.oldPrice}</span>
                     </div>
-                    
+
                     <div className="bs-action-bar">
                       <div className="bs-cart-icon">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                       </div>
                       <div className="bs-add-text">Add to Cart</div>
                       <div className="bs-plus-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
                       </div>
                     </div>
                   </div>
@@ -485,7 +463,7 @@ export default function Home() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="m9 18 6-6-6-6"></path></svg>
             </button>
           </div>
-          
+
           <div className="carousel-dots" style={{ marginTop: '2rem' }}>
             <span className="dot active" style={{ background: '#dcb360' }}></span>
             <span className="dot"></span>
@@ -508,7 +486,7 @@ export default function Home() {
 
           <div className="trending-carousel-wrapper">
             <button className="trending-nav-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6" /></svg>
             </button>
             <div className="trending-carousel">
               {[
@@ -520,7 +498,7 @@ export default function Home() {
               ].map((item, index) => (
                 <div key={index} className="trending-card">
                   {item.badge && <div className="trending-badge">{item.badge}</div>}
-                  <div className="trending-fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                  <div className="trending-fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg></div>
                   <img src={item.img} alt={item.name} className="trending-card-img" />
                   <div className="trending-card-content">
                     <h3 className="trending-title">{item.name}</h3>
@@ -530,12 +508,12 @@ export default function Home() {
                     </div>
                     <div className="trending-bottom">
                       <div className="trending-rating">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#dcb360" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#dcb360" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                         {item.rating}
                       </div>
                       <button className="trending-add-btn">
                         Add to Cart
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>
                       </button>
                     </div>
                   </div>
@@ -543,14 +521,14 @@ export default function Home() {
               ))}
             </div>
             <button className="trending-nav-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6" /></svg>
             </button>
           </div>
 
           <div className="trending-features">
             <div className="trending-feature-item">
               <div className="trending-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M12 21l-4-12m8 0-4 12m-6-12 3-6m6 0 3 6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 3h12l4 6-10 12L2 9l4-6z" /><path d="M2 9h20M12 21l-4-12m8 0-4 12m-6-12 3-6m6 0 3 6" /></svg>
               </div>
               <div className="trending-feature-text">
                 <h5>Premium Quality</h5>
@@ -559,7 +537,7 @@ export default function Home() {
             </div>
             <div className="trending-feature-item">
               <div className="trending-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
               </div>
               <div className="trending-feature-text">
                 <h5>Secure Packaging</h5>
@@ -568,7 +546,7 @@ export default function Home() {
             </div>
             <div className="trending-feature-item">
               <div className="trending-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 12 20 22 4 22 4 12" /><rect x="2" y="7" width="20" height="5" /><line x1="12" y1="22" x2="12" y2="7" /><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" /><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" /></svg>
               </div>
               <div className="trending-feature-text">
                 <h5>Perfect Gift</h5>
@@ -577,7 +555,7 @@ export default function Home() {
             </div>
             <div className="trending-feature-item">
               <div className="trending-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>
               </div>
               <div className="trending-feature-text">
                 <h5>Trusted by 10K+</h5>
@@ -588,31 +566,31 @@ export default function Home() {
         </section>
         <section className="section container" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div className="cd-section-wrapper">
-            
+
             <div className="cd-main">
               {/* LEFT COLUMN */}
               <div className="cd-left">
                 <div className="cd-badge" style={{ position: 'relative', padding: '0.4rem 1.25rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#dcb360', fontSize: '0.75rem', letterSpacing: '1.5px', fontWeight: 500, marginBottom: '1.5rem', background: 'transparent' }}>
                   <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} preserveAspectRatio="none" viewBox="0 0 200 40">
-                    <polygon points="10,1 190,1 199,20 190,39 10,39 1,20" fill="none" stroke="#dcb360" strokeWidth="1.5" opacity="0.6"/>
+                    <polygon points="10,1 190,1 199,20 190,39 10,39 1,20" fill="none" stroke="#dcb360" strokeWidth="1.5" opacity="0.6" />
                   </svg>
-                  <svg style={{ zIndex: 1 }} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 
+                  <svg style={{ zIndex: 1 }} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                   <span style={{ zIndex: 1 }}>CUSTOM DESIGN SERVICE</span>
                 </div>
                 <h2 className="cd-heading font-serif">
-                  Craft Your <br/> <span className="text-primary">Unique Story</span>
+                  Craft Your <br /> <span className="text-primary">Unique Story</span>
                 </h2>
                 <div className="cd-ornament">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                 </div>
                 <p className="cd-desc">
                   Transform your vision into reality with our bespoke jewelry design service. Every piece is a reflection of your style, crafted to be treasured forever.
                 </p>
-                
+
                 <div className="cd-features-list">
                   <div className="cd-feature-card">
                     <div className="cd-feature-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 17V3"/><path d="M6 11l6 6 6-6"/><path d="M19 21H5"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 17V3" /><path d="M6 11l6 6 6-6" /><path d="M19 21H5" /></svg>
                     </div>
                     <div className="cd-feature-text">
                       <h4>Expert Craftsmanship</h4>
@@ -621,7 +599,7 @@ export default function Home() {
                   </div>
                   <div className="cd-feature-card">
                     <div className="cd-feature-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
                     </div>
                     <div className="cd-feature-text">
                       <h4>Personalized Touch</h4>
@@ -630,7 +608,7 @@ export default function Home() {
                   </div>
                   <div className="cd-feature-card">
                     <div className="cd-feature-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><circle cx="18" cy="4" r="2"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /><circle cx="18" cy="4" r="2" /></svg>
                     </div>
                     <div className="cd-feature-text">
                       <h4>Master Designers</h4>
@@ -649,35 +627,35 @@ export default function Home() {
                   Your Vision, Our Creation
                 </div>
                 <div className="cd-right-ornament">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                 </div>
                 <div className="cd-timeline">
                   <svg className="cd-timeline-curve" width="100" height="320" style={{ position: 'absolute', top: 0, left: 24, zIndex: 0, overflow: 'visible' }}>
                     <path d="M0,24 Q 45,69 0,114 T 0,204 T 0,294" stroke="#dcb360" strokeWidth="1.5" strokeDasharray="3 4" fill="none" opacity="0.6" />
                   </svg>
                   <div className="timeline-item">
-                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg></div>
+                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><line x1="9" y1="12" x2="15" y2="12" /></svg></div>
                     <div className="timeline-content">
                       <h4>Share Your Idea</h4>
                       <p>Tell us your inspiration and preferences</p>
                     </div>
                   </div>
                   <div className="timeline-item">
-                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div>
+                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" /></svg></div>
                     <div className="timeline-content">
                       <h4>Design & Approval</h4>
                       <p>We create a 3D design for your approval</p>
                     </div>
                   </div>
                   <div className="timeline-item">
-                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/><line x1="14" y1="7" x2="17" y2="10"/></svg></div>
+                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" /><line x1="14" y1="7" x2="17" y2="10" /></svg></div>
                     <div className="timeline-content">
                       <h4>Handcrafted</h4>
                       <p>Our artisans craft your piece with precision</p>
                     </div>
                   </div>
                   <div className="timeline-item">
-                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+                    <div className="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 12 20 22 4 22 4 12" /><rect x="2" y="7" width="20" height="5" /><line x1="12" y1="22" x2="12" y2="7" /><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" /><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" /></svg></div>
                     <div className="timeline-content">
                       <h4>Delivered to You</h4>
                       <p>Your masterpiece, delivered with care</p>
@@ -686,52 +664,52 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             {/* BOTTOM PANEL */}
             <div className="cd-bottom-panel-wrapper">
               <div className="cd-bottom-panel">
                 <div className="cd-bottom-left">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
                   <div className="cd-bottom-title">
-                    Let's Create Something <br/>
+                    Let's Create Something <br />
                     <span className="text-primary">Extraordinary Together</span>
                   </div>
                 </div>
-                
+
                 <div className="cd-bottom-divider"></div>
-                
+
                 <div className="cd-bottom-middle">
                   <div className="cd-mini-feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
                     <div>
                       <h5>100% Confidential</h5>
                       <p>Your ideas are safe with us</p>
                     </div>
                   </div>
                   <div className="cd-mini-feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>
                     <div>
                       <h5>Quality Assurance</h5>
                       <p>Every piece meets the highest standards</p>
                     </div>
                   </div>
                   <div className="cd-mini-feature">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                     <div>
                       <h5>Timeless Value</h5>
                       <p>Designed to be loved for generations</p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="cd-bottom-divider"></div>
-                
+
                 <div className="cd-bottom-right">
                   <button className="btn-cd-start">
                     Start Your Custom Design <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                   </button>
                   <div className="cd-free-consult">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Free Consultation
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg> Free Consultation
                   </div>
                 </div>
               </div>
@@ -745,14 +723,14 @@ export default function Home() {
           <div className="footer-top">
             <div className="newsletter-text">
               <h3 className="font-serif">Join The Nayzora Family</h3>
-              <p>Subscribe to get special offers, free giveaways,<br/>and once-in-a-lifetime deals.</p>
+              <p>Subscribe to get special offers, free giveaways,<br />and once-in-a-lifetime deals.</p>
             </div>
             <div className="subscribe-form">
               <input type="email" placeholder="Enter your email address" className="subscribe-input" />
               <button className="subscribe-btn">Subscribe</button>
             </div>
           </div>
-          
+
           <div className="footer-main container">
             <div className="footer-col brand-col">
               <div className="footer-logo">
@@ -767,11 +745,11 @@ export default function Home() {
               <div className="social-links">
                 <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
                 <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.3 2.7 8 6.5 9.4-.1-1-.1-2.5 0-3.5l1.6-6.8s-.4-.8-.4-2c0-1.9 1.1-3.3 2.5-3.3 1.1 0 1.7.9 1.7 1.9 0 1.1-.7 2.8-1.1 4.4-.3 1.3.7 2.4 1.9 2.4 2.3 0 4.1-2.5 4.1-6 0-3.1-2.2-5.3-5.5-5.3-3.8 0-6 2.8-6 5.8 0 1.1.4 2.3 1 2.9.1.1.1.3.1.4-.1.4-.3 1.3-.3 1.5-.1.3-.2.3-.5.2-1.8-.8-2.9-3.4-2.9-5.4 0-4.4 3.2-8.4 9.2-8.4 5 0 8.8 3.5 8.8 8.2 0 4.9-3.1 8.9-7.4 8.9-1.4 0-2.8-.8-3.3-1.7l-1 3.8c-.3 1.4-1.2 3.1-1.8 4.1C9.6 21.8 10.8 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
-                <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.4c-.2-1-.9-1.7-1.9-1.9C18.9 4.1 12 4.1 12 4.1s-6.9 0-8.6.4C2.4 4.7 1.7 5.4 1.5 6.4 1 8.3 1 12 1 12s0 3.7.5 5.6c.2 1 .9 1.7 1.9 1.9 1.7.4 8.6.4 8.6.4s6.9 0 8.6-.4c1-.2 1.7-.9 1.9-1.9.5-1.9.5-5.6.5-5.6s0-3.7-.5-5.6zM9.8 15.3v-6.6l6 3.3-6 3.3z"/></svg></a>
+                <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.3 2.7 8 6.5 9.4-.1-1-.1-2.5 0-3.5l1.6-6.8s-.4-.8-.4-2c0-1.9 1.1-3.3 2.5-3.3 1.1 0 1.7.9 1.7 1.9 0 1.1-.7 2.8-1.1 4.4-.3 1.3.7 2.4 1.9 2.4 2.3 0 4.1-2.5 4.1-6 0-3.1-2.2-5.3-5.5-5.3-3.8 0-6 2.8-6 5.8 0 1.1.4 2.3 1 2.9.1.1.1.3.1.4-.1.4-.3 1.3-.3 1.5-.1.3-.2.3-.5.2-1.8-.8-2.9-3.4-2.9-5.4 0-4.4 3.2-8.4 9.2-8.4 5 0 8.8 3.5 8.8 8.2 0 4.9-3.1 8.9-7.4 8.9-1.4 0-2.8-.8-3.3-1.7l-1 3.8c-.3 1.4-1.2 3.1-1.8 4.1C9.6 21.8 10.8 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z" /></svg></a>
+                <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 6.4c-.2-1-.9-1.7-1.9-1.9C18.9 4.1 12 4.1 12 4.1s-6.9 0-8.6.4C2.4 4.7 1.7 5.4 1.5 6.4 1 8.3 1 12 1 12s0 3.7.5 5.6c.2 1 .9 1.7 1.9 1.9 1.7.4 8.6.4 8.6.4s6.9 0 8.6-.4c1-.2 1.7-.9 1.9-1.9.5-1.9.5-5.6.5-5.6s0-3.7-.5-5.6zM9.8 15.3v-6.6l6 3.3-6 3.3z" /></svg></a>
               </div>
             </div>
-            
+
             <div className="footer-col">
               <h4>Quick Links</h4>
               <ul>
@@ -782,7 +760,7 @@ export default function Home() {
                 <li><a href="#">FAQs</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-col">
               <h4>Customer Service</h4>
               <ul>
@@ -793,7 +771,7 @@ export default function Home() {
                 <li><a href="#">Privacy Policy</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-col contact-col">
               <h4>Contact Us</h4>
               <ul>
@@ -807,7 +785,7 @@ export default function Home() {
                 </li>
                 <li>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  123 Diamond Street,<br/>New York, NY 10001, USA
+                  123 Diamond Street,<br />New York, NY 10001, USA
                 </li>
               </ul>
             </div>
@@ -818,15 +796,15 @@ export default function Home() {
                 <div className="pay-box">
                   <img src="https://img.icons8.com/color/96/000000/visa.png" alt="Visa" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
                 </div>
-                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"/></div>
-                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="Amex"/></div>
-                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"/></div>
-                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay"/></div>
-                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay"/></div>
+                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" /></div>
+                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="Amex" /></div>
+                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" /></div>
+                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" /></div>
+                <div className="pay-box"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" /></div>
               </div>
             </div>
           </div>
-          
+
           <div className="footer-bottom container">
             <p>© 2024 Nayzora Jewellery. All Rights Reserved.</p>
           </div>

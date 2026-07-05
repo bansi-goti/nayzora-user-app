@@ -8,24 +8,23 @@ export default function Header() {
     <div className={styles['header-wrapper']}>
       {/* Top Bar */}
       <header className={styles['header-top-bar']}>
-        <PillTrace />
+        <PillTrace borderRadius={14} />
 
-        {/* Left: Logo */}
+        {/* Left: Logo (Restored to Original Asset Line Setup) */}
         <div className={styles['header-logo-section']}>
           <Link href="/" className={styles['logo-link']}>
-            <div className={styles['logo-emblem']} style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src="/logo.jpg" alt="Nayzora Logo" style={{ width: '110%', height: '110%', objectFit: 'contain', filter: 'invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.2)', mixBlendMode: 'screen' }} />
+            <div className={styles['logo-container']}>
+              <img src="/logo.jpg" alt="Nayzora Logo" className={styles['logo-image']} />
             </div>
             <div className={styles['logo-text-group']}>
               <span className={`${styles['logo-title']} ${styles['font-serif']}`}>NAYZORA</span>
               <span className={styles['logo-subtitle']}>JEWELLERY</span>
               <div className={styles['logo-ornament']}>
-                <svg width="80" height="10" viewBox="0 0 80 10">
-                  <path d="M0,5 H35 M45,5 H80" stroke="#dcb360" strokeWidth="1" />
-                  <circle cx="40" cy="5" r="3" fill="#dcb360" fillOpacity="0.3" stroke="#dcb360" strokeWidth="1" />
-                  <circle cx="40" cy="5" r="1" fill="#dcb360" />
-                  <circle cx="30" cy="5" r="1.5" fill="#dcb360" />
-                  <circle cx="50" cy="5" r="1.5" fill="#dcb360" />
+                <svg width="90" height="10" viewBox="0 0 90 10" fill="none">
+                  <path d="M 5,5 H 36 C 38,2 41,2 43,5 H 47 C 49,2 51,2 54,5 H 85" stroke="#dcb360" strokeWidth="1.2" />
+                  <circle cx="45" cy="5" r="2" fill="#dcb360" />
+                  <circle cx="5" cy="5" r="1.5" fill="#dcb360" />
+                  <circle cx="85" cy="5" r="1.5" fill="#dcb360" />
                 </svg>
               </div>
             </div>
@@ -39,8 +38,11 @@ export default function Header() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
               <span>Home</span>
             </div>
+            {/* Symmetrical Triple Accent Line Setup */}
             <div className={styles['nav-indicator']}>
-              <span></span><span></span><span></span>
+              <span className={styles['indicator-short']}></span>
+              <span className={styles['indicator-long']}></span>
+              <span className={styles['indicator-short']}></span>
             </div>
           </Link>
           <Link href="/categories" className={styles['nav-item']}>
