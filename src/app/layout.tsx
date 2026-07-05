@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "Premium handcrafted jewellery collection.",
 };
 
+import Header from '@/components/Header';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

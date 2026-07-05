@@ -1,9 +1,9 @@
-import Header from '@/components/Header';
+import Link from "next/link";
+import PillTrace from "../components/PillTrace";
 
 export default function Home() {
   return (
     <>
-      <Header />
       
       <main>
         {/* HERO SECTION */}
@@ -87,62 +87,115 @@ export default function Home() {
           </div>
 
           <div className="features-banner">
+            <PillTrace />
+            
             <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M32 10 L37 18 L46 16 L44 25 L52 32 L44 39 L46 48 L37 46 L32 54 L27 46 L18 48 L20 39 L12 32 L20 25 L18 16 L27 18 Z" strokeLinejoin="round"/>
-                  <circle cx="32" cy="32" r="8"/>
-                  <path d="M32 28 L34 32 L32 36 L30 32 Z"/>
-                </svg>
+              <div className="feature-icon-wrapper">
+                <PillTrace />
+                <div className="feature-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M22 43 L16 60 L26 54 L32 60 L38 54 L48 60 L42 43" fill="currentColor" stroke="none"/>
+                    <path d="M32 4 L37 9 L44 6 L47 13 L54 14 L53 21 L58 26 L53 31 L54 38 L47 39 L44 46 L37 43 L32 48 L27 43 L20 46 L17 39 L10 38 L11 31 L6 26 L11 21 L10 14 L17 13 L20 6 L27 9 Z" strokeLinejoin="round"/>
+                    <circle cx="32" cy="26" r="14" strokeWidth="2"/>
+                    <path d="M32 17 l2.5 6 6.5 1 -5 4.5 1.5 6.5 -5.5 -3.5 -5.5 3.5 1.5 -6.5 -5 -4.5 6.5 -1 Z" fill="currentColor" stroke="none"/>
+                  </svg>
+                </div>
               </div>
               <div className="feature-text">
                 <h4>Certified Jewellery</h4>
+                <div className="title-ornament">
+                  <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                  </svg>
+                </div>
                 <p>100% Hallmarked</p>
               </div>
             </div>
+            
             <div className="feature-divider"></div>
+            
             <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M32 10 L16 16 V32 C16 44 24 52 32 56 C40 52 48 44 48 32 V16 Z" />
-                  <circle cx="32" cy="33" r="10" />
-                  <path d="M28 33 L31 36 L37 30" />
-                </svg>
+              <div className="feature-icon-wrapper">
+                <PillTrace />
+                <div className="feature-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M32 6 L12 14 V30 C12 44 20 54 32 60 C36 58 40 55 43 51" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M52 30 V14 L32 6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M20 22 L32 30 L44 22" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="44" cy="44" r="14" fill="currentColor" stroke="none"/>
+                    <path d="M38 45 l4 4 l8 -8" stroke="#030f0c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
               <div className="feature-text">
                 <h4>Secure Payments</h4>
+                <div className="title-ornament">
+                  <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                  </svg>
+                </div>
                 <p>100% Protected</p>
               </div>
             </div>
+            
             <div className="feature-divider"></div>
+            
             <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="12" y="24" width="24" height="20" rx="2" />
-                  <path d="M36 28 H46 L50 34 V44 H36" />
-                  <circle cx="20" cy="46" r="4" />
-                  <circle cx="44" cy="46" r="4" />
-                  <path d="M24 30 L28 34 L24 38 L20 34 Z" />
-                  <line x1="38" y1="36" x2="48" y2="36" />
-                </svg>
+              <div className="feature-icon-wrapper">
+                <PillTrace />
+                <div className="feature-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
+                    <rect x="6" y="16" width="34" height="26" rx="2" strokeLinejoin="round"/>
+                    <path d="M40 26 H48 L56 32 V42 H40" strokeLinejoin="round"/>
+                    <path d="M42 28 H46 L51 32 H42 V28 Z" fill="currentColor" stroke="none"/>
+                    <circle cx="16" cy="46" r="6"/>
+                    <circle cx="16" cy="46" r="2" fill="currentColor" stroke="none"/>
+                    <circle cx="48" cy="46" r="6"/>
+                    <circle cx="48" cy="46" r="2" fill="currentColor" stroke="none"/>
+                    <line x1="22" y1="42" x2="42" y2="42" strokeLinecap="round"/>
+                    <path d="M16 22 L28 22 L32 28 L22 36 L12 28 Z" strokeWidth="2" strokeLinejoin="round"/>
+                    <line x1="16" y1="22" x2="22" y2="36" strokeWidth="2"/>
+                    <line x1="28" y1="22" x2="22" y2="36" strokeWidth="2"/>
+                    <line x1="12" y1="28" x2="32" y2="28" strokeWidth="2"/>
+                  </svg>
+                </div>
               </div>
               <div className="feature-text">
                 <h4>Free Shipping</h4>
+                <div className="title-ornament">
+                  <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                  </svg>
+                </div>
                 <p>On Orders Over $500</p>
               </div>
             </div>
+            
             <div className="feature-divider"></div>
+            
             <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M32 12 A 20 20 0 1 1 12 32" />
-                  <path d="M12 32 V24 M12 32 H20" />
-                  <circle cx="32" cy="32" r="6" />
-                  <circle cx="32" cy="32" r="2" />
-                </svg>
+              <div className="feature-icon-wrapper">
+                <PillTrace />
+                <div className="feature-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M32 6 A 26 26 0 1 1 12 16" strokeLinecap="round"/>
+                    <path d="M12 4 V16 H24" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M32 22 L44 28 L44 42 L32 48 L20 42 L20 28 Z" fill="currentColor" stroke="none"/>
+                    <path d="M32 35 L44 28 M32 35 L20 28 M32 35 L32 48" stroke="#030f0c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
               <div className="feature-text">
                 <h4>Easy Returns</h4>
+                <div className="title-ornament">
+                  <svg width="30" height="6" viewBox="0 0 30 6" fill="none">
+                    <path d="M0 3h12M18 3h12" stroke="#dcb360" strokeWidth="1" opacity="0.5"/>
+                    <path d="M15 1L17 3L15 5L13 3Z" fill="#dcb360"/>
+                  </svg>
+                </div>
                 <p>15-Day Returns</p>
               </div>
             </div>
@@ -316,15 +369,59 @@ export default function Home() {
         {/* BEST SELLERS SECTION */}
         <section className="section container" style={{ paddingTop: '2rem' }}>
           <div className="bs-header-wrapper">
-            <div className="bs-crown">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+            <div className="bs-header-border-top"></div>
+            <div className="bs-header-content">
+              <div className="bs-crown-wrapper">
+                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360"/></svg>
+                <div className="bs-crown">
+                  <svg width="46" height="46" viewBox="0 0 64 64" fill="#dcb360">
+                    <path d="M10 44 L16 22 L24 34 L32 16 L40 34 L48 22 L54 44 Z"/>
+                    <rect x="14" y="48" width="36" height="3" rx="1"/>
+                    <path d="M32 4 L36 10 L32 16 L28 10 Z"/>
+                    <path d="M16 10 L19 15 L16 20 L13 15 Z"/>
+                    <path d="M48 10 L51 15 L48 20 L45 15 Z"/>
+                  </svg>
+                </div>
+                <svg className="bs-crown-dot" width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360"/></svg>
+              </div>
+
+              <h2 className="bs-section-title font-serif">
+                <svg className="bs-swirl left-swirl" viewBox="0 0 160 50" fill="none">
+                  <defs>
+                    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
+                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
+                </svg>
+                
+                <span className="bs-title-text">Best Sellers</span>
+                
+                <svg className="bs-swirl right-swirl" viewBox="0 0 160 50" fill="none" style={{ transform: 'scaleX(-1)' }}>
+                  <path d="M15,32 C18,30 20,26 18,24 C16,24 13,26 15,32 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M40,45 C20,45 10,25 25,12 C40,0 60,10 60,25 C60,40 40,50 30,35 C20,20 35,15 42,22 C47,27 45,33 42,33" stroke="#dcb360" strokeWidth="2" strokeLinecap="round" filter="url(#gold-glow)"/>
+                  <path d="M22,34 C 35,42 50,33 65,30 L 140,29.5 L 140,30.5 L 65,31.5 C 50,34 35,40 22,34 Z" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <circle cx="42" cy="33" r="1.5" fill="#dcb360" filter="url(#gold-glow)"/>
+                  <path d="M140,25 L141.5,28.5 L146,30 L141.5,31.5 L140,35 L138.5,31.5 L134,30 L138.5,28.5 Z" fill="#fff" filter="drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #dcb360)"/>
+                </svg>
+              </h2>
+              
+              <p className="bs-subtitle">Handpicked favorites loved by our customers</p>
+              
+              <div className="bs-bottom-ornament">
+                <div className="bs-line"></div>
+                <svg className="bs-star" width="16" height="16" viewBox="0 0 24 24" fill="#dcb360">
+                   <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/>
+                </svg>
+                <div className="bs-line"></div>
+              </div>
             </div>
-            <h2 className="bs-section-title font-serif">
-              <svg className="bs-swirl" viewBox="0 0 100 30"><path d="M10,15 Q30,5 50,15 T90,15" strokeWidth="1.5"/><path d="M25,20 L40,15 L25,10" strokeWidth="1" fill="none"/><line x1="10" y1="15" x2="25" y2="15" strokeWidth="1"/></svg>
-              Best <span>Sellers</span>
-              <svg className="bs-swirl" viewBox="0 0 100 30" style={{ transform: 'scaleX(-1)' }}><path d="M10,15 Q30,5 50,15 T90,15" strokeWidth="1.5"/><path d="M25,20 L40,15 L25,10" strokeWidth="1" fill="none"/><line x1="10" y1="15" x2="25" y2="15" strokeWidth="1"/></svg>
-            </h2>
-            <p className="bs-subtitle">Handpicked favorites loved by our customers</p>
+            <div className="bs-header-border-bottom"></div>
           </div>
           
           <div className="bs-carousel">

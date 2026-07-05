@@ -1,0 +1,13 @@
+.shiningLine {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  height: 6px;
+  background-size: 
+    40px 2px,
+    120px 6px,
+    100% 1px;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 4px rgba(243, 207, 125, 0.8));
+  z-index: 10;
+}
