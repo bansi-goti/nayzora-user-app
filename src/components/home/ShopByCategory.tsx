@@ -114,7 +114,7 @@ export default function ShopByCategory() {
 
   return (
     <section className={styles['category-section']}>
-      <SectionTitle title="Shop by Category" />
+      <SectionTitle title="Shop by Category" subtitle="Discover our exquisite categories of luxury jewelry" />
 
       {/* Categories Slider */}
       <div className={styles['slider-container']}>

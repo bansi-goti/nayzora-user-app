@@ -30,7 +30,7 @@ export default function Testimonials() {
 
   return (
     <section className={styles['testimonials-section']}>
-      <SectionTitle title="Client Testimonials" />
+      <SectionTitle title="Client Testimonials" subtitle="What our clients say about their experience with us" />
 
       <div className={styles['carousel-wrapper']}>
         {REVIEWS.map((review, idx) => (

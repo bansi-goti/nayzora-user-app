@@ -80,39 +80,7 @@ export default function FeaturedProducts() {
     <section className={styles['featured-section']}>
       {/* BEST SELLERS SUB-SECTION */}
       <div className={styles['subsection-wrapper']}>
-        <div className={styles['bs-header-wrapper']}>
-          <div className={styles['bs-header-border-top']}></div>
-          <div className={styles['bs-header-content']}>
-            <div className={styles['bs-crown-wrapper']}>
-              <svg className={styles['bs-crown-dot']} width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360" /></svg>
-              <div className={styles['bs-crown']}>
-                <svg width="46" height="46" viewBox="0 0 64 64" fill="#dcb360">
-                  <path d="M10 44 L16 22 L24 34 L32 16 L40 34 L48 22 L54 44 Z" />
-                  <rect x="14" y="48" width="36" height="3" rx="1" />
-                  <path d="M32 4 L36 10 L32 16 L28 10 Z" />
-                  <path d="M16 10 L19 15 L16 20 L13 15 Z" />
-                  <path d="M48 10 L51 15 L48 20 L45 15 Z" />
-                </svg>
-              </div>
-              <svg className={styles['bs-crown-dot']} width="4" height="4" viewBox="0 0 4 4"><circle cx="2" cy="2" r="2" fill="#dcb360" /></svg>
-            </div>
-
-            <h2 className={`${styles['bs-section-title']} font-serif`}>
-              <span className={styles['title-text']}>Best Sellers</span>
-            </h2>
-
-            <p className={styles['bs-subtitle']}>Handpicked favorites loved by our customers</p>
-
-            <div className={styles['bs-bottom-ornament']}>
-              <div className={styles['bs-line']}></div>
-              <svg className={styles['bs-star']} width="16" height="16" viewBox="0 0 24 24" fill="#dcb360">
-                <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
-              </svg>
-              <div className={styles['bs-line']}></div>
-            </div>
-          </div>
-          <div className={styles['bs-header-border-bottom']}></div>
-        </div>
+        <SectionTitle title="Best Sellers" subtitle="Handpicked favorites loved by our customers" />
 
         {/* Best Sellers Grid */}
         <div className={styles['product-grid']}>
@@ -181,15 +149,7 @@ export default function FeaturedProducts() {
 
       {/* TRENDING DESIGNS SUB-SECTION */}
       <div className={styles['subsection-wrapper']}>
-        <div className={styles['trending-header-row']}>
-          <h2 className={`${styles['trending-title-main']} font-serif`}>
-            Trending <span className={styles['gold-text']}>Designs</span>
-          </h2>
-          <a href="#" className={styles['view-all-link']}>
-            View All Designs
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </a>
-        </div>
+        <SectionTitle title="Trending Designs" subtitle="Explore our most popular and sought-after jewelry designs" />
 
         {/* Trending Grid */}
         <div className={styles['trending-grid']}>
@@ -226,6 +186,14 @@ export default function FeaturedProducts() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Designs Centered Button */}
+        <div className="flex justify-center mt-10">
+          <a href="#" className={`${styles['view-all-link']} border border-[#dcb360]/40 px-6 py-3 rounded-full hover:bg-[#dcb360]/10 transition-all duration-300`}>
+            View All Designs
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block ml-2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
       </div>
     </section>
