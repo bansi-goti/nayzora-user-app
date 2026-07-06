@@ -86,11 +86,10 @@ export default function FeaturedProducts() {
         <div className={styles['product-grid']}>
           {BEST_SELLERS.map((product) => (
             <div key={product.name} className={styles['product-card']}>
+              {/* Glowing Line matching the border accent */}
+              <div className={styles['card-glow-line']} />
               <div className={styles['img-container']}>
-                <div className={styles['badge']}>
-                  {product.badgeIcon}
-                  <span>{product.badge}</span>
-                </div>
+
                 <div className={styles['fav-btn']}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
                 </div>
@@ -102,45 +101,36 @@ export default function FeaturedProducts() {
                   className={styles['product-img']}
                   loading="lazy"
                 />
-                <svg className={styles['card-curve']} viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M0,20 L0,0 Q50,25 100,0 L100,20 Z" fill="#010a07" />
-                  <path d="M0,0 Q50,25 100,0" fill="none" stroke="#dcb360" strokeWidth="0.8" opacity="0.8" />
-                </svg>
-                <div className={styles['curve-icon']}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 3h12l4 6-10 12L2 9l4-6z" /><path d="M2 9h20M12 21l-4-12m8 0-4 12m-6-12 3-6m6 0 3 6" /></svg>
-                </div>
-                <div className={styles['discount-tag']}>25% OFF</div>
               </div>
 
               <div className={styles['card-content']}>
-                <h3 className={`${styles['product-title']} font-serif`}>{product.name}</h3>
+                <div className={styles['title-row']}>
+                  <h3 className={`${styles['product-title']} font-serif`}>{product.name}</h3>
+                  <div className={styles['title-heart-btn']}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                  </div>
+                </div>
                 
-                <div className={styles['meta-row']}>
-                  <div className={styles['meta-item']}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                    <span>{product.rating}</span>
-                  </div>
-                  <div className={styles['meta-divider']}></div>
-                  <div className={styles['meta-item']}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-                    <span>{product.likes}</span>
-                  </div>
+                <div className={styles['rating-row']}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#dcb360"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                  <span>{product.rating}</span>
                 </div>
 
-                <div className={styles['price-row']}>
-                  <span className={styles['current-price']}>{product.price}</span>
-                  <span className={styles['old-price']}>{product.oldPrice}</span>
-                </div>
+                <div className={styles['discount-tag']}>25% OFF</div>
 
-                <button className={styles['action-bar']}>
-                  <div className={styles['cart-icon']}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <div className={styles['price-cart-row']}>
+                  <div className={styles['price-group']}>
+                    <span className={styles['current-price']}>{product.price}</span>
+                    <span className={styles['old-price']}>{product.oldPrice}</span>
                   </div>
-                  <span className={styles['add-text']}>Add to Cart</span>
-                  <div className={styles['plus-icon']}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                  </div>
-                </button>
+                  <button className={styles['cart-btn-circle']}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#010a07" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="9" cy="21" r="2"></circle>
+                      <circle cx="20" cy="21" r="2"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -155,7 +145,7 @@ export default function FeaturedProducts() {
         <div className={styles['trending-grid']}>
           {TRENDING_DESIGNS.map((item) => (
             <div key={item.name} className={styles['trending-card']}>
-              {item.badge && <div className={styles['trending-badge']}>{item.badge}</div>}
+
               <div className={styles['trending-fav']}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
               </div>

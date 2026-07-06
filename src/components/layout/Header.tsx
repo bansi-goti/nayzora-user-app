@@ -1,11 +1,51 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PillTrace from '../PillTrace';
 import styles from './Header.module.css';
 import HeaderBottomBar from './HeaderBottomBar';
 
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Clear the timeout indicating scroll has stopped
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+
+      // Hide if scrolling down and past the header, show if scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+
+      // When user stops scrolling for 150ms, show the header again
+      scrollTimeout = setTimeout(() => {
+        setIsVisible(true);
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    };
+  }, []);
+
   return (
-    <div className={styles['header-wrapper']}>
+    <div className={`${styles['header-wrapper']} ${!isVisible ? styles['header-hidden'] : ''}`}>
       {/* Top Bar */}
       <header className={styles['header-top-bar']}>
         <PillTrace borderRadius={14} />

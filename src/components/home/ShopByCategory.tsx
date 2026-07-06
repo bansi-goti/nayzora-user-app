@@ -39,7 +39,7 @@ const CATEGORIES = [
   },
   {
     name: 'NECKLACES',
-    image: '/categories/necklace.png',
+    image: '/categories/gemstones.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M16 20 Q 32 64 48 20" strokeDasharray="4 6" strokeWidth="6" strokeLinecap="round" />
@@ -129,6 +129,9 @@ export default function ShopByCategory() {
         <div className={styles['category-list']} ref={scrollRef}>
           {CATEGORIES.map((cat) => (
             <div key={cat.name} className={styles['category-card']}>
+              {/* Top Right Glowing Line Effect */}
+              <div className={styles['card-glow-line']}></div>
+              
               {/* Double Gold-Border Image Wrapper */}
               <div className={styles['image-frame-outer']}>
                 <div className={styles['image-frame-inner']}>
@@ -143,13 +146,13 @@ export default function ShopByCategory() {
                 </div>
               </div>
 
-              {/* Gold Outline Icon */}
-              <div className={styles['category-icon']}>
-                {cat.icon}
+              {/* Category Content: Icon + Name */}
+              <div className={styles['category-content']}>
+                <div className={styles['category-icon']}>
+                  {cat.icon}
+                </div>
+                <span className={styles['category-name']}>{cat.name}</span>
               </div>
-
-              {/* Category Name */}
-              <span className={styles['category-name']}>{cat.name}</span>
 
               {/* Diamond Ribbon Decor */}
               <div className={styles['category-diamond']}>
@@ -174,13 +177,22 @@ export default function ShopByCategory() {
       {/* Value Proposition Features Banner */}
       <div className={styles['features-banner']}>
         <PillTrace borderRadius={16} />
+        {/* Glowing Line matching the border accent but centered/smaller */}
+        <div className={styles['banner-glow-line']} />
 
         <div className={styles['feature-item']}>
           <div className={styles['feature-icon-circle']}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <circle cx="32" cy="26" r="14" />
-              <path d="M22 43 L16 60 L26 54 L32 60 L38 54 L48 60 L42 43" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M32 18 l2 4.5 5 0.5 -3.5 3.5 1 5 -4.5 -2.5 -4.5 2.5 1 -5 -3.5 -3.5 5 -0.5 Z" fill="#dcb360" stroke="none" />
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round">
+              {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+                <path 
+                  key={i} 
+                  d="M 27 22 Q 32 8 32 4 Q 32 8 37 22"
+                  transform={`rotate(${angle} 32 32)`}
+                />
+              ))}
+              <circle cx="32" cy="32" r="12" />
+              <circle cx="32" cy="34" r="3" />
+              <path d="M32 27 V31" />
             </svg>
           </div>
           <div className={styles['feature-text']}>
@@ -193,9 +205,16 @@ export default function ShopByCategory() {
 
         <div className={styles['feature-item']}>
           <div className={styles['feature-icon-circle']}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M32 6 L12 14 V30 C12 44 20 54 32 60 C44 54 52 44 52 30 V14 Z" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M24 28 l6 6 l10 -10" stroke="#dcb360" strokeLinecap="round" strokeLinejoin="round" />
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Notched Shield */}
+              <path d="M 32 8 C 38 10 44 12 48 16 C 40 24 40 34 48 42 C 40 50 32 58 32 58 C 32 58 24 50 16 42 C 24 34 24 24 16 16 C 20 12 26 10 32 8 Z" />
+              {/* Center Target Dot */}
+              <circle cx="32" cy="33" r="2" fill="currentColor" />
+              {/* Broken Circle for Bullseye */}
+              <path d="M 38 27 A 9 9 0 1 0 40 36" />
+              {/* Dart/Arrow pointing top-right */}
+              <path d="M 32 33 L 42 23" />
+              <path d="M 36 23 H 42 V 29" />
             </svg>
           </div>
           <div className={styles['feature-text']}>
@@ -208,11 +227,15 @@ export default function ShopByCategory() {
 
         <div className={styles['feature-item']}>
           <div className={styles['feature-icon-circle']}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <rect x="6" y="16" width="34" height="26" rx="2" />
-              <path d="M40 26 H48 L56 32 V42 H40 Z" fill="none" strokeLinejoin="round" />
-              <circle cx="16" cy="46" r="6" />
-              <circle cx="48" cy="46" r="6" />
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M 12 22 C 12 20 14 18 16 18 H 36 C 38 18 40 20 40 22 V 44 H 12 Z" />
+              <path d="M 40 26 H 46 C 48 26 50 28 52 32 L 54 36 V 44 H 40" />
+              <path d="M 42 26 V 34 H 54" />
+              <path d="M 18 28 L 26 24 L 30 28 L 22 32 Z" />
+              <circle cx="22" cy="46" r="5" fill="#010a07" />
+              <circle cx="44" cy="46" r="5" fill="#010a07" />
+              <circle cx="22" cy="46" r="2" />
+              <circle cx="44" cy="46" r="2" />
             </svg>
           </div>
           <div className={styles['feature-text']}>
@@ -225,10 +248,11 @@ export default function ShopByCategory() {
 
         <div className={styles['feature-item']}>
           <div className={styles['feature-icon-circle']}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M32 6 A 26 26 0 1 1 12 16" strokeLinecap="round" />
-              <path d="M12 4 V16 H24" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M32 24 L42 34 L32 44" stroke="#dcb360" strokeLinecap="round" strokeLinejoin="round" />
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M 18 46 A 20 20 0 1 0 14 24" />
+              <path d="M 24 18 L 14 24 L 20 32" />
+              <circle cx="32" cy="32" r="8" />
+              <circle cx="32" cy="32" r="3" fill="currentColor" />
             </svg>
           </div>
           <div className={styles['feature-text']}>
