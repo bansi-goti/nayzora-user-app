@@ -196,6 +196,13 @@
   border-color: #d4af37;
 }
 
+.fav-btn-active {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #010a07;
+  border-color: #d4af37;
+  box-shadow: 0 0 12px 2px rgba(212, 175, 55, 0.4);
+}
+
 .card-curve {
   position: absolute;
   bottom: 0;
