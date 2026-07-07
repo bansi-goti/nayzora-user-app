@@ -29,8 +29,10 @@
   gap: 24px;
   padding: 12px 32px;
   border-radius: 16px;
-  background: linear-gradient(90deg, #041f15 0%, #010a07 25%, #000000 100%);
-  border: 1px solid #d4af37;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(90deg, #041f15 0%, #010a07 25%, #000000 100%) padding-box,
+    linear-gradient(90deg, rgba(212, 175, 55, 0.2), #ffe8b1 50%, rgba(212, 175, 55, 0.2)) border-box;
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.8),
     0 0 15px rgba(212, 175, 55, 0.25),
@@ -205,20 +207,12 @@
   width: 100%;
 }
 
-.indicator-short {
-  width: 6px;
-  height: 2px;
-  background: #dcb360;
-  border-radius: 1px;
-  opacity: 0.7;
-}
-
-.indicator-long {
-  width: 22px;
+.indicator-line {
+  width: 24px;
   height: 2.5px;
-  background: #ffdf8c;
+  background: linear-gradient(90deg, transparent, #ffdf8c, transparent);
   border-radius: 1px;
-  box-shadow: 0 0 8px #ffdf8c;
+  box-shadow: 0 0 8px rgba(255, 223, 140, 0.8);
 }
 
 /* ---------- RIGHT ACTIONS ---------- */
@@ -333,7 +327,8 @@
 .bottom-items {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 32px;
   width: 100%;
 }
 

@@ -63,7 +63,6 @@ export default function Hero() {
             key={idx}
             className={`${styles['slide-content-item']} ${idx === current ? styles['active-content'] : ''}`}
           >
-            <span className={styles['hero-tag']}>{slide.tag}</span>
             <h1 className={`${styles['hero-title']} ${styles['font-serif']}`}>{slide.title}</h1>
             <div className={styles['hero-subtitle']}>
               <span className={styles['subtitle-line']}></span>

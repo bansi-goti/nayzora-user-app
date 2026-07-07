@@ -34,7 +34,7 @@ export default function SectionTitle({
   return (
     <div className={`${styles.wrapper} ${className}`}>
       {/* Crown Icon Above */}
-      {showCrown && (
+      {/* {showCrown && (
         <div className={styles.crownContainer}>
           <div className={styles.crownLineLeft}></div>
           <Image
@@ -47,7 +47,7 @@ export default function SectionTitle({
           />
           <div className={styles.crownLineRight}></div>
         </div>
-      )}
+      )} */}
 
       {/* Main Title Row with Flanking Swirl Ornaments */}
       <div className={styles.titleRow}>

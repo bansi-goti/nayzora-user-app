@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 4rem;
-  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
   position: relative;
   z-index: 10;
 
@@ -17,10 +17,6 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  /* Top and bottom gold borders */
-  border-top: 1px solid rgba(220, 179, 96, 0.45);
-  border-bottom: 1px solid rgba(220, 179, 96, 0.45);
-
   /* Full-width viewport breakout */
   width: 100vw;
   left: 50%;
@@ -28,38 +24,6 @@
   margin-left: -50vw;
   margin-right: -50vw;
   box-sizing: border-box;
-}
-
-/* Center Glow on Top Border */
-.wrapper::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 45%;
-  right: 45%;
-  height: 3px;
-  background: #ffe8b1;
-  box-shadow:
-    0 0 10px 2px #dcb360,
-    0 0 20px 4px #ffe8b1;
-  border-radius: 50%;
-  z-index: 11;
-}
-
-/* Center Glow on Bottom Border */
-.wrapper::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 45%;
-  right: 45%;
-  height: 3px;
-  background: #ffe8b1;
-  box-shadow:
-    0 0 10px 2px #dcb360,
-    0 0 20px 4px #ffe8b1;
-  border-radius: 50%;
-  z-index: 11;
 }
 
 .crownContainer {

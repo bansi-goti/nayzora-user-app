@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PillTrace from '../PillTrace';
 import styles from './Header.module.css';
-import HeaderBottomBar from './HeaderBottomBar';
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -78,11 +77,8 @@ export default function Header() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
               <span>Home</span>
             </div>
-            {/* Symmetrical Triple Accent Line Setup */}
             <div className={styles['nav-indicator']}>
-              <span className={styles['indicator-short']}></span>
-              <span className={styles['indicator-long']}></span>
-              <span className={styles['indicator-short']}></span>
+              <span className={styles['indicator-line']}></span>
             </div>
           </Link>
           <Link href="/categories" className={styles['nav-item']}>
@@ -129,8 +125,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-      <HeaderBottomBar />
     </div>
   );
 }
