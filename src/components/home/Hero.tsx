@@ -95,17 +95,6 @@ export default function Hero() {
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6" /></svg>
       </button>
 
-      {/* Slider Indicators (Dots) */}
-      <div className={styles['slider-dots']}>
-        {SLIDES.map((_, idx) => (
-          <button
-            key={idx}
-            className={`${styles['slider-dot']} ${idx === current ? styles['active-dot'] : ''}`}
-            onClick={() => setCurrent(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
-      </div>
     </section>
   );
 }

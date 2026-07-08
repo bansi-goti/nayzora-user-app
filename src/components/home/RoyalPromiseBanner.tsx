@@ -6,7 +6,7 @@ export default function RoyalPromiseBanner() {
   return (
     <section className={styles['featured-section']}>
       <div className={styles['subsection-wrapper']}>
-        <div 
+        <div
           className="relative rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-2xl"
           style={{
             background: 'linear-gradient(to right, #010604, #02120b)',
@@ -17,14 +17,14 @@ export default function RoyalPromiseBanner() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 flex items-center justify-center opacity-80">
             <div className="w-[100px] h-[1px] bg-gradient-to-r from-transparent via-[#dcb360] to-transparent"></div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="mx-1" stroke="#dcb360" strokeWidth="1">
-              <path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z" fill="rgba(220,179,96,0.1)"/>
+              <path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z" fill="rgba(220,179,96,0.1)" />
             </svg>
             <div className="w-[100px] h-[1px] bg-gradient-to-r from-transparent via-[#dcb360] to-transparent"></div>
           </div>
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center opacity-80">
             <div className="w-[100px] h-[1px] bg-gradient-to-r from-transparent via-[#dcb360] to-transparent"></div>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="mx-1" stroke="#dcb360" strokeWidth="1">
-              <path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z" fill="rgba(220,179,96,0.1)"/>
+              <path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z" fill="rgba(220,179,96,0.1)" />
             </svg>
             <div className="w-[100px] h-[1px] bg-gradient-to-r from-transparent via-[#dcb360] to-transparent"></div>
           </div>
@@ -36,7 +36,7 @@ export default function RoyalPromiseBanner() {
           <div className="absolute bottom-2 right-2 w-8 h-8 border-b border-r border-[#dcb360] opacity-50 rounded-br-lg"></div>
 
           {/* Left Text Content */}
-          <div 
+          <div
             className="flex-1 z-10 w-full"
             style={{ paddingLeft: '8%', paddingRight: '4%', paddingTop: '3rem', paddingBottom: '3rem' }}
           >
@@ -48,34 +48,34 @@ export default function RoyalPromiseBanner() {
                 The Royal Promise
               </span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl lg:text-[56px] text-white font-serif font-normal leading-[1.1] mb-6">
-              Enjoy all the benefits of <br/>
+              Enjoy all the benefits of <br />
               <span className="text-[#dcb360]">
                 The Royal Promise
               </span>
             </h2>
-            
+
             {/* Divider */}
             <div className="flex items-center gap-2 mb-8 opacity-80">
               <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#dcb360]"></div>
               <div className="w-2 h-2 rotate-45 border border-[#dcb360]"></div>
               <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#dcb360]"></div>
             </div>
-            
+
             <p className="text-[#a4b5aa] text-[17px] max-w-md leading-relaxed font-sans">
               At Nayzora Jewellery, every piece comes with trust, quality, and a promise that lasts forever.
             </p>
           </div>
-          
+
           {/* Right Image Showcase */}
-          <div 
+          <div
             className="flex-1 w-full relative h-[400px] md:h-[500px] lg:h-[600px]"
             style={{ paddingRight: '8%', paddingTop: '3rem', paddingBottom: '3rem' }}
           >
-            <div className="w-full h-full relative rounded-xl overflow-hidden shadow-[0_0_30px_rgba(212,175,55,0.1)]">
+            <div className="w-full h-full relative rounded-[20px] overflow-hidden shadow-2xl">
               <Image
-                src="/royal_promise_new.png"
+                src="/royal_promise_nayzora.png"
                 alt="Nayzora Jewellery Royal Promise Showcase"
                 fill
                 className="object-cover"

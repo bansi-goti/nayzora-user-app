@@ -46,8 +46,10 @@
   padding: 0 32px;
   height: 85px;
   border-radius: 20px;
-  border: 1px solid #dcb360;
-  background: radial-gradient(ellipse at center, #021f14 0%, #000000 70%);
+  border: 1px solid transparent;
+  background: 
+    radial-gradient(ellipse at center, #021f14 0%, #000000 70%) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.05) 0%, rgba(220,179,96,0.15) 25%, rgba(220,179,96,0.4) 50%, rgba(220,179,96,0.15) 75%, rgba(220,179,96,0.05) 100%) border-box;
   box-shadow: 0 20px 40px rgba(196, 137, 44, 0.15);
   width: 100%;
   box-sizing: border-box;
@@ -180,9 +182,9 @@
 }
 
 .nav-item svg {
-  stroke: #dcb360;
+  stroke: #ffffff;
   transition: stroke 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 0 6px rgba(220, 179, 96, 0.5));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
 }
 
 .nav-item:not(.active):hover {
@@ -191,8 +193,8 @@
 }
 
 .nav-item:not(.active):hover svg {
-  stroke: #dcb360;
-  filter: drop-shadow(0 0 8px rgba(220, 179, 96, 0.7));
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .nav-item span {
@@ -352,8 +354,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(2, 5, 3, 0.6);
-  border: 1px solid #c4892c;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(rgba(2, 5, 3, 0.6), rgba(2, 5, 3, 0.6)) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.05) 0%, rgba(220,179,96,0.15) 25%, rgba(220,179,96,0.4) 50%, rgba(220,179,96,0.15) 75%, rgba(220,179,96,0.05) 100%) border-box;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -403,8 +407,10 @@
   box-sizing: border-box;
   padding: 12px 32px;
   border-radius: 16px;
-  background: linear-gradient(90deg, #031c12 0%, #010a07 20%, #000000 100%);
-  border: 1px solid #d4af37;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(90deg, #031c12 0%, #010a07 20%, #000000 100%) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.05) 0%, rgba(220,179,96,0.15) 25%, rgba(220,179,96,0.4) 50%, rgba(220,179,96,0.15) 75%, rgba(220,179,96,0.05) 100%) border-box;
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.8),
     0 0 15px rgba(212, 175, 55, 0.2);
@@ -453,11 +459,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: 1.5px solid #ffdf8c;
-  box-shadow:
-    0 0 12px rgba(212, 175, 55, 0.5),
-    inset 0 0 8px rgba(212, 175, 55, 0.3);
+  border: 1.5px solid transparent;
+  background: 
+    linear-gradient(#010a07, #010a07) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.2) 0%, rgba(220,179,96,0.4) 25%, rgba(220,179,96,0.8) 50%, rgba(220,179,96,0.4) 75%, rgba(220,179,96,0.2) 100%) border-box;
   flex-shrink: 0;
 }
 

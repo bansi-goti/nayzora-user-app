@@ -98,14 +98,10 @@
 .product-card {
   background: 
     linear-gradient(#080808, #080808) padding-box,
-    linear-gradient(180deg, #dcb360 0%, rgba(220, 179, 96, 0.15) 35%, rgba(220, 179, 96, 0.05) 50%, rgba(220, 179, 96, 0.15) 65%, #dcb360 100%) border-box;
+    linear-gradient(90deg, rgba(220,179,96,0.2) 0%, rgba(220,179,96,0.4) 25%, rgba(220,179,96,0.8) 50%, rgba(220,179,96,0.4) 75%, rgba(220,179,96,0.2) 100%) border-box;
   border: 1px solid transparent;
   border-radius: 20px;
-  box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.9),
-    0 0 20px rgba(212, 175, 55, 0.3),
-    inset 0 1px 2px rgba(212, 175, 55, 0.5),
-    inset 0 0 12px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -116,25 +112,12 @@
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.9),
-    0 0 25px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
 }
 
 /* Card Glow Line */
 .card-glow-line {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  width: 45%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4af37, #ffe8b1, transparent);
-  box-shadow: 
-    0 0 15px 3px rgba(212, 175, 55, 0.9), 
-    0 0 8px 1px rgba(255, 232, 177, 1);
-  border-radius: 2px;
-  z-index: 10;
-  pointer-events: none;
+  display: none;
 }
 
 .img-container {
@@ -435,8 +418,10 @@
 }
 
 .trending-card {
-  background: #040910;
-  border: 1px solid #4a3b2c;
+  background: 
+    linear-gradient(#040910, #040910) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.2) 0%, rgba(220,179,96,0.4) 25%, rgba(220,179,96,0.8) 50%, rgba(220,179,96,0.4) 75%, rgba(220,179,96,0.2) 100%) border-box;
+  border: 1px solid transparent;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
   position: relative;
@@ -449,9 +434,7 @@
 
 .trending-card:hover {
   transform: translateY(-8px);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.9),
-    0 0 25px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
 }
 
 .trending-badge {

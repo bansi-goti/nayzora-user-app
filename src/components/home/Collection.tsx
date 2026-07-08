@@ -12,17 +12,57 @@ export default function Collection() {
         <div className={styles['rp-banner']}>
           {/* Top Flourish */}
           <div className={styles['rp-banner-border-ornament']}>
-            <svg viewBox="0 0 100 20" width="80" height="16">
-              <path d="M0,10 Q25,10 45,5 Q50,0 55,5 Q75,10 100,10" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-              <circle cx="50" cy="5" r="3" fill="#dcb360" />
-              <circle cx="50" cy="15" r="1.5" fill="#dcb360" />
+            <svg viewBox="0 0 300 30" width="300" height="30">
+              {/* Left Line */}
+              <line x1="0" y1="15" x2="85" y2="15" stroke="#dcb360" strokeWidth="1.5" />
+              
+              {/* Left Small Loop */}
+              <path d="M 85 15 C 90 5, 100 5, 100 15 C 100 25, 90 25, 85 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+              
+              {/* Left Eye */}
+              <path d="M 100 15 Q 120 0 140 15 Q 120 30 100 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+              <circle cx="120" cy="15" r="2.5" fill="#dcb360" />
+              
+              {/* Center Leaf */}
+              <path d="M 150 2 C 160 10 160 15 160 15 C 160 15 160 20 150 28 C 140 20 140 15 140 15 C 140 15 140 10 150 2 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+              <path d="M 150 7 L 153 15 L 150 23 L 147 15 Z" fill="#dcb360" />
+
+              {/* Right Eye */}
+              <path d="M 160 15 Q 180 0 200 15 Q 180 30 160 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+              <circle cx="180" cy="15" r="2.5" fill="#dcb360" />
+
+              {/* Right Small Loop */}
+              <path d="M 200 15 C 200 5, 210 5, 215 15 C 210 25, 200 25, 200 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+
+              {/* Right Line */}
+              <line x1="215" y1="15" x2="300" y2="15" stroke="#dcb360" strokeWidth="1.5" />
             </svg>
           </div>
 
           <div className={styles['rp-content']}>
             <div className={styles['rp-crown']}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="#dcb360">
-                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" />
+              <svg viewBox="0 0 200 40" width="160" height="32">
+                <linearGradient id="fadeLeft" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#dcb360" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#dcb360" stopOpacity="1" />
+                </linearGradient>
+                <line x1="10" y1="25" x2="75" y2="25" stroke="url(#fadeLeft)" strokeWidth="1" />
+                
+                <path d="M 75 25 Q 82 20 85 25 Q 82 30 75 25" fill="none" stroke="#dcb360" strokeWidth="1" />
+
+                <path d="M 90 25 L 110 25 L 112 28 L 88 28 Z" fill="#dcb360" />
+                <path d="M 90 23 L 85 12 L 93 18 L 100 8 L 107 18 L 115 12 L 110 23 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+                <circle cx="85" cy="10" r="1.5" fill="#dcb360" />
+                <circle cx="100" cy="6" r="1.5" fill="#dcb360" />
+                <circle cx="115" cy="10" r="1.5" fill="#dcb360" />
+
+                <path d="M 125 25 Q 118 20 115 25 Q 118 30 125 25" fill="none" stroke="#dcb360" strokeWidth="1" />
+
+                <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#dcb360" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#dcb360" stopOpacity="0" />
+                </linearGradient>
+                <line x1="125" y1="25" x2="190" y2="25" stroke="url(#fadeRight)" strokeWidth="1" />
               </svg>
             </div>
             <div className={styles['rp-kicker']}>THE ROYAL PROMISE</div>
@@ -30,11 +70,31 @@ export default function Collection() {
               Enjoy all the benefits of<br /> The <span className={styles['text-primary']}>Royal Promise</span>
             </h2>
             <div className={styles['rp-heading-ornament']}>
-              <svg viewBox="0 0 100 15" width="80" height="12">
-                <path d="M0,7.5 L40,7.5 M60,7.5 L100,7.5" stroke="#dcb360" strokeWidth="1.5" />
-                <circle cx="50" cy="7.5" r="3" fill="#dcb360" />
-                <circle cx="45" cy="7.5" r="1.5" fill="#dcb360" />
-                <circle cx="55" cy="7.5" r="1.5" fill="#dcb360" />
+              <svg viewBox="0 0 300 30" width="240" height="24">
+                <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#dcb360" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#dcb360" stopOpacity="1" />
+                </linearGradient>
+                <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#dcb360" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#dcb360" stopOpacity="0" />
+                </linearGradient>
+                
+                <line x1="0" y1="15" x2="85" y2="15" stroke="url(#fadeL)" strokeWidth="1.5" />
+                
+                <path d="M 85 15 C 90 5, 100 5, 100 15 C 100 25, 90 25, 85 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+                <path d="M 100 15 Q 120 0 140 15 Q 120 30 100 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+                <circle cx="120" cy="15" r="2.5" fill="#dcb360" />
+                
+                <path d="M 150 2 C 160 10 160 15 160 15 C 160 15 160 20 150 28 C 140 20 140 15 140 15 C 140 15 140 10 150 2 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+                <path d="M 150 7 L 153 15 L 150 23 L 147 15 Z" fill="#dcb360" />
+
+                <path d="M 160 15 Q 180 0 200 15 Q 180 30 160 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+                <circle cx="180" cy="15" r="2.5" fill="#dcb360" />
+
+                <path d="M 200 15 C 200 5, 210 5, 215 15 C 210 25, 200 25, 200 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
+
+                <line x1="215" y1="15" x2="300" y2="15" stroke="url(#fadeR)" strokeWidth="1.5" />
               </svg>
             </div>
             <p className={styles['rp-desc']}>
@@ -45,7 +105,7 @@ export default function Collection() {
           {/* Optimized Next.js Image wrapper */}
           <div className={styles['rp-image-wrapper']}>
             <Image 
-              src="/royal_promise.png" 
+              src="/royal_promise_nayzora.png" 
               alt="The Royal Promise" 
               width={400} 
               height={450} 

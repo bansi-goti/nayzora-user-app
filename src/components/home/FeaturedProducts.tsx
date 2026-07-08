@@ -216,10 +216,10 @@ export default function FeaturedProducts() {
             <div key={item.name} className={styles['trending-card']}>
 
               <div 
-                  className={`${styles['trending-fav-btn']} ${likedProducts.has(item.name) ? styles['trending-fav-active'] : ''}`}
+                  className={`${styles['fav-btn']} ${likedProducts.has(item.name) ? styles['fav-btn-active'] : ''}`}
                   onClick={() => toggleLike(item.name)}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "#ffffff" : "none"} stroke="#ffffff" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
               </div>
               <div className={styles['trending-img-wrapper']}>
                 <div className={styles['trending-badge']}>NEW ARRIVAL</div>
