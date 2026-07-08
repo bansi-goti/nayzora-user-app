@@ -435,18 +435,16 @@
 }
 
 .trending-card {
-  background: linear-gradient(180deg, #02150e 0%, #000201 100%);
-  border: 1px solid #d4af37;
+  background: #040910;
+  border: 1px solid #4a3b2c;
   border-radius: 16px;
-  box-shadow: 
-    0 15px 30px rgba(0, 0, 0, 0.7),
-    0 0 15px rgba(212, 175, 55, 0.12);
-  padding: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
   position: relative;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .trending-card:hover {
@@ -460,110 +458,124 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #d4af37;
-  color: #010a07;
+  background: #eebc6a;
+  color: #0a0a0a;
   font-size: 9px;
   font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 3px;
+  padding: 4px 8px;
+  border-radius: 6px;
   letter-spacing: 0.5px;
   z-index: 3;
 }
 
-.trending-fav {
+.trending-fav-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  top: 16px;
+  right: 16px;
+  z-index: 10;
   cursor: pointer;
-  transition: color 0.3s ease;
-  z-index: 3;
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
-.trending-fav svg {
-  width: 18px;
-  height: 18px;
+.trending-fav-btn:hover, .trending-fav-active {
+  opacity: 1;
 }
 
-.trending-card:hover .trending-fav {
-  color: #d4af37;
+.trending-img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background-color: transparent;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .trending-card-img {
   width: 100%;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 12px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.trending-card:hover .trending-card-img {
+  transform: scale(1.05);
 }
 
 .trending-card-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 10px 12px 8px 12px;
 }
 
 .trending-card-title {
-  font-size: 15px;
-  color: #ffffff;
-  margin-bottom: 8px;
-  font-weight: 400;
-  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  margin-bottom: 4px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.trending-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.trending-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
 }
 
 .trending-prices {
   display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+  align-items: baseline;
+  gap: 12px;
 }
 
 .trending-price {
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffe8b1;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .trending-old-price {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.35);
+  font-weight: 400;
+  color: #9ca3af;
   text-decoration: line-through;
-}
-
-.trending-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
 }
 
 .trending-rating {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  color: #a4b5aa;
+  gap: 6px;
+  font-size: 13px;
+  color: #9ca3af;
 }
 
-.trending-add-btn {
-  background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #ffe8b1;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 600;
+.trending-cart-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #eebc6a 0%, #c4892c 100%);
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  border: none;
   cursor: pointer;
+  box-shadow: 0 0 16px rgba(227, 186, 97, 0.4), 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 
-.trending-add-btn:hover {
-  background: #d4af37;
-  color: #010a07;
-  border-color: #d4af37;
+.trending-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(227, 186, 97, 0.6), 0 6px 14px rgba(0, 0, 0, 0.6);
 }
 
 /* ---------- RESPONSIVE ---------- */

@@ -216,46 +216,43 @@ export default function FeaturedProducts() {
             <div key={item.name} className={styles['trending-card']}>
 
               <div 
-                  className={`${styles['fav-btn']} ${likedProducts.has(item.name) ? styles['fav-btn-active'] : ''}`}
+                  className={`${styles['trending-fav-btn']} ${likedProducts.has(item.name) ? styles['trending-fav-active'] : ''}`}
                   onClick={() => toggleLike(item.name)}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "#ffffff" : "none"} stroke="#ffffff" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
               </div>
-              <Image 
-                src={item.img} 
-                alt={item.name} 
-                width={240} 
-                height={220} 
-                className={styles['trending-card-img']}
-                loading="lazy"
-              />
+              <div className={styles['trending-img-wrapper']}>
+                <div className={styles['trending-badge']}>NEW ARRIVAL</div>
+                <Image 
+                  src={item.img} 
+                  alt={item.name} 
+                  width={300} 
+                  height={260} 
+                  className={styles['trending-card-img']}
+                  loading="lazy"
+                />
+              </div>
               <div className={styles['trending-card-content']}>
-                <h3 className={`${styles['trending-card-title']} font-serif`}>{item.name}</h3>
-                <div className={styles['trending-prices']}>
-                  <span className={styles['trending-price']}>{item.price}</span>
-                  <span className={styles['trending-old-price']}>{item.oldPrice}</span>
-                </div>
-                <div className={styles['trending-bottom']}>
-                  <div className={styles['trending-rating']}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#dcb360" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                    <span>{item.rating.split(' ')[0]}</span>
+                <h3 className={styles['trending-card-title']}>{item.name}</h3>
+                
+                <div className={styles['trending-bottom-row']}>
+                  <div className={styles['trending-bottom-left']}>
+                    <div className={styles['trending-prices']}>
+                      <span className={styles['trending-price']}>{item.price}</span>
+                      <span className={styles['trending-old-price']}>{item.oldPrice}</span>
+                    </div>
+                    <div className={styles['trending-rating']}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#eebc6a" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                      <span>{item.rating}</span>
+                    </div>
                   </div>
-                  <button className={styles['trending-add-btn']}>
-                    Add
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                  <button className={styles['trending-cart-btn']}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path><path d="M10 10h6"></path><path d="M10 13h6"></path></svg>
                   </button>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* View All Designs Centered Button */}
-        <div className="flex justify-center mt-10">
-          <a href="#" className={`${styles['view-all-link']} border border-[#dcb360]/40 px-6 py-3 rounded-full hover:bg-[#dcb360]/10 transition-all duration-300`}>
-            View All Designs
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block ml-2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-          </a>
         </div>
       </div>
     </section>

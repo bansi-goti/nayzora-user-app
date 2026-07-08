@@ -3,6 +3,7 @@ import ShopByCategory from "@/components/home/ShopByCategory";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import Collection from "@/components/home/Collection";
 import Testimonials from "@/components/home/Testimonials";
+import RoyalPromiseBanner from "@/components/home/RoyalPromiseBanner";
 import HeaderBottomBar from "@/components/layout/HeaderBottomBar";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <HeaderBottomBar />
       </div>
       <ShopByCategory />
+      <RoyalPromiseBanner />
       <FeaturedProducts />
       <Collection />
       <Testimonials />

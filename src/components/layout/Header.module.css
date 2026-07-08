@@ -20,56 +20,67 @@
   transform: translateY(-150%);
 }
 
+/* ---------- ANIMATIONS ---------- */
+@keyframes sweepBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes sweepShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes slowPulse {
+  0%, 100% { opacity: 0.65; filter: drop-shadow(0 0 6px rgba(184, 138, 43, 0.25)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(184, 138, 43, 0.5)); }
+}
+
 /* ---------- TOP BAR ---------- */
 .header-top-bar {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 12px 32px;
-  border-radius: 16px;
-  border: 1px solid transparent;
-  background: 
-    linear-gradient(90deg, #041f15 0%, #010a07 25%, #000000 100%) padding-box,
-    linear-gradient(90deg, rgba(212, 175, 55, 0.2), #ffe8b1 50%, rgba(212, 175, 55, 0.2)) border-box;
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.8),
-    0 0 15px rgba(212, 175, 55, 0.25),
-    inset 0 0 20px rgba(0, 0, 0, 0.5);
+  gap: 16px;
+  padding: 0 32px;
+  height: 85px;
+  border-radius: 20px;
+  border: 1px solid #dcb360;
+  background: radial-gradient(ellipse at center, #021f14 0%, #000000 70%);
+  box-shadow: 0 20px 40px rgba(196, 137, 44, 0.15);
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Intense Cinematic Flare on Top Center */
-.header-top-bar::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 350px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #fcecae 40%, #ffffff 50%, #fcecae 60%, transparent);
-  box-shadow:
-    0 0 20px 4px rgba(255, 235, 160, 0.7),
-    0 0 45px 12px rgba(212, 175, 55, 0.4);
-  border-radius: 50%;
-  z-index: 5;
-  pointer-events: none;
-}
-
-/* Intense Cinematic Flare on Bottom Center */
+/* Texture Layer (Damask/Filigree) */
 .header-top-bar::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  inset: 0;
+  border-radius: inherit;
+  background-image: 
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(196, 137, 44, 0.05) 21%, rgba(196, 137, 44, 0.05) 34%, transparent 35%, transparent),
+    radial-gradient(circle at 100% 50%, transparent 20%, rgba(196, 137, 44, 0.05) 21%, rgba(196, 137, 44, 0.05) 34%, transparent 35%, transparent);
+  background-size: 24px 24px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: color-dodge;
+}
+
+/* Sharp Lens Flare / Star Burst - Top removed per user request */
+
+/* Sharp Lens Flare / Star Burst - Bottom (Needs specific class since ::after is used for texture) */
+.flare-bottom {
+  position: absolute;
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 200px;
+  width: 150px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ffffff 50%, transparent);
-  box-shadow: 0 0 15px 4px rgba(255, 235, 160, 0.6);
+  background: radial-gradient(ellipse, #ffffff 0%, #ffe99e 15%, #c4892c 50%, transparent 70%);
+  box-shadow: 0 1px 8px 1px rgba(196, 137, 44, 0.4), 0 -1px 3px 0px rgba(196, 137, 44, 0.15);
   z-index: 5;
   pointer-events: none;
 }
@@ -78,19 +89,22 @@
 .header-logo-section {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-decoration: none;
+  filter: drop-shadow(0 0 5px rgba(184, 138, 43, 0.3));
 }
 
 .logo-container {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +116,7 @@
   height: 100%;
   object-fit: contain;
   mix-blend-mode: screen;
-  filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.2) drop-shadow(0 0 8px rgba(220, 179, 96, 0.5));
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(15deg) brightness(1.2) drop-shadow(0 0 6px rgba(184, 138, 43, 0.4));
 }
 
 .logo-text-group {
@@ -112,12 +126,12 @@
 }
 
 .logo-title {
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
   line-height: 1;
-  color: #f0cd7e;
-  background: linear-gradient(180deg, #f6dd9a 0%, #dcb360 55%, #b8893a 100%);
+  color: #E5C56A;
+  background: linear-gradient(180deg, #FFF2B0 0%, #B88A2B 40%, #7A5A12 70%, #5c420b 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -128,23 +142,28 @@
 }
 
 .logo-subtitle {
-  font-size: 10.5px;
+  font-size: 8.5px;
   font-weight: 500;
-  letter-spacing: 5px;
-  color: #cbb98a;
+  letter-spacing: 4.5px;
+  color: #B88A2B;
   margin-left: 1px;
 }
 
 .logo-ornament {
   margin-top: 3px;
   opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 0 3px rgba(184, 138, 43, 0.4));
 }
 
 /* ---------- NAVIGATION ---------- */
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-item {
@@ -153,18 +172,27 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #e2ded5;
-  font-size: 14px;
+  color: rgba(245, 245, 242, 0.72);
+  font-size: 12.5px;
   font-weight: 500;
-  transition: color 0.25s ease;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(220, 179, 96, 0.6);
 }
 
 .nav-item svg {
-  stroke: currentColor;
+  stroke: #dcb360;
+  transition: stroke 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(220, 179, 96, 0.5));
 }
 
 .nav-item:not(.active):hover {
-  color: #ffdf8c;
+  color: #F5F5F2;
+  text-shadow: 0 0 10px rgba(220, 179, 96, 0.8);
+}
+
+.nav-item:not(.active):hover svg {
+  stroke: #dcb360;
+  filter: drop-shadow(0 0 8px rgba(220, 179, 96, 0.7));
 }
 
 .nav-item span {
@@ -174,12 +202,12 @@
 
 .nav-item:not(.active) {
   flex-direction: row;
-  gap: 8px;
-  padding: 8px 4px;
+  gap: 4px;
+  padding: 5px 6px;
 }
 
 .nav-item.active {
-  color: #ffe6a3;
+  color: #F5F5F2;
 }
 
 .nav-pill {
@@ -187,59 +215,127 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 20px;
+  padding: 6px 16px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #ffe6a3;
-  font-weight: 600;
+  background: radial-gradient(ellipse at center, rgba(30, 25, 10, 0.9) 0%, rgba(5, 10, 7, 0.9) 100%);
+  border: 1px solid rgba(241, 205, 107, 0.4);
+  color: #f1cd6b;
+  font-weight: 500;
   box-shadow:
-    0 0 15px rgba(212, 175, 55, 0.15),
-    inset 0 0 8px rgba(212, 175, 55, 0.1);
+    0 4px 10px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(241, 205, 107, 0.15),
+    inset 0 0 15px rgba(241, 205, 107, 0.15);
+}
+
+.nav-pill::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: radial-gradient(ellipse, #ffffff 0%, #f1cd6b 50%, transparent 80%);
+  box-shadow: 0 0 6px 1px rgba(241, 205, 107, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: radial-gradient(ellipse, #ffffff 0%, #f1cd6b 50%, transparent 80%);
+  box-shadow: 0 0 6px 1px rgba(241, 205, 107, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.nav-pill svg {
+  stroke: #f1cd6b;
+  fill: none;
+  filter: drop-shadow(0 0 2px rgba(241, 205, 107, 0.3));
+}
+
+.nav-pill-highlight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 245, 242, 0.7), transparent);
+  box-shadow: 0 0 6px 1px rgba(229, 197, 106, 0.5);
+  pointer-events: none;
 }
 
 .nav-indicator {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  margin-top: 6px;
+  gap: 4px;
+  margin-top: 5px;
   width: 100%;
+  filter: drop-shadow(0 0 3px rgba(184, 138, 43, 0.5));
 }
 
 .indicator-line {
-  width: 24px;
-  height: 2.5px;
-  background: linear-gradient(90deg, transparent, #ffdf8c, transparent);
+  width: 10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E5C56A, transparent);
   border-radius: 1px;
-  box-shadow: 0 0 8px rgba(255, 223, 140, 0.8);
+  box-shadow: 0 0 6px rgba(184, 138, 43, 0.6);
+}
+
+.indicator-dot {
+  width: 4px;
+  height: 2px;
+  background: #F5F5F2;
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(245, 245, 242, 0.8);
 }
 
 /* ---------- RIGHT ACTIONS ---------- */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+  position: relative;
+  z-index: 10;
 }
 
 .currency-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
+  gap: 4px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(2, 5, 3, 0.6);
+  border: 1px solid #c4892c;
   color: #ffffff;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(196, 137, 44, 0.2);
+}
+
+.currency-btn svg {
+  stroke: #ffffff;
+}
+
+.currency-btn svg:last-child {
+  stroke: #ffffff;
+  width: 14px;
+  height: 14px;
 }
 
 .currency-btn:hover {
-  border-color: #dcb360;
-  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 12px rgba(196, 137, 44, 0.4);
 }
 
 .icon-group {
@@ -250,39 +346,50 @@
 
 .icon-circle {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(2, 5, 3, 0.6);
+  border: 1px solid #c4892c;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(196, 137, 44, 0.2);
+}
+
+.icon-circle svg {
+  stroke: #ffffff;
+  width: 18px;
+  height: 18px;
 }
 
 .icon-circle:hover {
-  border-color: #ffdf8c;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px rgba(196, 137, 44, 0.4);
+}
+
+.icon-circle:hover svg {
+  stroke: #ffffff;
 }
 
 .icon-badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 18px;
-  height: 18px;
+  top: -3px;
+  right: -3px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #fcd572;
-  color: #000000;
-  font-size: 10.5px;
-  font-weight: 700;
+  background: #dcb360;
+  color: #000;
+  font-size: 8.5px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(252, 213, 114, 0.6);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.95), 0 0 8px rgba(220, 179, 96, 0.8);
+  border: 0.5px solid #dcb360;
 }
 
 /* ---------- BOTTOM STRIP ---------- */
