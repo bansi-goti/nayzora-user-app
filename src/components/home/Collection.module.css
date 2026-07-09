@@ -12,102 +12,138 @@
 }
 
 /* ---------- THE ROYAL PROMISE BANNER ---------- */
+/* ---------- THE ROYAL PROMISE BANNER ---------- */
 .rp-banner {
-  background: linear-gradient(135deg, #02150e 0%, #000201 100%);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: 
+    linear-gradient(to right, #031A0E 0%, #052414 50%, #052414 100%) padding-box,
+    linear-gradient(90deg, rgba(220,179,96,0.2) 0%, rgba(220,179,96,0.4) 25%, rgba(220,179,96,0.8) 50%, rgba(220,179,96,0.4) 75%, rgba(220,179,96,0.2) 100%) border-box;
+  border: 1px solid transparent;
   border-radius: 20px;
-  padding: 50px 60px;
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  min-height: 480px;
+}
+
+.rp-top-accent {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.rp-columns {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  gap: 50px;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  min-height: 480px;
 }
 
-.rp-banner-border-ornament {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #dcb360;
-  background-color: #010a07;
+.rp-left {
+  flex: 0 0 44%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 45px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.rp-banner-border-ornament svg {
-  opacity: 0.6;
+.rp-right {
+  flex: 0 0 56%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
 }
 
-.rp-content {
-  flex: 1;
-  max-width: 600px;
-  text-align: center;
+.rp-title-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rp-logo-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.rp-crown {
-  margin-bottom: 16px;
-  filter: drop-shadow(0 0 4px rgba(220, 179, 96, 0.3));
-}
-
-.rp-kicker {
-  font-family: 'Poppins', sans-serif;
-  color: #dcb360;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.rp-heading {
-  font-size: 3.2rem;
-  color: #ffffff;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 24px;
-}
-
-.text-primary {
-  color: #dcb360;
-}
-
-.rp-heading-ornament {
-  color: #dcb360;
-  opacity: 0.7;
+  align-self: center;
   margin-bottom: 20px;
 }
 
+.rp-crown {
+  margin-bottom: 10px;
+}
+
+.rp-kicker {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #C8A25A;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.rp-heading {
+  font-size: 54px;
+  color: #FFFFFF;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.rp-heading-gold {
+  color: #F1C36C;
+}
+
+.rp-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
 .rp-desc {
-  color: #a4b5aa;
-  font-size: 15px;
-  line-height: 1.7;
-  max-width: 480px;
+  color: #D4D4D4;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 360px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 20px;
 }
 
 .rp-image-wrapper {
-  width: 380px;
-  height: 380px;
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid rgba(220, 179, 96, 0.25);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  flex-shrink: 0;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  width: 62%;
+  display: flex;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 15%, rgba(0,0,0,1) 40%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 15%, rgba(0,0,0,1) 40%);
 }
 
 .rp-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.rp-banner:hover .rp-image {
-  transform: scale(1.05);
+  position: relative;
+  object-fit: contain;
+  object-position: right center;
+  display: block;
 }
 
 /* Promise Cards Grid */
@@ -453,6 +489,14 @@
   flex: 1;
 }
 
+.rp-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
 .btn-cd-start {
   background: #dcb360;
   border: 1px solid #dcb360;
@@ -491,15 +535,25 @@
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
-  .rp-banner {
+  .rp-columns {
     flex-direction: column;
-    padding: 40px;
-    gap: 30px;
+    gap: 40px;
+  }
+  .rp-left {
+    flex: 1;
+    width: 100%;
+  }
+  .rp-right {
+    flex: 1;
+    width: 100%;
+    max-width: 400px;
+  }
+  .rp-badge {
+    left: 20px;
   }
   .rp-image-wrapper {
     width: 100%;
-    max-width: 320px;
-    height: 320px;
+    max-width: 400px;
   }
   .rp-features-grid {
     grid-template-columns: repeat(2, 1fr);

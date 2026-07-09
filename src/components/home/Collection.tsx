@@ -10,108 +10,124 @@ export default function Collection() {
       {/* ---------- THE ROYAL PROMISE SUB-SECTION ---------- */}
       <div className={styles['rp-wrapper']}>
         <div className={styles['rp-banner']}>
-          {/* Top Flourish */}
-          <div className={styles['rp-banner-border-ornament']}>
-            <svg viewBox="0 0 300 30" width="300" height="30">
-              {/* Left Line */}
-              <line x1="0" y1="15" x2="85" y2="15" stroke="#dcb360" strokeWidth="1.5" />
-              
-              {/* Left Small Loop */}
-              <path d="M 85 15 C 90 5, 100 5, 100 15 C 100 25, 90 25, 85 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-              
-              {/* Left Eye */}
-              <path d="M 100 15 Q 120 0 140 15 Q 120 30 100 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-              <circle cx="120" cy="15" r="2.5" fill="#dcb360" />
-              
-              {/* Center Leaf */}
-              <path d="M 150 2 C 160 10 160 15 160 15 C 160 15 160 20 150 28 C 140 20 140 15 140 15 C 140 15 140 10 150 2 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-              <path d="M 150 7 L 153 15 L 150 23 L 147 15 Z" fill="#dcb360" />
-
-              {/* Right Eye */}
-              <path d="M 160 15 Q 180 0 200 15 Q 180 30 160 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-              <circle cx="180" cy="15" r="2.5" fill="#dcb360" />
-
-              {/* Right Small Loop */}
-              <path d="M 200 15 C 200 5, 210 5, 215 15 C 210 25, 200 25, 200 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-
-              {/* Right Line */}
-              <line x1="215" y1="15" x2="300" y2="15" stroke="#dcb360" strokeWidth="1.5" />
-            </svg>
+          {/* Top Center Accent */}
+          <div className={styles['rp-top-accent']}>
+              <svg viewBox="0 0 100 24" width="85" height="20">
+                <line x1="0" y1="12" x2="15" y2="12" stroke="#C49A45" strokeWidth="1" />
+                <path d="M 15 12 Q 30 4 45 12 Q 30 20 15 12 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.2" />
+                <circle cx="30" cy="12" r="1.5" fill="#C49A45" />
+                <path d="M 50 1 Q 60 12 50 23 Q 40 12 50 1 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.5" />
+                <path d="M 50 6 Q 54 12 50 18 Q 46 12 50 6 Z" fill="#C49A45" />
+                <path d="M 85 12 Q 70 4 55 12 Q 70 20 85 12 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.2" />
+                <circle cx="70" cy="12" r="1.5" fill="#C49A45" />
+                <line x1="85" y1="12" x2="100" y2="12" stroke="#C49A45" strokeWidth="1" />
+              </svg>
           </div>
 
-          <div className={styles['rp-content']}>
-            <div className={styles['rp-crown']}>
-              <svg viewBox="0 0 200 40" width="160" height="32">
-                <linearGradient id="fadeLeft" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#dcb360" stopOpacity="0" />
-                  <stop offset="100%" stopColor="#dcb360" stopOpacity="1" />
-                </linearGradient>
-                <line x1="10" y1="25" x2="75" y2="25" stroke="url(#fadeLeft)" strokeWidth="1" />
-                
-                <path d="M 75 25 Q 82 20 85 25 Q 82 30 75 25" fill="none" stroke="#dcb360" strokeWidth="1" />
+          <div className={styles['rp-columns']}>
+            {/* Left Column */}
+            <div className={styles['rp-left']}>
+              <div className={styles['rp-title-container']}>
+                <div className={styles['rp-logo-block']}>
+                  <div className={styles['rp-crown']}>
+                    <svg viewBox="0 0 160 60" width="140" height="52">
+                      <defs>
+                        <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#C49A45" stopOpacity="0"/>
+                          <stop offset="70%" stopColor="#C49A45" stopOpacity="0.8"/>
+                          <stop offset="100%" stopColor="#C49A45" stopOpacity="0"/>
+                        </linearGradient>
+                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="#FFF2D8" stopOpacity="1"/>
+                          <stop offset="100%" stopColor="#C49A45" stopOpacity="0"/>
+                        </radialGradient>
+                      </defs>
 
-                <path d="M 90 25 L 110 25 L 112 28 L 88 28 Z" fill="#dcb360" />
-                <path d="M 90 23 L 85 12 L 93 18 L 100 8 L 107 18 L 115 12 L 110 23 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-                <circle cx="85" cy="10" r="1.5" fill="#dcb360" />
-                <circle cx="100" cy="6" r="1.5" fill="#dcb360" />
-                <circle cx="115" cy="10" r="1.5" fill="#dcb360" />
+                      {/* Glowing base line */}
+                      <line x1="10" y1="45" x2="90" y2="45" stroke="url(#glowLine)" strokeWidth="1.5"/>
 
-                <path d="M 125 25 Q 118 20 115 25 Q 118 30 125 25" fill="none" stroke="#dcb360" strokeWidth="1" />
+                      {/* Crown Base */}
+                      <line x1="65" y1="42" x2="95" y2="42" stroke="#E2B659" strokeWidth="1.5"/>
+                      <line x1="67" y1="38" x2="93" y2="38" stroke="#E2B659" strokeWidth="1"/>
 
-                <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#dcb360" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#dcb360" stopOpacity="0" />
-                </linearGradient>
-                <line x1="125" y1="25" x2="190" y2="25" stroke="url(#fadeRight)" strokeWidth="1" />
-              </svg>
+                      {/* Crown Body */}
+                      <path d="M 67 38 L 62 20 L 73 28 L 80 12 L 87 28 L 98 20 L 93 38 Z" fill="none" stroke="#E2B659" strokeWidth="1.5"/>
+                      
+                      {/* Crown Jewels/Dots */}
+                      <circle cx="62" cy="18" r="1.5" fill="#E2B659" />
+                      <circle cx="98" cy="18" r="1.5" fill="#E2B659" />
+
+                      {/* Center Cross */}
+                      <line x1="80" y1="4" x2="80" y2="10" stroke="#E2B659" strokeWidth="1.2"/>
+                      <line x1="77" y1="7" x2="83" y2="7" stroke="#E2B659" strokeWidth="1.2"/>
+
+                      {/* Center Glow Dot */}
+                      <circle cx="80" cy="45" r="3" fill="url(#centerGlow)" />
+
+                      {/* Elaborate Flourishes below base */}
+                      {/* Left flourish */}
+                      <path d="M 65 45 C 55 45, 55 52, 65 52 C 70 52, 70 48, 75 48" fill="none" stroke="#E2B659" strokeWidth="1"/>
+                      {/* Right flourish */}
+                      <path d="M 95 45 C 105 45, 105 52, 95 52 C 90 52, 90 48, 85 48" fill="none" stroke="#E2B659" strokeWidth="1"/>
+
+                      {/* Little dots in flourishes */}
+                      <circle cx="58" cy="49" r="1" fill="#E2B659" />
+                      <circle cx="102" cy="49" r="1" fill="#E2B659" />
+                    </svg>
+                  </div>
+                  <div className={styles['rp-kicker']}>THE ROYAL PROMISE</div>
+                </div>
+
+                <h2 className={styles['rp-heading']}>
+                  Enjoy all the benefits of<br />
+                  The <span className={styles['rp-heading-gold']}>Royal Promise</span>
+                </h2>
+                {/* Bottom Divider */}
+                <div className={styles['rp-divider']}>
+                  <svg viewBox="0 0 430 24" width="100%" height="24">
+                    {/* Left End Dot */}
+                    <circle cx="5" cy="12" r="1" fill="#C49A45" />
+                    {/* Left Line */}
+                    <line x1="8" y1="12" x2="195" y2="12" stroke="#C49A45" strokeWidth="1" />
+                    
+                    {/* Left Loop */}
+                    <path d="M 211 12 C 190 2, 190 22, 211 12 Z" fill="none" stroke="#C49A45" strokeWidth="1.2" />
+                    <circle cx="200" cy="12" r="1.2" fill="#C49A45" />
+                    
+                    {/* Center Oval */}
+                    <ellipse cx="215" cy="12" rx="4" ry="7" fill="none" stroke="#C49A45" strokeWidth="1.5" />
+                    <circle cx="215" cy="12" r="1.5" fill="#C49A45" />
+                    
+                    {/* Right Loop */}
+                    <path d="M 219 12 C 240 2, 240 22, 219 12 Z" fill="none" stroke="#C49A45" strokeWidth="1.2" />
+                    <circle cx="230" cy="12" r="1.2" fill="#C49A45" />
+                    
+                    {/* Right Line */}
+                    <line x1="235" y1="12" x2="422" y2="12" stroke="#C49A45" strokeWidth="1" />
+                    {/* Right End Dot */}
+                    <circle cx="425" cy="12" r="1" fill="#C49A45" />
+                  </svg>
+                </div>
+              </div>
+
+              <p className={styles['rp-desc']}>
+                At Nayzora Jewellery, every piece comes with trust, quality, and a promise that lasts forever.
+              </p>
             </div>
-            <div className={styles['rp-kicker']}>THE ROYAL PROMISE</div>
-            <h2 className={`${styles['rp-heading']} font-serif`}>
-              Enjoy all the benefits of<br /> The <span className={styles['text-primary']}>Royal Promise</span>
-            </h2>
-            <div className={styles['rp-heading-ornament']}>
-              <svg viewBox="0 0 300 30" width="240" height="24">
-                <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#dcb360" stopOpacity="0" />
-                  <stop offset="100%" stopColor="#dcb360" stopOpacity="1" />
-                </linearGradient>
-                <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#dcb360" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#dcb360" stopOpacity="0" />
-                </linearGradient>
-                
-                <line x1="0" y1="15" x2="85" y2="15" stroke="url(#fadeL)" strokeWidth="1.5" />
-                
-                <path d="M 85 15 C 90 5, 100 5, 100 15 C 100 25, 90 25, 85 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-                <path d="M 100 15 Q 120 0 140 15 Q 120 30 100 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-                <circle cx="120" cy="15" r="2.5" fill="#dcb360" />
-                
-                <path d="M 150 2 C 160 10 160 15 160 15 C 160 15 160 20 150 28 C 140 20 140 15 140 15 C 140 15 140 10 150 2 Z" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-                <path d="M 150 7 L 153 15 L 150 23 L 147 15 Z" fill="#dcb360" />
 
-                <path d="M 160 15 Q 180 0 200 15 Q 180 30 160 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-                <circle cx="180" cy="15" r="2.5" fill="#dcb360" />
-
-                <path d="M 200 15 C 200 5, 210 5, 215 15 C 210 25, 200 25, 200 15" fill="none" stroke="#dcb360" strokeWidth="1.5" />
-
-                <line x1="215" y1="15" x2="300" y2="15" stroke="url(#fadeR)" strokeWidth="1.5" />
-              </svg>
+            {/* Right Column */}
+            <div className={styles['rp-right']}>
+              <div className={styles['rp-image-wrapper']}>
+                <Image 
+                  src="/final_royal_promise.webp" 
+                  alt="The Royal Promise" 
+                  width={800} 
+                  height={600} 
+                  className={styles['rp-image']}
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <p className={styles['rp-desc']}>
-              At Nayzora Jewellery, every piece comes with trust, quality, and a promise that lasts forever.
-            </p>
-          </div>
-
-          {/* Optimized Next.js Image wrapper */}
-          <div className={styles['rp-image-wrapper']}>
-            <Image 
-              src="/royal_promise_nayzora.png" 
-              alt="The Royal Promise" 
-              width={400} 
-              height={450} 
-              className={styles['rp-image']}
-              loading="lazy"
-            />
           </div>
         </div>
 
