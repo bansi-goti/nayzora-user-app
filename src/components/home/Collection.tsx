@@ -12,16 +12,14 @@ export default function Collection() {
         <div className={styles['rp-banner']}>
           {/* Top Center Accent */}
           <div className={styles['rp-top-accent']}>
-              <svg viewBox="0 0 100 24" width="85" height="20">
-                <line x1="0" y1="12" x2="15" y2="12" stroke="#C49A45" strokeWidth="1" />
-                <path d="M 15 12 Q 30 4 45 12 Q 30 20 15 12 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.2" />
-                <circle cx="30" cy="12" r="1.5" fill="#C49A45" />
-                <path d="M 50 1 Q 60 12 50 23 Q 40 12 50 1 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.5" />
-                <path d="M 50 6 Q 54 12 50 18 Q 46 12 50 6 Z" fill="#C49A45" />
-                <path d="M 85 12 Q 70 4 55 12 Q 70 20 85 12 Z" fill="#021209" stroke="#C49A45" strokeWidth="1.2" />
-                <circle cx="70" cy="12" r="1.5" fill="#C49A45" />
-                <line x1="85" y1="12" x2="100" y2="12" stroke="#C49A45" strokeWidth="1" />
-              </svg>
+              <Image 
+                src="/divider-original.png" 
+                alt="Top Accent" 
+                width={900} 
+                height={90} 
+                style={{ objectFit: 'cover', width: '100%', height: '90px' }} 
+                loading="lazy" 
+              />
           </div>
 
           <div className={styles['rp-columns']}>
@@ -30,83 +28,32 @@ export default function Collection() {
               <div className={styles['rp-title-container']}>
                 <div className={styles['rp-logo-block']}>
                   <div className={styles['rp-crown']}>
-                    <svg viewBox="0 0 160 60" width="140" height="52">
-                      <defs>
-                        <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#C49A45" stopOpacity="0"/>
-                          <stop offset="70%" stopColor="#C49A45" stopOpacity="0.8"/>
-                          <stop offset="100%" stopColor="#C49A45" stopOpacity="0"/>
-                        </linearGradient>
-                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="#FFF2D8" stopOpacity="1"/>
-                          <stop offset="100%" stopColor="#C49A45" stopOpacity="0"/>
-                        </radialGradient>
-                      </defs>
-
-                      {/* Glowing base line */}
-                      <line x1="10" y1="45" x2="90" y2="45" stroke="url(#glowLine)" strokeWidth="1.5"/>
-
-                      {/* Crown Base */}
-                      <line x1="65" y1="42" x2="95" y2="42" stroke="#E2B659" strokeWidth="1.5"/>
-                      <line x1="67" y1="38" x2="93" y2="38" stroke="#E2B659" strokeWidth="1"/>
-
-                      {/* Crown Body */}
-                      <path d="M 67 38 L 62 20 L 73 28 L 80 12 L 87 28 L 98 20 L 93 38 Z" fill="none" stroke="#E2B659" strokeWidth="1.5"/>
-                      
-                      {/* Crown Jewels/Dots */}
-                      <circle cx="62" cy="18" r="1.5" fill="#E2B659" />
-                      <circle cx="98" cy="18" r="1.5" fill="#E2B659" />
-
-                      {/* Center Cross */}
-                      <line x1="80" y1="4" x2="80" y2="10" stroke="#E2B659" strokeWidth="1.2"/>
-                      <line x1="77" y1="7" x2="83" y2="7" stroke="#E2B659" strokeWidth="1.2"/>
-
-                      {/* Center Glow Dot */}
-                      <circle cx="80" cy="45" r="3" fill="url(#centerGlow)" />
-
-                      {/* Elaborate Flourishes below base */}
-                      {/* Left flourish */}
-                      <path d="M 65 45 C 55 45, 55 52, 65 52 C 70 52, 70 48, 75 48" fill="none" stroke="#E2B659" strokeWidth="1"/>
-                      {/* Right flourish */}
-                      <path d="M 95 45 C 105 45, 105 52, 95 52 C 90 52, 90 48, 85 48" fill="none" stroke="#E2B659" strokeWidth="1"/>
-
-                      {/* Little dots in flourishes */}
-                      <circle cx="58" cy="49" r="1" fill="#E2B659" />
-                      <circle cx="102" cy="49" r="1" fill="#E2B659" />
-                    </svg>
+                    <Image 
+                      src="/crown-original.png" 
+                      alt="Royal Crown" 
+                      width={160} 
+                      height={64} 
+                      style={{ objectFit: 'contain', mixBlendMode: 'screen', filter: 'contrast(1.5)' }}
+                      loading="lazy"
+                    />
                   </div>
                   <div className={styles['rp-kicker']}>THE ROYAL PROMISE</div>
                 </div>
 
                 <h2 className={styles['rp-heading']}>
-                  Enjoy all the benefits of<br />
+                  Enjoy all the benefits&nbsp;of<br />
                   The <span className={styles['rp-heading-gold']}>Royal Promise</span>
                 </h2>
                 {/* Bottom Divider */}
                 <div className={styles['rp-divider']}>
-                  <svg viewBox="0 0 430 24" width="100%" height="24">
-                    {/* Left End Dot */}
-                    <circle cx="5" cy="12" r="1" fill="#C49A45" />
-                    {/* Left Line */}
-                    <line x1="8" y1="12" x2="195" y2="12" stroke="#C49A45" strokeWidth="1" />
-                    
-                    {/* Left Loop */}
-                    <path d="M 211 12 C 190 2, 190 22, 211 12 Z" fill="none" stroke="#C49A45" strokeWidth="1.2" />
-                    <circle cx="200" cy="12" r="1.2" fill="#C49A45" />
-                    
-                    {/* Center Oval */}
-                    <ellipse cx="215" cy="12" rx="4" ry="7" fill="none" stroke="#C49A45" strokeWidth="1.5" />
-                    <circle cx="215" cy="12" r="1.5" fill="#C49A45" />
-                    
-                    {/* Right Loop */}
-                    <path d="M 219 12 C 240 2, 240 22, 219 12 Z" fill="none" stroke="#C49A45" strokeWidth="1.2" />
-                    <circle cx="230" cy="12" r="1.2" fill="#C49A45" />
-                    
-                    {/* Right Line */}
-                    <line x1="235" y1="12" x2="422" y2="12" stroke="#C49A45" strokeWidth="1" />
-                    {/* Right End Dot */}
-                    <circle cx="425" cy="12" r="1" fill="#C49A45" />
-                  </svg>
+                  <Image 
+                    src="/new-divider.png" 
+                    alt="Divider" 
+                    width={320} 
+                    height={40} 
+                    style={{ objectFit: 'cover', objectPosition: 'left center', width: '100%', height: '40px' }} 
+                    loading="lazy" 
+                  />
                 </div>
               </div>
 
@@ -135,71 +82,90 @@ export default function Collection() {
         <div className={styles['rp-features-grid']}>
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="M12 8v4l3 3" />
-                <circle cx="12" cy="12" r="3" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
+                <path d="M7 3h8a2 2 0 0 1 2 2v9" strokeLinecap="round" />
+                <path d="M7 3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" strokeLinecap="round" />
+                <path d="M11 7c-1.5 0-2.5.5-2.5.5v2.5c0 1.5 2.5 3 2.5 3s2.5-1.5 2.5-3v-2.5s-1-.5-2.5-.5z" />
+                <circle cx="11" cy="9.5" r="1" fill="currentColor" stroke="none" />
+                <circle cx="17" cy="17" r="3" />
+                <path d="M15.5 19.5l-1 3.5 2.5-1 2.5 1 -1-3.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3 className="font-serif">Certificate</h3>
+            <h3>Certificate</h3>
             <p>Get authentic BIS hallmarked jewellery backed with the trust of Royal Jewellers.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 15" width="60" height="10">
-                <path d="M0,7.5 L45,7.5 M55,7.5 L100,7.5" stroke="#dcb360" strokeWidth="1" />
-                <polygon points="50,4 53,7.5 50,11 47,7.5" fill="#dcb360" />
+              <svg viewBox="0 0 100 20" width="80" height="16">
+                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
               </svg>
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
+                <path d="M15.5 9l-4.5 4.5-2-2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 4v2" strokeLinecap="round" />
+                <path d="M12 18v2" strokeLinecap="round" />
+                <path d="M4 12h2" strokeLinecap="round" />
+                <path d="M18 12h2" strokeLinecap="round" />
               </svg>
             </div>
-            <h3 className="font-serif">Customization Options</h3>
+            <h3>Customization Options</h3>
             <p>Buy jewellery that's customised and personalised to the smallest specifications.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 15" width="60" height="10">
-                <path d="M0,7.5 L45,7.5 M55,7.5 L100,7.5" stroke="#dcb360" strokeWidth="1" />
-                <polygon points="50,4 53,7.5 50,11 47,7.5" fill="#dcb360" />
+              <svg viewBox="0 0 100 20" width="80" height="16">
+                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
               </svg>
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                <path d="M3 3v5h5" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 3v5h5" strokeLinecap="round" strokeLinejoin="round" />
+                <text x="12" y="16" fontSize="8" textAnchor="middle" fill="currentColor" stroke="none" fontWeight="bold">100%</text>
               </svg>
             </div>
-            <h3 className="font-serif">100% Refund</h3>
+            <h3>100% Refund</h3>
             <p>You can return your jewellery easily within 15 days of purchase.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 15" width="60" height="10">
-                <path d="M0,7.5 L45,7.5 M55,7.5 L100,7.5" stroke="#dcb360" strokeWidth="1" />
-                <polygon points="50,4 53,7.5 50,11 47,7.5" fill="#dcb360" />
+              <svg viewBox="0 0 100 20" width="80" height="16">
+                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
               </svg>
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <polyline points="16 3 21 3 21 8" />
-                <line x1="4" y1="20" x2="21" y2="3" />
-                <polyline points="21 16 21 21 16 21" />
-                <line x1="15" y1="15" x2="21" y2="21" />
-                <line x1="4" y1="4" x2="9" y2="9" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
+                <path d="M20 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8c2.146 0 4.095.845 5.542 2.22" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M21 4v4h-4" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 8v4l3 3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h3 className="font-serif">Lifetime Exchange</h3>
+            <h3>Lifetime Exchange</h3>
             <p>Experience a relationship that will last a lifetime with our exchange policies.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 15" width="60" height="10">
-                <path d="M0,7.5 L45,7.5 M55,7.5 L100,7.5" stroke="#dcb360" strokeWidth="1" />
-                <polygon points="50,4 53,7.5 50,11 47,7.5" fill="#dcb360" />
+              <svg viewBox="0 0 100 20" width="80" height="16">
+                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
               </svg>
             </div>
           </div>
