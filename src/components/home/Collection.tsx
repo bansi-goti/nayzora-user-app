@@ -78,96 +78,133 @@ export default function Collection() {
           </div>
         </div>
 
-        {/* Promise Cards Grid */}
-        <div className={styles['rp-features-grid']}>
-          <div className={styles['rp-feature-card']}>
+        {/* Promise Cards Grid with Ornaments */}
+        <div className={styles['rp-features-section']}>
+          <div className={styles['rp-side-ornament-left']}>
+            <Image 
+              src="/the royal left.png" 
+              alt="Left Ornament" 
+              width={160} 
+              height={280} 
+              style={{ transform: 'scaleX(-1)' }}
+              loading="lazy"
+            />
+          </div>
+
+          <div className={styles['rp-features-grid']}>
+            <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
-                <path d="M7 3h8a2 2 0 0 1 2 2v9" strokeLinecap="round" />
-                <path d="M7 3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" strokeLinecap="round" />
-                <path d="M11 7c-1.5 0-2.5.5-2.5.5v2.5c0 1.5 2.5 3 2.5 3s2.5-1.5 2.5-3v-2.5s-1-.5-2.5-.5z" />
-                <circle cx="11" cy="9.5" r="1" fill="currentColor" stroke="none" />
-                <circle cx="17" cy="17" r="3" />
-                <path d="M15.5 19.5l-1 3.5 2.5-1 2.5 1 -1-3.5" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                {/* Document outline */}
+                <path d="M14.5 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8.5" />
+                {/* Shield */}
+                <path d="M9 7h6v3.5c0 2.5-3 4.5-3 4.5s-3-2-3-4.5V7z" />
+                {/* Crown inside shield */}
+                <path d="M10.5 11l.75-1.5L12 10.5l.75-1.5L13.5 11v1.5h-3V11z" fill="currentColor" stroke="none" />
+                {/* Seal Outer */}
+                <circle cx="17.5" cy="16.5" r="3.5" />
+                {/* Seal Inner */}
+                <circle cx="17.5" cy="16.5" r="1.5" />
+                {/* Ribbons */}
+                <path d="M15.5 19.5l-1.5 3.5 3.5-2 3.5 2-1.5-3.5" />
               </svg>
             </div>
             <h3>Certificate</h3>
-            <p>Get authentic BIS hallmarked jewellery backed with the trust of Royal Jewellers.</p>
+            <p>Get authentic BIS hallmarked<br />jewellery backed with the trust<br />of Royal Jewellers.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 20" width="80" height="16">
-                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              </svg>
+              <Image
+                src="/new-divider-small.png"
+                alt="Card Divider"
+                width={160}
+                height={24}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto', maxWidth: '160px' }}
+              />
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
-                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
-                <path d="M15.5 9l-4.5 4.5-2-2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 4v2" strokeLinecap="round" />
-                <path d="M12 18v2" strokeLinecap="round" />
-                <path d="M4 12h2" strokeLinecap="round" />
-                <path d="M18 12h2" strokeLinecap="round" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                {/* Wrench */}
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                {/* Screwdriver Handle */}
+                <path d="M9 11l-3 3a2.83 2.83 0 0 0 0 4l0 0a2.83 2.83 0 0 0 4 0l3-3" />
+                {/* Screwdriver Shaft */}
+                <path d="M12 10l5-5" />
+                {/* Screwdriver Tip */}
+                <path d="M17 5l2-2" />
               </svg>
             </div>
             <h3>Customization Options</h3>
-            <p>Buy jewellery that's customised and personalised to the smallest specifications.</p>
+            <p>Buy jewellery that&apos;s customised<br />and personalised to the smallest<br />specifications.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 20" width="80" height="16">
-                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              </svg>
+              <Image
+                src="/new-divider-small.png"
+                alt="Card Divider"
+                width={160}
+                height={24}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto', maxWidth: '160px' }}
+              />
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
-                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3 3v5h5" strokeLinecap="round" strokeLinejoin="round" />
-                <text x="12" y="16" fontSize="8" textAnchor="middle" fill="currentColor" stroke="none" fontWeight="bold">100%</text>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                {/* Top arrow (ends pointing right) */}
+                <path d="M 7.05,16.95 A 7,7 0 0,1 12,5" />
+                <polyline points="8,1 12,5 8,9" />
+                {/* Bottom arrow (ends pointing left) */}
+                <path d="M 16.95,7.05 A 7,7 0 0,1 12,19" />
+                <polyline points="16,15 12,19 16,23" />
               </svg>
             </div>
             <h3>100% Refund</h3>
-            <p>You can return your jewellery easily within 15 days of purchase.</p>
+            <p>You can return your jewellery<br />easily within 15 days<br />of purchase.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 20" width="80" height="16">
-                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              </svg>
+              <Image
+                src="/new-divider-small.png"
+                alt="Card Divider"
+                width={160}
+                height={24}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto', maxWidth: '160px' }}
+              />
             </div>
           </div>
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" width="28" height="28">
-                <path d="M20 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8c2.146 0 4.095.845 5.542 2.22" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M21 4v4h-4" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 8v4l3 3" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                {/* Top arrow (points right) */}
+                <path d="M 6 9 L 18 9" />
+                <polyline points="15 6 18 9 15 12" />
+                {/* Bottom arrow (points left) */}
+                <path d="M 18 15 L 6 15" />
+                <polyline points="9 12 6 15 9 18" />
               </svg>
             </div>
             <h3>Lifetime Exchange</h3>
-            <p>Experience a relationship that will last a lifetime with our exchange policies.</p>
+            <p>Experience a relationship<br />that will last a lifetime<br />with our exchange policies.</p>
             <div className={styles['rp-card-ornament']}>
-              <svg viewBox="0 0 100 20" width="80" height="16">
-                <line x1="10" y1="10" x2="40" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-                <path d="M 43 10 C 43 6, 50 6, 50 10 C 50 14, 43 14, 43 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <circle cx="50" cy="10" r="1.5" fill="currentColor" stroke="none" />
-                <path d="M 57 10 C 57 6, 50 6, 50 10 C 50 14, 57 14, 57 10 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                <line x1="60" y1="10" x2="90" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              </svg>
+              <Image
+                src="/new-divider-small.png"
+                alt="Card Divider"
+                width={160}
+                height={24}
+                style={{ objectFit: 'contain', width: '100%', height: 'auto', maxWidth: '160px' }}
+              />
             </div>
+          </div>
+        </div>
+
+          <div className={styles['rp-side-ornament-right']}>
+            <Image 
+              src="/the royal left.png" 
+              alt="Right Ornament" 
+              width={160} 
+              height={280} 
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
