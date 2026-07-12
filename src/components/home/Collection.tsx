@@ -215,13 +215,10 @@ export default function Collection() {
           {/* LEFT COLUMN: Custom Text & Core Features */}
           <div className={styles['cd-left']}>
             <div className={styles['cd-badge-container']}>
-              <svg className={styles['cd-badge-bg']} preserveAspectRatio="none" viewBox="0 0 200 40">
-                <polygon points="10,1 190,1 199,20 190,39 10,39 1,20" fill="none" stroke="#dcb360" strokeWidth="1.5" opacity="0.6" />
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className={styles['cd-badge-icon']}>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
-              <div className={styles['cd-badge-inner']}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <span>CUSTOM DESIGN SERVICE</span>
-              </div>
+              <span>CUSTOM DESIGN SERVICE</span>
             </div>
 
             <h2 className={`${styles['cd-heading']} font-serif`}>
@@ -229,7 +226,9 @@ export default function Collection() {
             </h2>
 
             <div className={styles['cd-ornament']}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L9 9 2 12l7 3 3 7 3-7 7-3-7-3-3-7z" />
+              </svg>
             </div>
 
             <p className={styles['cd-desc']}>
@@ -239,7 +238,11 @@ export default function Collection() {
             <div className={styles['cd-features-list']}>
               <div className={styles['cd-feature-card']}>
                 <div className={styles['cd-feature-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 17V3" /><path d="M6 11l6 6 6-6" /><path d="M19 21H5" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 3h12l3 4-9 10-9-10 3-4z" />
+                    <path d="M11 3L8 7l4 10 4-10-3-4" />
+                    <path d="M3 14c2-1 4-1 6 1s4 1 6-1 4-1 6 1" />
+                  </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
                   <h4>Expert Craftsmanship</h4>
@@ -249,7 +252,10 @@ export default function Collection() {
 
               <div className={styles['cd-feature-card']}>
                 <div className={styles['cd-feature-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M18.5 7.5a2.122 2.122 0 1 0-3-3L7 13v4h4L18.5 7.5z" />
+                  </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
                   <h4>Personalized Touch</h4>
@@ -259,7 +265,12 @@ export default function Collection() {
 
               <div className={styles['cd-feature-card']}>
                 <div className={styles['cd-feature-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /><circle cx="18" cy="4" r="2" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M19 3l3 3-5 5-3-3 5-5z" />
+                    <circle cx="19" cy="3" r="1" />
+                  </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
                   <h4>Master Designers</h4>
@@ -269,7 +280,8 @@ export default function Collection() {
             </div>
           </div>
 
-          <div className={styles['cd-center-spacer']} />
+          {/* CENTER COLUMN: Spacer to let the background pendant illustration show through */}
+          <div className={styles['cd-center']} />
 
           {/* RIGHT COLUMN: The Customization Process Timeline */}
           <div className={styles['cd-right']}>
@@ -277,52 +289,72 @@ export default function Collection() {
               Your Vision, Our Creation
             </div>
             <div className={styles['cd-right-ornament']}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L9 9 2 12l7 3 3 7 3-7 7-3-7-3-3-7z" />
+              </svg>
             </div>
 
             <div className={styles['cd-timeline']}>
-              {/* Dash Timeline Curve */}
-              <svg className={styles['cd-timeline-curve']} width="100" height="320">
-                <path d="M0,24 Q 45,69 0,114 T 0,204 T 0,294" stroke="#dcb360" strokeWidth="1.5" strokeDasharray="3 4" fill="none" opacity="0.6" />
+              {/* Dotted curved connectors */}
+              <svg className={styles['cd-timeline-curve']} width="120" height="360" viewBox="0 0 120 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 60,30 A 50,50 0 0,0 60,130 A 50,50 0 0,1 60,230 A 50,50 0 0,0 60,330" stroke="#dcb360" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.55" />
               </svg>
 
               <div className={styles['timeline-item']}>
                 <div className={styles['timeline-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><line x1="9" y1="12" x2="15" y2="12" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    <circle cx="8" cy="10" r="1" fill="currentColor" />
+                    <circle cx="12" cy="10" r="1" fill="currentColor" />
+                    <circle cx="16" cy="10" r="1" fill="currentColor" />
+                  </svg>
                 </div>
                 <div className={styles['timeline-content']}>
                   <h4>Share Your Idea</h4>
-                  <p>Tell us your inspiration and preferences</p>
+                  <p>Tell us your inspiration <br /> and preferences</p>
                 </div>
               </div>
 
               <div className={styles['timeline-item']}>
                 <div className={styles['timeline-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="4" y1="20" x2="20" y2="4" />
+                    <path d="M20 4l-4 4 4 4" />
+                    <path d="M4 20l4-4-4-4" />
+                  </svg>
                 </div>
                 <div className={styles['timeline-content']}>
                   <h4>Design & Approval</h4>
-                  <p>We create a 3D design for your approval</p>
+                  <p>We create a 3D design <br /> for your approval</p>
                 </div>
               </div>
 
               <div className={styles['timeline-item']}>
                 <div className={styles['timeline-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" /><line x1="14" y1="7" x2="17" y2="10" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.5 2L22 9.5L13 18.5H5.5V11L14.5 2Z" />
+                    <path d="M11 5.5L18.5 13" />
+                  </svg>
                 </div>
                 <div className={styles['timeline-content']}>
                   <h4>Handcrafted</h4>
-                  <p>Our artisans craft your piece with precision</p>
+                  <p>Our artisans craft your <br /> piece with precision</p>
                 </div>
               </div>
 
               <div className={styles['timeline-item']}>
                 <div className={styles['timeline-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 12 20 22 4 22 4 12" /><rect x="2" y="7" width="20" height="5" /><line x1="12" y1="22" x2="12" y2="7" /><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" /><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="22 12 22 22 2 22 2 12" />
+                    <rect x="1" y="7" width="22" height="5" />
+                    <line x1="12" y1="22" x2="12" y2="7" />
+                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+                  </svg>
                 </div>
                 <div className={styles['timeline-content']}>
                   <h4>Delivered to You</h4>
-                  <p>Your masterpiece, delivered with care</p>
+                  <p>Your masterpiece, <br /> delivered with care</p>
                 </div>
               </div>
             </div>
@@ -333,7 +365,12 @@ export default function Collection() {
         <div className={styles['cd-bottom-panel-wrapper']}>
           <div className={styles['cd-bottom-panel']}>
             <div className={styles['cd-bottom-left']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
+              <div className={styles['cd-bottom-logo']}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5">
+                  <path d="M6 3h12l3 4-9 10-9-10 3-4z" />
+                  <path d="M11 3L8 7l4 10 4-10-3-4" />
+                </svg>
+              </div>
               <div className={styles['cd-bottom-title']}>
                 Let's Create Something <br />
                 <span className={styles['text-primary']}>Extraordinary Together</span>
@@ -342,27 +379,39 @@ export default function Collection() {
 
             <div className={styles['cd-bottom-divider']} />
 
-            <div className={styles['cd-bottom-middle']}>
-              <div className={styles['cd-mini-feature']}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-                <div>
-                  <h5>100% Confidential</h5>
-                  <p>Your ideas are safe with us</p>
-                </div>
+            <div className={styles['cd-mini-feature']}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles['cd-mini-icon']}>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <div>
+                <h5>100% Confidential</h5>
+                <p>Your ideas are safe with us</p>
               </div>
-              <div className={styles['cd-mini-feature']}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>
-                <div>
-                  <h5>Quality Assurance</h5>
-                  <p>Every piece meets standards</p>
-                </div>
+            </div>
+
+            <div className={styles['cd-bottom-divider']} />
+
+            <div className={styles['cd-mini-feature']}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles['cd-mini-icon']}>
+                <circle cx="12" cy="8" r="7" />
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+              </svg>
+              <div>
+                <h5>Quality Assurance</h5>
+                <p>Every piece meets the highest standards</p>
               </div>
-              <div className={styles['cd-mini-feature']}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <div>
-                  <h5>Timeless Value</h5>
-                  <p>Designed for generations</p>
-                </div>
+            </div>
+
+            <div className={styles['cd-bottom-divider']} />
+
+            <div className={styles['cd-mini-feature']}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={styles['cd-mini-icon']}>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <div>
+                <h5>Timeless Value</h5>
+                <p>Designed to be loved for generations</p>
               </div>
             </div>
 
@@ -374,7 +423,7 @@ export default function Collection() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </button>
               <div className={styles['cd-free-consult']}>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                 <span>Free Consultation</span>
               </div>
             </div>

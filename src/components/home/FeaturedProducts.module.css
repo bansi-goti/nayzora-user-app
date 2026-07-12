@@ -11,6 +11,10 @@
   margin: 0 auto 5rem;
 }
 
+.subsection-wrapper:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- BEST SELLERS HEADER ---------- */
 .bs-header-wrapper {
   position: relative;
