@@ -2,13 +2,13 @@
    NAYZORA JEWELLERY — The Royal Promise & Custom Design Styles
    ========================================================= */
 .collection-section {
-  padding: 4rem 2rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
   background-color: #010a07;
 }
 
 .rp-wrapper {
-  max-width: 1440px;
-  margin: 0 auto 6rem;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
 
 /* ---------- THE ROYAL PROMISE BANNER ---------- */
@@ -280,7 +280,7 @@
 
 /* ---------- CUSTOM DESIGN SERVICE ---------- */
 .cd-section-wrapper {
-  max-width: 1440px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   background: #000201 url('/background image.png') no-repeat right 20%;
   background-size: 70% auto;

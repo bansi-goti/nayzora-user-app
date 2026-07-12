@@ -90,165 +90,169 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section className={styles['featured-section']}>
-      {/* BEST SELLERS SUB-SECTION */}
-      <div className={styles['subsection-wrapper']}>
-        <SectionTitle title="Best Sellers" subtitle="Handpicked favorites loved by our customers" />
+    <>
+      <section className={styles['featured-section']}>
+        {/* BEST SELLERS SUB-SECTION */}
+        <div className={styles['subsection-wrapper']}>
+          <SectionTitle title="Best Sellers" subtitle="Handpicked favorites loved by our customers" />
 
-        {/* Best Sellers Grid */}
-        <div className={styles['product-grid']}>
-          {BEST_SELLERS.map((product) => (
-            <div key={product.name} className={styles['product-card']}>
-              <div className={styles['img-container']}>
-                {/* Top Left Badge */}
-                <div className={styles['top-badge']}>
-                  {product.badgeIcon}
-                  <span>{product.badge}</span>
-                </div>
-                
-                {/* Top Right Heart */}
-                <div 
-                  className={`${styles['fav-btn']} ${likedProducts.has(product.name) ? styles['fav-btn-active'] : ''}`}
-                  onClick={() => toggleLike(product.name)}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill={likedProducts.has(product.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-                </div>
-
-                <Image 
-                  src={product.img} 
-                  alt={product.name} 
-                  width={260} 
-                  height={240} 
-                  className={styles['product-img']}
-                  loading="lazy"
-                />
-
-                {/* SVG Overlay for bottom wave */}
-                <div className={styles['img-wave-overlay']}>
-                  <svg viewBox="0 0 100 50" preserveAspectRatio="none" width="100%" height="100%" style={{ display: 'block' }}>
-                    <defs>
-                      <linearGradient id={`wave-stroke-grad-${product.name.replace(/\s+/g, '-')}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#dcb360" stopOpacity="0.1" />
-                        <stop offset="35%" stopColor="#dcb360" stopOpacity="0.8" />
-                        <stop offset="50%" stopColor="#ffeaad" stopOpacity="1" />
-                        <stop offset="65%" stopColor="#dcb360" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#dcb360" stopOpacity="0.1" />
-                      </linearGradient>
-                      <linearGradient id={`wave-fill-grad-${product.name.replace(/\s+/g, '-')}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#1a1408" />
-                        <stop offset="100%" stopColor="#080808" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M0,5 C 25,5 35,35 50,35 C 65,35 75,16 100,16 L100,55 L0,55 Z" fill={`url(#wave-fill-grad-${product.name.replace(/\s+/g, '-')})`} />
-                    <path d="M0,5 C 25,5 35,35 50,35 C 65,35 75,16 100,16" fill="none" stroke={`url(#wave-stroke-grad-${product.name.replace(/\s+/g, '-')})`} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-                  </svg>
-                  <div className={styles['diamond-badge']}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#080808" />
-                      <path d="M12 16l-4-5h8zM8 11l4-5 4 5" strokeWidth="1.2" />
-                    </svg>
+          {/* Best Sellers Grid */}
+          <div className={styles['product-grid']}>
+            {BEST_SELLERS.map((product) => (
+              <div key={product.name} className={styles['product-card']}>
+                <div className={styles['img-container']}>
+                  {/* Top Left Badge */}
+                  <div className={styles['top-badge']}>
+                    {product.badgeIcon}
+                    <span>{product.badge}</span>
                   </div>
-                </div>
-              </div>
-
-              <div className={styles['card-content']}>
-                <div className={styles['discount-tag']}>25% OFF</div>
-
-                <h3 className={`${styles['product-title']} font-serif`}>{product.name}</h3>
-                
-                <div className={styles['price-row']}>
-                  <div className={styles['price-container']}>
-                    <span className={styles['current-price']}>{product.price}</span>
-                    <span className={styles['old-price']}>{product.oldPrice}</span>
+                  
+                  {/* Top Right Heart */}
+                  <div 
+                    className={`${styles['fav-btn']} ${likedProducts.has(product.name) ? styles['fav-btn-active'] : ''}`}
+                    onClick={() => toggleLike(product.name)}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill={likedProducts.has(product.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
                   </div>
-                  <div className={styles['rating']}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="#dcb360"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                    <span>{product.rating}</span>
-                  </div>
-                </div>
 
-                {/* Split Add to Cart Button */}
-                <div className={styles['add-to-cart-split']}>
-                  <div className={styles['cart-icon-part']}>
-                    <svg className={styles['cart-icon-bg-svg']} viewBox="0 0 70 40" preserveAspectRatio="none">
+                  <Image 
+                    src={product.img} 
+                    alt={product.name} 
+                    width={260} 
+                    height={240} 
+                    className={styles['product-img']}
+                    loading="lazy"
+                  />
+
+                  {/* SVG Overlay for bottom wave */}
+                  <div className={styles['img-wave-overlay']}>
+                    <svg viewBox="0 0 100 50" preserveAspectRatio="none" width="100%" height="100%" style={{ display: 'block' }}>
                       <defs>
-                        <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#efc464" />
-                          <stop offset="60%" stopColor="#c58f27" />
-                          <stop offset="100%" stopColor="#966113" />
+                        <linearGradient id={`wave-stroke-grad-${product.name.replace(/\s+/g, '-')}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#dcb360" stopOpacity="0.1" />
+                          <stop offset="35%" stopColor="#dcb360" stopOpacity="0.8" />
+                          <stop offset="50%" stopColor="#ffeaad" stopOpacity="1" />
+                          <stop offset="65%" stopColor="#dcb360" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#dcb360" stopOpacity="0.1" />
                         </linearGradient>
-                        <linearGradient id="gold-highlight" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="rgba(255,255,255,0.45)" />
-                          <stop offset="12%" stopColor="rgba(255,255,255,0)" />
+                        <linearGradient id={`wave-fill-grad-${product.name.replace(/\s+/g, '-')}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#1a1408" />
+                          <stop offset="100%" stopColor="#080808" />
                         </linearGradient>
                       </defs>
-                      <path d="M0,0 H70 C45,0 45,40 30,40 H0 Z" fill="url(#gold-grad)" />
-                      <path d="M0,0 H70 C45,0 45,40 30,40 H0 Z" fill="url(#gold-highlight)" />
+                      <path d="M0,5 C 25,5 35,35 50,35 C 65,35 75,16 100,16 L100,55 L0,55 Z" fill={`url(#wave-fill-grad-${product.name.replace(/\s+/g, '-')})`} />
+                      <path d="M0,5 C 25,5 35,35 50,35 C 65,35 75,16 100,16" fill="none" stroke={`url(#wave-stroke-grad-${product.name.replace(/\s+/g, '-')})`} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
                     </svg>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#010a07" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{position: 'relative', zIndex: 2}}><circle cx="9" cy="21" r="2"></circle><circle cx="20" cy="21" r="2"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <div className={styles['diamond-badge']}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#080808" />
+                        <path d="M12 16l-4-5h8zM8 11l4-5 4 5" strokeWidth="1.2" />
+                      </svg>
+                    </div>
                   </div>
-                  <div className={styles['text-part']}>
-                    Add to Cart
+                </div>
+
+                <div className={styles['card-content']}>
+                  <div className={styles['discount-tag']}>25% OFF</div>
+
+                  <h3 className={`${styles['product-title']} font-serif`}>{product.name}</h3>
+                  
+                  <div className={styles['price-row']}>
+                    <div className={styles['price-container']}>
+                      <span className={styles['current-price']}>{product.price}</span>
+                      <span className={styles['old-price']}>{product.oldPrice}</span>
+                    </div>
+                    <div className={styles['rating']}>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#dcb360"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                      <span>{product.rating}</span>
+                    </div>
                   </div>
-                  <div className={styles['plus-part']}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5B54A" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+
+                  {/* Split Add to Cart Button */}
+                  <div className={styles['add-to-cart-split']}>
+                    <div className={styles['cart-icon-part']}>
+                      <svg className={styles['cart-icon-bg-svg']} viewBox="0 0 70 40" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#efc464" />
+                            <stop offset="60%" stopColor="#c58f27" />
+                            <stop offset="100%" stopColor="#966113" />
+                          </linearGradient>
+                          <linearGradient id="gold-highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="rgba(255,255,255,0.45)" />
+                            <stop offset="12%" stopColor="rgba(255,255,255,0)" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M0,0 H70 C45,0 45,40 30,40 H0 Z" fill="url(#gold-grad)" />
+                        <path d="M0,0 H70 C45,0 45,40 30,40 H0 Z" fill="url(#gold-highlight)" />
+                      </svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#010a07" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{position: 'relative', zIndex: 2}}><circle cx="9" cy="21" r="2"></circle><circle cx="20" cy="21" r="2"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    </div>
+                    <div className={styles['text-part']}>
+                      Add to Cart
+                    </div>
+                    <div className={styles['plus-part']}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5B54A" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* TRENDING DESIGNS SUB-SECTION */}
-      <div className={styles['subsection-wrapper']}>
-        <SectionTitle title="Trending Designs" subtitle="Explore our most popular and sought-after jewelry designs" />
+      <section className={styles['featured-section']}>
+        {/* TRENDING DESIGNS SUB-SECTION */}
+        <div className={styles['subsection-wrapper']}>
+          <SectionTitle title="Trending Designs" subtitle="Explore our most popular and sought-after jewelry designs" />
 
-        {/* Trending Grid */}
-        <div className={styles['trending-grid']}>
-          {TRENDING_DESIGNS.map((item) => (
-            <div key={item.name} className={styles['trending-card']}>
+          {/* Trending Grid */}
+          <div className={styles['trending-grid']}>
+            {TRENDING_DESIGNS.map((item) => (
+              <div key={item.name} className={styles['trending-card']}>
 
-              <div 
-                  className={`${styles['fav-btn']} ${likedProducts.has(item.name) ? styles['fav-btn-active'] : ''}`}
-                  onClick={() => toggleLike(item.name)}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-              </div>
-              <div className={styles['trending-img-wrapper']}>
-                <div className={styles['trending-badge']}>NEW ARRIVAL</div>
-                <Image 
-                  src={item.img} 
-                  alt={item.name} 
-                  width={300} 
-                  height={260} 
-                  className={styles['trending-card-img']}
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles['trending-card-content']}>
-                <h3 className={styles['trending-card-title']}>{item.name}</h3>
-                
-                <div className={styles['trending-bottom-row']}>
-                  <div className={styles['trending-bottom-left']}>
-                    <div className={styles['trending-prices']}>
-                      <span className={styles['trending-price']}>{item.price}</span>
-                      <span className={styles['trending-old-price']}>{item.oldPrice}</span>
+                <div 
+                    className={`${styles['fav-btn']} ${likedProducts.has(item.name) ? styles['fav-btn-active'] : ''}`}
+                    onClick={() => toggleLike(item.name)}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill={likedProducts.has(item.name) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                </div>
+                <div className={styles['trending-img-wrapper']}>
+                  <div className={styles['trending-badge']}>NEW ARRIVAL</div>
+                  <Image 
+                    src={item.img} 
+                    alt={item.name} 
+                    width={300} 
+                    height={260} 
+                    className={styles['trending-card-img']}
+                    loading="lazy"
+                  />
+                </div>
+                <div className={styles['trending-card-content']}>
+                  <h3 className={styles['trending-card-title']}>{item.name}</h3>
+                  
+                  <div className={styles['trending-bottom-row']}>
+                    <div className={styles['trending-bottom-left']}>
+                      <div className={styles['trending-prices']}>
+                        <span className={styles['trending-price']}>{item.price}</span>
+                        <span className={styles['trending-old-price']}>{item.oldPrice}</span>
+                      </div>
+                      <div className={styles['trending-rating']}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#eebc6a" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                        <span>{item.rating}</span>
+                      </div>
                     </div>
-                    <div className={styles['trending-rating']}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#eebc6a" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                      <span>{item.rating}</span>
-                    </div>
+                    <button className={styles['trending-cart-btn']}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path><path d="M10 10h6"></path><path d="M10 13h6"></path></svg>
+                    </button>
                   </div>
-                  <button className={styles['trending-cart-btn']}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path><path d="M10 10h6"></path><path d="M10 13h6"></path></svg>
-                  </button>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

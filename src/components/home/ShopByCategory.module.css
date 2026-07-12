@@ -2,7 +2,7 @@
    NAYZORA JEWELLERY — Redesigned Shop by Category Styles
    ========================================================= */
 .category-section {
-  padding: 4rem 2rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
   background-color: #010a07; /* Dark luxury background matching Hero */
   position: relative;
   overflow: hidden;
@@ -11,8 +11,8 @@
 /* Slider Container */
 .slider-container {
   position: relative;
-  max-width: 1440px;
-  margin: 0 auto 5rem;
+  max-width: var(--container-max-width);
+  margin: 0 auto 3.5rem;
   padding: 0 50px;
   display: flex;
   align-items: center;
@@ -198,7 +198,7 @@
 /* ---------- FEATURES BANNER ---------- */
 .features-banner {
   position: relative;
-  max-width: 1360px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 24px 32px;
   border-radius: 16px;
@@ -286,12 +286,9 @@
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
-  .category-section {
-    padding: 4rem 1.5rem 3rem;
-  }
   .slider-container {
     padding: 0 40px;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
   .category-card {
     width: 180px;
@@ -319,9 +316,6 @@
 }
 
 @media (max-width: 640px) {
-  .category-section {
-    padding: 3rem 1rem 2rem;
-  }
   .category-card {
     width: 155px;
     padding: 0 0 10px 0;

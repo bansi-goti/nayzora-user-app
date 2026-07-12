@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="bg-[#010a07] min-h-screen">
       <Hero />
-      <div style={{width: '100%', padding: '0 24px', boxSizing: 'border-box', marginTop: '-32px', position: 'relative', zIndex: 20}}>
+      <div style={{width: '100%', maxWidth: '1440px', margin: '0 auto', padding: '0 2rem', boxSizing: 'border-box', marginTop: '-32px', position: 'relative', zIndex: 20}}>
         <HeaderBottomBar />
       </div>
       <ShopByCategory />
