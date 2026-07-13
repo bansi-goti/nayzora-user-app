@@ -12,25 +12,7 @@
 
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
-
-  /* Global section spacing and container tokens */
-  --section-padding-y: 3rem;
-  --section-padding-x: 2rem;
-  --container-max-width: 1440px;
 }
-
-@media (max-width: 1024px) {
-  :root {
-    --section-padding-x: 1.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  :root {
-    --section-padding-x: 1rem;
-  }
-}
-
 
 * {
   box-sizing: border-box;

@@ -2,13 +2,13 @@
    NAYZORA JEWELLERY — Featured Products Sub-Sections
    ========================================================= */
 .featured-section {
-  padding: var(--section-padding-y) var(--section-padding-x);
+  padding: 4rem 2rem;
   background-color: #010a07;
 }
 
 .subsection-wrapper {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto 5rem;
 }
 
 .subsection-wrapper:last-child {

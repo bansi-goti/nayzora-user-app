@@ -6,10 +6,9 @@ import styles from './Collection.module.css';
 
 export default function Collection() {
   return (
-    <>
-      <section className={styles['collection-section']}>
-        {/* ---------- THE ROYAL PROMISE SUB-SECTION ---------- */}
-        <div className={styles['rp-wrapper']}>
+    <section className={styles['collection-section']}>
+      {/* ---------- THE ROYAL PROMISE SUB-SECTION ---------- */}
+      <div className={styles['rp-wrapper']}>
         <div className={styles['rp-banner']}>
           {/* Top Center Accent */}
           <div className={styles['rp-top-accent']}>
@@ -209,9 +208,7 @@ export default function Collection() {
           </div>
         </div>
       </div>
-      </section>
 
-      <section className={styles['collection-section']}>
       {/* ---------- CUSTOM DESIGN SERVICE SUB-SECTION ---------- */}
       <div className={styles['cd-section-wrapper']}>
         <div className={styles['cd-main']}>
@@ -433,7 +430,6 @@ export default function Collection() {
           </div>
         </div>
       </div>
-      </section>
-    </>
+    </section>
   );
 }

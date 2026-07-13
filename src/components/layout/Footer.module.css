@@ -4,7 +4,7 @@
 .footer {
   background-color: #000201; /* Luxury black background */
   border-top: 1px solid rgba(212, 175, 55, 0.25);
-  padding-top: var(--section-padding-y);
+  padding-top: 4rem;
   font-family: 'Poppins', system-ui, sans-serif;
   position: relative;
   overflow: hidden;
@@ -12,8 +12,8 @@
 
 /* Newsletter row */
 .footer-top {
-  max-width: var(--container-max-width);
-  margin: 0 auto 3.5rem;
+  max-width: 1440px;
+  margin: 0 auto 4rem;
   padding: 40px 400px 40px 60px;
   background: 
     linear-gradient(90deg, #020d08 0%, #020d08 35%, rgba(2, 13, 8, 0.9) 50%, rgba(2, 13, 8, 0) 70%),
@@ -95,9 +95,9 @@
 
 /* Main Grid */
 .footer-main {
-  max-width: var(--container-max-width);
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 var(--section-padding-x) 3.5rem;
+  padding: 0 24px 4rem;
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr) 1.5fr;
   gap: 40px;
@@ -248,7 +248,7 @@
 
 /* Footer Bottom details */
 .footer-bottom {
-  max-width: var(--container-max-width);
+  max-width: 1360px;
   margin: 0 auto;
   padding: 24px;
   display: flex;
