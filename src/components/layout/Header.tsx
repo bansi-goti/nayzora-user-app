@@ -79,6 +79,7 @@ export default function Header() {
               </div>
 
             </Link>
+
             <div className={styles['nav-indicator']}>
               <span className={styles['indicator-line']}></span>
               <span className={styles['indicator-diamond']}></span>
@@ -153,6 +154,13 @@ export default function Header() {
               </svg>
             </button>
           </div>
+        </div>
+
+        {/* Absolute Center Star */}
+        <div className={styles['nav-center-star']}>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C12 7.5 16.5 12 24 12C16.5 12 12 16.5 12 24C12 16.5 7.5 12 0 12C7.5 12 12 7.5 12 0Z" fill="#FFF2B2" />
+          </svg>
         </div>
       </header>
     </div>
