@@ -326,3 +326,23 @@ div.hero-subtitle .subtitle-line:last-child {
     bottom: 70px;
   }
 }
+
+@media (max-width: 480px) {
+  .hero {
+    height: 460px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .subtitle-text {
+    font-size: 1.2rem;
+  }
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .slider-dots {
+    bottom: 60px;
+  }
+}

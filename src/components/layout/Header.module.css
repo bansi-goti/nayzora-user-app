@@ -42,11 +42,14 @@
 }
 
 @keyframes starShine {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.8);
     opacity: 0.8;
     filter: drop-shadow(0 0 5px rgba(255, 140, 0, 0.6));
   }
+
   50% {
     transform: scale(1.3);
     opacity: 1;
@@ -55,10 +58,13 @@
 }
 
 @keyframes flarePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.5;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.1);
     opacity: 1;
@@ -97,7 +103,7 @@
     radial-gradient(ellipse 150% 200% at 50% 50%, rgba(0, 50, 20, 0.07) 0%, transparent 60%) padding-box,
     linear-gradient(180deg, #101211 0%, #050706 50%, #020302 100%) padding-box,
     linear-gradient(90deg, rgba(138, 100, 30, 0.1) 0%, rgba(224, 192, 96, 0.3) 35%, rgba(255, 255, 255, 0.7) 50%, rgba(224, 192, 96, 0.3) 65%, rgba(138, 100, 30, 0.1) 100%) border-box;
-  box-shadow: 
+  box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.95),
     inset 0 0 40px rgba(0, 0, 0, 0.9);
   width: 100%;
@@ -107,7 +113,10 @@
 .header-top-bar::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
   border-radius: 18px;
   background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.02) 20%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.02) 80%, transparent 100%);
   mask-image: linear-gradient(180deg, black 0%, transparent 15px);
@@ -120,7 +129,10 @@
 .header-top-bar::after {
   content: '';
   position: absolute;
-  bottom: -1px; left: 15%; right: 15%; height: 2px;
+  bottom: -1px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 140, 0, 0.8) 15%, transparent 50%);
   filter: blur(1px);
   mix-blend-mode: screen;
@@ -158,9 +170,11 @@
 .logo-container::before {
   content: '';
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 180%; height: 180%;
+  width: 180%;
+  height: 180%;
   background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 60%);
   pointer-events: none;
   z-index: -1;
@@ -171,9 +185,7 @@
   height: 100%;
   object-fit: contain;
   mix-blend-mode: screen;
-  filter: invert(1) sepia(1) saturate(3) hue-rotate(15deg) brightness(1.2) 
-          drop-shadow(0 2px 2px rgba(212, 175, 55, 0.15)) 
-          drop-shadow(0 6px 12px rgba(212, 175, 55, 0.05));
+  filter: invert(1) sepia(1) saturate(3) hue-rotate(15deg) brightness(1.2) drop-shadow(0 2px 2px rgba(212, 175, 55, 0.15)) drop-shadow(0 6px 12px rgba(212, 175, 55, 0.05));
 }
 
 .logo-text-group {
@@ -283,14 +295,14 @@
   gap: 6px;
   padding: 3px 21px;
   border-radius: 14px;
-  background: 
+  background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 15%) padding-box,
     linear-gradient(180deg, rgba(30, 30, 25, 0.9) 0%, rgba(10, 10, 5, 0.95) 100%) padding-box,
     linear-gradient(180deg, #FFF2B2 0%, #E0C060 25%, #8A641E 100%) border-box;
   border: 1px solid transparent;
   color: #E0C060;
   font-weight: 500;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0px rgba(255, 255, 255, 0.3),
     inset 0 -1px 3px rgba(0, 0, 0, 0.8),
     0 4px 10px rgba(0, 0, 0, 0.5);
@@ -314,7 +326,8 @@
 
 .nav-center-star {
   position: absolute;
-  bottom: -8px; /* Position directly over the bottom physical border */
+  bottom: -8px;
+  /* Position directly over the bottom physical border */
   left: 50%;
   transform: translateX(-50%);
   width: 16px;
@@ -349,7 +362,8 @@
   height: 100%;
   position: relative;
   z-index: 2;
-  fill: #FFFFFF; /* Ensure core is bright white */
+  fill: #FFFFFF;
+  /* Ensure core is bright white */
 }
 
 .nav-pill svg {
@@ -401,12 +415,12 @@
   padding: 4px 12px;
   height: 30px;
   border-radius: 15px;
-  background: 
+  background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 15%) padding-box,
     linear-gradient(135deg, rgba(30, 30, 25, 0.8) 0%, rgba(10, 10, 5, 0.95) 100%) padding-box,
     linear-gradient(180deg, #E0C060 0%, #8A641E 100%) border-box;
   border: 1px solid transparent;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0px rgba(255, 255, 255, 0.2),
     inset 0 -1px 3px rgba(0, 0, 0, 0.8),
     0 2px 5px rgba(0, 0, 0, 0.6);
@@ -438,7 +452,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: 
+  background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 15%) padding-box,
     linear-gradient(135deg, rgba(30, 30, 25, 0.8) 0%, rgba(10, 10, 5, 0.95) 100%) padding-box,
     linear-gradient(180deg, #E0C060 0%, #8A641E 100%) border-box;
@@ -446,7 +460,7 @@
   color: #F5F5F5;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0px rgba(255, 255, 255, 0.2),
     inset 0 -1px 3px rgba(0, 0, 0, 0.8),
     0 2px 5px rgba(0, 0, 0, 0.6);
@@ -461,11 +475,11 @@
 
 .icon-circle:hover,
 .currency-btn:hover {
-  background: 
+  background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 15%) padding-box,
     linear-gradient(135deg, rgba(40, 40, 35, 0.9) 0%, rgba(15, 15, 10, 0.95) 100%) padding-box,
     linear-gradient(180deg, #FFF2B2 0%, #C89A2D 100%) border-box;
-  box-shadow: 
+  box-shadow:
     inset 0 1px 0px rgba(255, 255, 255, 0.3),
     inset 0 -1px 3px rgba(0, 0, 0, 0.8),
     0 4px 10px rgba(0, 0, 0, 0.6);
@@ -591,12 +605,103 @@
     display: none;
   }
 
+  .header-wrapper {
+    padding: 0 16px;
+    top: 10px;
+  }
+
+  .header-top-bar {
+    padding: 0 20px;
+  }
+
   .bottom-items {
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 20px;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .bottom-items::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bottom-item {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .bottom-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-wrapper {
+    padding: 0 10px;
+    top: 8px;
+  }
+
+  .header-top-bar {
+    padding: 0 12px;
+    height: 60px;
+    gap: 8px;
+  }
+
+  .logo-container {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-title {
+    font-size: 14px;
+  }
+  
+  .logo-subtitle {
+    font-size: 6.5px;
+    letter-spacing: 3px;
+  }
+
+  .header-actions {
+    gap: 12px;
+  }
+
+  .currency-btn {
+    display: none;
+  }
+
+  .icon-group {
+    gap: 8px;
+  }
+
+  .icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon-circle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-bottom-bar {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .bottom-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .bottom-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .bottom-item span {
+    font-size: 12px;
+  }
+  .bottom-sparkle {
     display: none;
   }
 }
