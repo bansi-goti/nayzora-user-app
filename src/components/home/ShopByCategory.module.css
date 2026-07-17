@@ -2,7 +2,7 @@
    NAYZORA JEWELLERY — Redesigned Shop by Category Styles
    ========================================================= */
 .category-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background-color: #010a07; /* Dark luxury background matching Hero */
   position: relative;
   overflow: hidden;
@@ -36,129 +36,209 @@
 /* Category Card */
 .category-card {
   flex: 0 0 auto;
-  width: 200px;
-  background: 
-    linear-gradient(180deg, #02150e 0%, #000201 100%) padding-box,
-    linear-gradient(90deg, rgba(220,179,96,0.2) 0%, rgba(220,179,96,0.4) 25%, rgba(220,179,96,0.8) 50%, rgba(220,179,96,0.4) 75%, rgba(220,179,96,0.2) 100%) border-box;
-  border: 1px solid transparent;
-  border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-  padding: 0 0 16px 0;
+  width: 280px;
+  height: 420px;
+  background: #020b06;
+  border: 0.5px solid rgba(200, 162, 74, 0.4);
+  border-radius: 12px;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
-  box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(200, 162, 74, 0.2), inset 0 0 30px rgba(0,0,0,0.8);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-sizing: border-box;
 }
 
 .category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(200, 162, 74, 0.3), inset 0 0 50px rgba(0,0,0,0.9);
+  border-color: rgba(200, 162, 74, 0.6);
 }
 
-/* Card Glow Line */
-.card-glow-line {
-  display: none;
+/* Corner Accents */
+.corner-ornament {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 10;
 }
+.corner-tl { top: 6px; left: 6px; }
+.corner-tr { top: 6px; right: 6px; transform: scaleX(-1); }
+.corner-bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+.corner-br { bottom: 6px; right: 6px; transform: scale(-1, -1); }
 
-/* Banner Glow Line (Centered and Smaller) */
-.banner-glow-line {
-  display: none;
-}
-
-/* Image Frames for the optimized Next.js Images */
-.image-frame-outer {
-  width: 100%;
-  aspect-ratio: 1.3 / 1;
-  border: none;
-  border-radius: 16px 16px 0 0;
-  background: transparent;
-  padding: 0;
-  margin-bottom: 12px;
-  transition: opacity 0.3s ease;
-  box-sizing: border-box;
-}
-
-.category-card:hover .image-frame-outer {
-  opacity: 0.9;
-}
-
-.image-frame-inner {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
+/* Image Area */
+.card-image-wrapper {
   position: relative;
+  width: 90%;
+  height: 70%;
+  margin: 14px auto 0; /* 5% top margin, centered horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .category-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  object-position: 25% center; /* Reveals text on the left while keeping jewelry centered */
+  transition: transform 0.6s ease;
 }
-
 .category-card:hover .category-img {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Standard hover scale without empty space */
 }
 
-/* Category Content */
-.category-content {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 8px;
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 11, 6, 0) 70%, rgba(2, 11, 6, 1) 100%);
+  pointer-events: none;
 }
 
-/* Gold Outline Icons */
-.category-icon {
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
+.collection-tag {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #d4af37;
-  opacity: 0.85;
-  transition: all 0.3s ease;
+  width: 110px;
+  height: 22px;
+  z-index: 2;
 }
 
-.category-card:hover .category-icon {
-  opacity: 1;
-  transform: translateY(-2px) scale(1.05);
+.tag-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-/* Category Typography */
-.category-name {
-  display: block;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 14px;
-  font-weight: 600;
+.tag-text {
+  position: relative;
+  z-index: 1;
+  color: #C8A24A;
+  font-family: var(--font-serif);
+  font-size: 8px;
   letter-spacing: 2px;
-  margin: 0 0 0 2px; /* Adds 2px to the left to perfectly balance the 2px letter-spacing on the right */
-  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+.tag-star {
+  font-size: 8px;
+}
+
+/* Separator */
+.separator-line {
+  width: 80%;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, rgba(200, 162, 74, 0.4), transparent);
+  margin: 10px auto 0; /* Small gap below image */
+  position: relative;
+  z-index: 2;
+}
+
+/* Bottom Info Section */
+.card-footer {
+  position: relative;
+  width: 100%;
+  flex: 1; /* Fills remaining space compactly */
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(200, 162, 74, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C8A24A;
+  flex-shrink: 0;
+  background: transparent;
+}
+.icon-circle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -6px; /* Adjust vertical alignment */
+}
+
+.category-title {
+  font-family: var(--font-serif);
   color: #ffffff;
-  transition: color 0.3s ease;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  margin: 0 0 2px 0;
+  text-transform: uppercase;
 }
 
-.category-card:hover .category-name {
-  color: #ffe8b1;
+.category-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
-.category-diamond {
-  margin-top: auto;
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
+.arrow-icon {
+  color: #C8A24A;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  opacity: 0.8;
+  margin-top: -10px;
+  transition: transform 0.3s ease;
+}
+.category-card:hover .arrow-icon {
+  transform: translateX(4px);
 }
 
-.category-card:hover .category-diamond {
-  opacity: 1;
+/* Bottom Decor */
+.bottom-decor {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.decor-line {
+  width: 35px;
+  height: 0.5px;
+  background: rgba(200, 162, 74, 0.6);
+}
+.decor-diamond {
+  width: 4px;
+  height: 4px;
+  background: #C8A24A;
+  transform: rotate(45deg);
 }
 
 /* Navigation Buttons */
@@ -287,27 +367,17 @@
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
   .category-section {
-    padding: 4rem 1.5rem 3rem;
+    padding: 2rem 1.5rem 1rem;
   }
   .slider-container {
     padding: 0 40px;
-    margin-bottom: 4rem;
+    margin-bottom: 0rem;
   }
   .category-card {
-    width: 180px;
-    padding: 0 0 12px 0;
+    width: 220px;
+    height: 320px;
   }
   .features-banner {
-    flex-wrap: wrap;
-    padding: 24px;
-    gap: 30px;
-  }
-  .feature-item {
-    flex: 0 0 calc(50% - 15px);
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-  .feature-divider {
     display: none;
   }
   .nav-btn {
@@ -320,25 +390,11 @@
 
 @media (max-width: 640px) {
   .category-section {
-    padding: 6rem 1rem 2rem;
+    padding: 2rem 1rem 1rem;
   }
   .category-card {
-    width: 155px;
-    padding: 0 0 10px 0;
+    width: 200px;
+    height: 300px;
   }
-  .image-frame-outer {
-    margin-bottom: 8px;
-  }
-  .category-name {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-  }
-  .features-banner {
-    gap: 20px;
-    padding: 20px 12px;
-  }
-  .feature-item {
-    flex: 0 0 100%;
-    padding-left: 10px;
-  }
+
 }

@@ -118,9 +118,9 @@ export default function ShopByCategory() {
 
       {/* Categories Slider */}
       <div className={styles['slider-container']}>
-        <button 
-          className={`${styles['nav-btn']} ${styles['btn-left']}`} 
-          onClick={() => scroll('left')} 
+        <button
+          className={`${styles['nav-btn']} ${styles['btn-left']}`}
+          onClick={() => scroll('left')}
           aria-label="Scroll Left"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6" /></svg>
@@ -129,45 +129,82 @@ export default function ShopByCategory() {
         <div className={styles['category-list']} ref={scrollRef}>
           {CATEGORIES.map((cat) => (
             <div key={cat.name} className={styles['category-card']}>
-              {/* Top Right Glowing Line Effect */}
-              <div className={styles['card-glow-line']}></div>
-              
-              {/* Double Gold-Border Image Wrapper */}
-              <div className={styles['image-frame-outer']}>
-                <div className={styles['image-frame-inner']}>
-                  <Image 
-                    src={cat.image} 
-                    alt={cat.name} 
-                    width={180} 
-                    height={160} 
-                    className={styles['category-img']}
-                    priority
-                  />
+              {/* Corner Accents */}
+              <svg className={`${styles['corner-ornament']} ${styles['corner-tl']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
+                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
+                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
+              </svg>
+              <svg className={`${styles['corner-ornament']} ${styles['corner-tr']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
+                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
+                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
+              </svg>
+              <svg className={`${styles['corner-ornament']} ${styles['corner-bl']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
+                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
+                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
+              </svg>
+              <svg className={`${styles['corner-ornament']} ${styles['corner-br']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
+                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
+                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
+              </svg>
+
+              {/* Image Area */}
+              <div className={styles['card-image-wrapper']}>
+                <Image
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  className={styles['category-img']}
+                  priority
+                />
+                <div className={styles['image-overlay']}></div>
+
+                {/* Collection Tag Overlay */}
+                <div className={styles['collection-tag']}>
+                  <svg className={styles['tag-bg']} viewBox="0 0 120 24" fill="none" stroke="#C8A24A" strokeWidth="1">
+                    <polygon points="10,1 110,1 119,12 110,23 10,23 1,12" fill="rgba(0,0,0,0.6)" />
+                  </svg>
+                  <span className={styles['tag-text']}>
+                    <span className={styles['tag-star']}>✦</span>
+                    COLLECTION
+                    <span className={styles['tag-star']}>✦</span>
+                  </span>
                 </div>
               </div>
 
-              {/* Category Content: Icon + Name */}
-              <div className={styles['category-content']}>
-                <div className={styles['category-icon']}>
+              {/* Separator */}
+              <div className={styles['separator-line']}></div>
+
+              {/* Bottom Info Section */}
+              <div className={styles['card-footer']}>
+                <div className={styles['icon-circle']}>
                   {cat.icon}
                 </div>
-                <span className={styles['category-name']}>{cat.name}</span>
+
+                <div className={styles['text-container']}>
+                  <h3 className={styles['category-title']}>{cat.name}</h3>
+                  <p className={styles['category-subtitle']}>Timeless Beauty.<br/>Naturally You</p>
+                </div>
+
+                <div className={styles['arrow-icon']}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </div>
               </div>
 
-              {/* Diamond Ribbon Decor */}
-              <div className={styles['category-diamond']}>
-                <svg width="50" height="8" viewBox="0 0 50 8" fill="none">
-                  <path d="M0 4h18M32 4h18" stroke="#dcb360" strokeWidth="1" strokeOpacity="0.4" />
-                  <path d="M25 1L28 4L25 7L22 4L25 1Z" fill="#dcb360" />
-                </svg>
+              {/* Bottom Decor */}
+              <div className={styles['bottom-decor']}>
+                <div className={styles['decor-line']}></div>
+                <div className={styles['decor-diamond']}></div>
+                <div className={styles['decor-line']}></div>
               </div>
             </div>
           ))}
         </div>
 
-        <button 
-          className={`${styles['nav-btn']} ${styles['btn-right']}`} 
-          onClick={() => scroll('right')} 
+        <button
+          className={`${styles['nav-btn']} ${styles['btn-right']}`}
+          onClick={() => scroll('right')}
           aria-label="Scroll Right"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6" /></svg>
@@ -184,8 +221,8 @@ export default function ShopByCategory() {
           <div className={styles['feature-icon-circle']}>
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round">
               {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                <path 
-                  key={i} 
+                <path
+                  key={i}
                   d="M 27 22 Q 32 8 32 4 Q 32 8 37 22"
                   transform={`rotate(${angle} 32 32)`}
                 />
