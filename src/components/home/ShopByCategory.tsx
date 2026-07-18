@@ -130,22 +130,10 @@ export default function ShopByCategory() {
           {CATEGORIES.map((cat) => (
             <div key={cat.name} className={styles['category-card']}>
               {/* Corner Accents */}
-              <svg className={`${styles['corner-ornament']} ${styles['corner-tl']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
-                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
-                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
-              </svg>
-              <svg className={`${styles['corner-ornament']} ${styles['corner-tr']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
-                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
-                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
-              </svg>
-              <svg className={`${styles['corner-ornament']} ${styles['corner-bl']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
-                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
-                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
-              </svg>
-              <svg className={`${styles['corner-ornament']} ${styles['corner-br']}`} viewBox="0 0 16 16" fill="none" stroke="#C8A24A">
-                <path d="M16 1H1V16" strokeWidth="1" strokeOpacity="0.8"/>
-                <path d="M1 5L5 1" strokeWidth="1" strokeOpacity="0.8"/>
-              </svg>
+              <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-tl']}`} />
+              <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-tr']}`} />
+              <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-bl']}`} />
+              <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-br']}`} />
 
               {/* Image Area */}
               <div className={styles['card-image-wrapper']}>
@@ -153,8 +141,8 @@ export default function ShopByCategory() {
                   src={cat.image}
                   alt={cat.name}
                   fill
-                  className={styles['category-img']}
                   priority
+                  className={styles['category-img']}
                 />
                 <div className={styles['image-overlay']}></div>
 
@@ -182,7 +170,7 @@ export default function ShopByCategory() {
 
                 <div className={styles['text-container']}>
                   <h3 className={styles['category-title']}>{cat.name}</h3>
-                  <p className={styles['category-subtitle']}>Timeless Beauty.<br/>Naturally You</p>
+                  <p className={styles['category-subtitle']}>Timeless Beauty.<br />Naturally You</p>
                 </div>
 
                 <div className={styles['arrow-icon']}>

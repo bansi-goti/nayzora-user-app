@@ -37,10 +37,9 @@ export default function RoyalPromiseBanner() {
 
           {/* Left Text Content */}
           <div
-            className="flex-1 z-10 w-full"
-            style={{ paddingLeft: '8%', paddingRight: '4%', paddingTop: '3rem', paddingBottom: '3rem' }}
+            className="flex-1 z-10 w-full flex flex-col items-center text-center md:items-start md:text-left px-6 py-12 md:pl-[8%] md:pr-[4%]"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2 17L3 6l4.5 4L12 2l4.5 8L21 6l1 11H2z" />
               </svg>
@@ -49,29 +48,28 @@ export default function RoyalPromiseBanner() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-[56px] text-white font-serif font-normal leading-[1.1] mb-6">
-              Enjoy all the benefits of <br />
+            <h2 className="text-center md:text-left w-full text-4xl md:text-5xl lg:text-[56px] text-white font-serif font-normal leading-[1.1] mb-6">
+              Enjoy all the benefits of <br className="hidden sm:block" />
               <span className="text-[#dcb360]">
                 The Royal Promise
               </span>
             </h2>
 
             {/* Divider */}
-            <div className="flex items-center gap-2 mb-8 opacity-80">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-8 opacity-80 w-full">
               <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#dcb360]"></div>
               <div className="w-2 h-2 rotate-45 border border-[#dcb360]"></div>
-              <div className="h-px w-24 bg-gradient-to-l from-transparent to-[#dcb360]"></div>
+              <div className="h-px w-24 bg-gradient-to-l from-transparent md:bg-gradient-to-r md:from-[#dcb360] md:to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-[#dcb360]"></div>
             </div>
 
-            <p className="text-[#a4b5aa] text-[17px] max-w-md leading-relaxed font-sans">
+            <p className="text-center md:text-left w-full text-[#a4b5aa] text-[17px] max-w-md leading-relaxed font-sans mx-auto md:mx-0">
               At Nayzora Jewellery, every piece comes with trust, quality, and a promise that lasts forever.
             </p>
           </div>
 
           {/* Right Image Showcase */}
           <div
-            className="flex-1 w-full relative h-[400px] md:h-[500px] lg:h-[600px]"
-            style={{ paddingRight: '8%', paddingTop: '3rem', paddingBottom: '3rem' }}
+            className="flex-1 w-full relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] px-6 pb-10 md:pt-12 md:pb-12 md:pl-0 md:pr-[8%]"
           >
             <div className="w-full h-full relative rounded-[20px] overflow-hidden shadow-2xl">
               <Image
