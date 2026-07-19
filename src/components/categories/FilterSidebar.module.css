@@ -1,0 +1,234 @@
+/* src/components/categories/FilterSidebar.module.css */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(220, 179, 96, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-header svg {
+  color: #dcb360;
+}
+
+.filters-container {
+  border: 1px solid rgba(220, 179, 96, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filters-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #dcb360;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filter-item-active {
+  color: #dcb360;
+}
+
+.filter-radio {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-radio-active {
+  border-color: #dcb360;
+}
+
+.filter-radio-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #dcb360;
+}
+
+.filter-checkbox {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-label {
+  font-size: 13px;
+  color: #a4b5aa;
+  flex-grow: 1;
+}
+
+.filter-item-active .filter-label {
+  color: #fff;
+}
+
+.filter-count {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.filter-item-active .filter-count {
+  color: #a4b5aa;
+}
+
+/* Price Range */
+.price-range-slider {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin: 12px 0 20px;
+}
+
+.price-range-progress {
+  position: absolute;
+  left: 10%;
+  right: 20%;
+  height: 100%;
+  background: #dcb360;
+}
+
+.price-range-thumb {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: #dcb360;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.thumb-left {
+  left: 10%;
+}
+.thumb-right {
+  left: 80%;
+}
+
+.price-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #dcb360;
+  font-weight: 500;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+.price-currency {
+  color: #6b7280;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.price-input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+}
+
+.price-separator {
+  color: #6b7280;
+}
+
+.clear-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(220, 179, 96, 0.4);
+  color: #dcb360;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.clear-btn:hover {
+  background: rgba(220, 179, 96, 0.1);
+  border-color: #dcb360;
+}

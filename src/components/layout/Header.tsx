@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import PillTrace from '../PillTrace';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -71,45 +73,39 @@ export default function Header() {
 
         {/* Middle: Navigation */}
         <nav className={styles['header-nav']}>
-          <div className={styles['nav-item-wrapper']}>
-            <Link href="/" className={`${styles['nav-item']} ${styles['active']}`}>
-              <div className={styles['nav-pill']}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
-                <span>Home</span>
+          {[
+            { name: 'Home', path: '/', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
+            { name: 'Categories', path: '/categories', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></svg> },
+            { name: 'Products', path: '/products', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></svg> },
+            { name: 'My Order', path: '/order', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" x2="8" y1="13" y2="13" /><line x1="16" x2="8" y1="17" y2="17" /><polyline points="10 9 9 9 8 9" /></svg> },
+            { name: 'Contact', path: '/contact', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg> },
+          ].map((item) => {
+            const isActive = pathname === item.path || (item.path !== '/' && pathname.startsWith(item.path));
+            return (
+              <div key={item.name} className={styles['nav-item-wrapper']}>
+                <Link href={item.path} className={`${styles['nav-item']} ${isActive ? styles['active'] : ''}`}>
+                  {isActive ? (
+                    <div className={styles['nav-pill']}>
+                      {item.icon}
+                      <span>{item.name}</span>
+                    </div>
+                  ) : (
+                    <>
+                      {item.icon}
+                      <span>{item.name}</span>
+                    </>
+                  )}
+                </Link>
+                {isActive && (
+                  <div className={styles['nav-indicator']}>
+                    <span className={styles['indicator-line']}></span>
+                    <span className={styles['indicator-diamond']}></span>
+                    <span className={styles['indicator-line']}></span>
+                  </div>
+                )}
               </div>
-
-            </Link>
-
-            <div className={styles['nav-indicator']}>
-              <span className={styles['indicator-line']}></span>
-              <span className={styles['indicator-diamond']}></span>
-              <span className={styles['indicator-line']}></span>
-            </div>
-          </div>
-          <div className={styles['nav-item-wrapper']}>
-            <Link href="/categories" className={styles['nav-item']}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></svg>
-              <span>Categories</span>
-            </Link>
-          </div>
-          <div className={styles['nav-item-wrapper']}>
-            <Link href="/products" className={styles['nav-item']}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /><path d="M3 6h18" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
-              <span>Products</span>
-            </Link>
-          </div>
-          <div className={styles['nav-item-wrapper']}>
-            <Link href="/order" className={styles['nav-item']}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" x2="8" y1="13" y2="13" /><line x1="16" x2="8" y1="17" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
-              <span>My Order</span>
-            </Link>
-          </div>
-          <div className={styles['nav-item-wrapper']}>
-            <Link href="/contact" className={styles['nav-item']}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-              <span>Contact</span>
-            </Link>
-          </div>
+            );
+          })}
         </nav>
 
         {/* Right: Actions */}

@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import SectionTitle from '../common/SectionTitle';
 import PillTrace from '../PillTrace';
 import styles from './ShopByCategory.module.css';
@@ -128,7 +129,7 @@ export default function ShopByCategory() {
 
         <div className={styles['category-list']} ref={scrollRef}>
           {CATEGORIES.map((cat) => (
-            <div key={cat.name} className={styles['category-card']}>
+            <Link href={`/categories/${cat.name.toLowerCase()}`} key={cat.name} className={styles['category-card']} style={{ textDecoration: 'none' }}>
               {/* Corner Accents */}
               <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-tl']}`} />
               <img src="/card corner.png" alt="" className={`${styles['corner-ornament']} ${styles['corner-tr']}`} />
@@ -186,7 +187,7 @@ export default function ShopByCategory() {
                 <div className={styles['decor-diamond']}></div>
                 <div className={styles['decor-line']}></div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
