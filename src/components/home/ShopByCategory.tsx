@@ -5,12 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SectionTitle from '../common/SectionTitle';
 import PillTrace from '../PillTrace';
+import IconCircle from '../common/IconCircle';
 import styles from './ShopByCategory.module.css';
 
 const CATEGORIES = [
   {
     name: 'RINGS',
-    image: '/categories/ring.png',
+    subtitle: 'Elegance on Your Fingers',
+    image: '/categories/ring.jpeg',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <g transform="translate(-4, 0)">
@@ -28,6 +30,7 @@ const CATEGORIES = [
   },
   {
     name: 'BRACELETS',
+    subtitle: 'A Touch of Grace',
     image: '/categories/bracelet.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -40,6 +43,7 @@ const CATEGORIES = [
   },
   {
     name: 'NECKLACES',
+    subtitle: 'Close to Your Heart',
     image: '/categories/gemstones.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -50,6 +54,7 @@ const CATEGORIES = [
   },
   {
     name: 'PENDANTS',
+    subtitle: 'Your Signature Style',
     image: '/categories/pendant.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -61,6 +66,7 @@ const CATEGORIES = [
   },
   {
     name: 'CUFFLINKS',
+    subtitle: "A Gentleman's Choice",
     image: '/categories/cufflinks.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -74,6 +80,7 @@ const CATEGORIES = [
   },
   {
     name: 'EARRINGS',
+    subtitle: 'Shine With Every Move',
     image: '/categories/earrings.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -87,6 +94,7 @@ const CATEGORIES = [
   },
   {
     name: 'GEMSTONES',
+    subtitle: "Nature's Masterpiece",
     image: '/categories/gemstones.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -145,7 +153,6 @@ export default function ShopByCategory() {
                   priority
                   className={styles['category-img']}
                 />
-                <div className={styles['image-overlay']}></div>
 
                 {/* Collection Tag Overlay */}
                 <div className={styles['collection-tag']}>
@@ -153,39 +160,36 @@ export default function ShopByCategory() {
                     <polygon points="10,1 110,1 119,12 110,23 10,23 1,12" fill="rgba(0,0,0,0.6)" />
                   </svg>
                   <span className={styles['tag-text']}>
-                    <span className={styles['tag-star']}>✦</span>
+                    <span className={styles['tag-star']}>♦</span>
                     COLLECTION
-                    <span className={styles['tag-star']}>✦</span>
+                    <span className={styles['tag-star']}>♦</span>
                   </span>
                 </div>
               </div>
 
-              {/* Separator */}
-              <div className={styles['separator-line']}></div>
-
               {/* Bottom Info Section */}
               <div className={styles['card-footer']}>
-                <div className={styles['icon-circle']}>
+                <IconCircle textColor="#dcb360" style={{ marginRight: '18px' }}>
                   {cat.icon}
-                </div>
+                </IconCircle>
 
                 <div className={styles['text-container']}>
                   <h3 className={styles['category-title']}>{cat.name}</h3>
-                  <p className={styles['category-subtitle']}>Timeless Beauty.<br />Naturally You</p>
+                  <p className={styles['category-subtitle']}>{cat.subtitle}</p>
                 </div>
 
                 <div className={styles['arrow-icon']}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 18 6-6-6-6" />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#dcb360" strokeWidth="1.5">
+                    <path d="M9 18l6-6-6-6" />
                   </svg>
                 </div>
-              </div>
 
-              {/* Bottom Decor */}
-              <div className={styles['bottom-decor']}>
-                <div className={styles['decor-line']}></div>
-                <div className={styles['decor-diamond']}></div>
-                <div className={styles['decor-line']}></div>
+                {/* Bottom Decor */}
+                <div className={styles['bottom-decor']}>
+                  <div className={`${styles['decor-line']} ${styles['left']}`}></div>
+                  <div className={styles['decor-diamond']}></div>
+                  <div className={`${styles['decor-line']} ${styles['right']}`}></div>
+                </div>
               </div>
             </Link>
           ))}
@@ -267,23 +271,6 @@ export default function ShopByCategory() {
           <div className={styles['feature-text']}>
             <h4>Free Shipping</h4>
             <p>ON ORDERS OVER $500</p>
-          </div>
-        </div>
-
-        <div className={styles['feature-divider']} />
-
-        <div className={styles['feature-item']}>
-          <div className={styles['feature-icon-circle']}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M 18 46 A 20 20 0 1 0 14 24" />
-              <path d="M 24 18 L 14 24 L 20 32" />
-              <circle cx="32" cy="32" r="8" />
-              <circle cx="32" cy="32" r="3" fill="currentColor" />
-            </svg>
-          </div>
-          <div className={styles['feature-text']}>
-            <h4>Easy Returns</h4>
-            <p>15-DAY RETURNS</p>
           </div>
         </div>
       </div>

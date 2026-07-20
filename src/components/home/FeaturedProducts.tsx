@@ -100,11 +100,8 @@ export default function FeaturedProducts() {
           {BEST_SELLERS.map((product) => (
             <div key={product.name} className={styles['product-card']}>
               <div className={styles['img-container']}>
-                {/* Top Left Badge */}
-                <div className={styles['top-badge']}>
-                  {product.badgeIcon}
-                  <span>{product.badge}</span>
-                </div>
+                {/* Discount Tag (Top Left) */}
+                <div className={styles['discount-tag']}>25% OFF</div>
                 
                 {/* Top Right Heart */}
                 <div 
@@ -152,7 +149,6 @@ export default function FeaturedProducts() {
               </div>
 
               <div className={styles['card-content']}>
-                <div className={styles['discount-tag']}>25% OFF</div>
 
                 <h3 className={`${styles['product-title']} font-serif`}>{product.name}</h3>
                 

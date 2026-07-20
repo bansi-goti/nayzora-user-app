@@ -54,7 +54,13 @@ export default function Hero() {
       const video = videoRefs.current[idx];
       if (video) {
         if (idx === current) {
-          video.currentTime = 0;
+          try {
+            if (video.readyState >= 1) {
+              video.currentTime = 0;
+            }
+          } catch (e) {
+            // ignore
+          }
           video.play().catch((err) => {
             console.log("Auto-play prevented by browser policy:", err);
           });
@@ -77,12 +83,15 @@ export default function Hero() {
                 ref={(el) => {
                   videoRefs.current[idx] = el;
                 }}
-                src={slide.src}
                 className={`${styles['slide-video']} ${idx === current ? styles['active'] : ''}`}
+                autoPlay
                 muted
                 playsInline
+                preload="auto"
                 onEnded={nextSlide}
-              />
+              >
+                <source src={slide.src} />
+              </video>
             );
           }
           return (
@@ -105,9 +114,6 @@ export default function Hero() {
             key={idx}
             className={`${styles['slide-content-item']} ${idx === current ? styles['active-content'] : ''}`}
           >
-            {slide.tag && (
-              <span className={styles['hero-tag']}>{slide.tag}</span>
-            )}
             <h1 className={`${styles['hero-title']} ${styles['font-serif']}`}>{slide.title}</h1>
             <div className={styles['hero-subtitle']}>
               <span className={styles['subtitle-line']}></span>
