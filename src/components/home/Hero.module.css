@@ -35,6 +35,22 @@
   transform: scale(1);
 }
 
+.slide-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out, transform 8s ease;
+  transform: scale(1.04);
+}
+
+.slide-video.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* Dark Ambient Overlay to maintain rich emeralds & contrast */
 .hero-overlay {
   position: absolute;

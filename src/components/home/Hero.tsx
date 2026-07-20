@@ -1,22 +1,28 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 
 const SLIDES = [
   {
+    type: 'video',
+    src: '/hero_video.mp4',
     tag: "PURELY HAND-CRAFTED",
     title: "TIMELESS ELEGANCE",
     subtitle: "Premium Collection",
     desc: "Experience luxury with our handcrafted jewelry pieces.\nEach piece is a masterpiece of artistry."
   },
   {
+    type: 'image',
+    src: '/hero.png',
     tag: "EXQUISITE CRAFTSMANSHIP",
     title: "ROYAL SPLENDOR",
     subtitle: "Elite Masterpieces",
     desc: "Indulge in the finest collections designed for royalty.\nCrafted to make every moment unforgettable."
   },
   {
+    type: 'image',
+    src: '/hero_bg.png',
     tag: "TEMPTING BEAUTY",
     title: "GOLDEN HERITAGE",
     subtitle: "Signature Creations",
@@ -26,6 +32,7 @@ const SLIDES = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % SLIDES.length);
@@ -36,21 +43,56 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 7000);
-    return () => clearInterval(timer);
-  }, []);
+    // Set a longer fallback timer (15 seconds) for video slide, and 7 seconds for image slides.
+    const delay = SLIDES[current].type === 'video' ? 15000 : 7000;
+    const timer = setTimeout(nextSlide, delay);
+    return () => clearTimeout(timer);
+  }, [current]);
+
+  useEffect(() => {
+    SLIDES.forEach((slide, idx) => {
+      const video = videoRefs.current[idx];
+      if (video) {
+        if (idx === current) {
+          video.currentTime = 0;
+          video.play().catch((err) => {
+            console.log("Auto-play prevented by browser policy:", err);
+          });
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }, [current]);
 
   return (
     <section className={styles['hero']}>
       {/* Slides Background */}
       <div className={styles['slides-container']}>
-        {SLIDES.map((slide, idx) => (
-          <div
-            key={idx}
-            className={`${styles['slide-bg']} ${idx === current ? styles['active'] : ''}`}
-            style={{ backgroundImage: `url('/hero.png')` }}
-          />
-        ))}
+        {SLIDES.map((slide, idx) => {
+          if (slide.type === 'video') {
+            return (
+              <video
+                key={idx}
+                ref={(el) => {
+                  videoRefs.current[idx] = el;
+                }}
+                src={slide.src}
+                className={`${styles['slide-video']} ${idx === current ? styles['active'] : ''}`}
+                muted
+                playsInline
+                onEnded={nextSlide}
+              />
+            );
+          }
+          return (
+            <div
+              key={idx}
+              className={`${styles['slide-bg']} ${idx === current ? styles['active'] : ''}`}
+              style={{ backgroundImage: `url('${slide.src}')` }}
+            />
+          );
+        })}
       </div>
 
       {/* Dark Overlay */}
@@ -63,6 +105,9 @@ export default function Hero() {
             key={idx}
             className={`${styles['slide-content-item']} ${idx === current ? styles['active-content'] : ''}`}
           >
+            {slide.tag && (
+              <span className={styles['hero-tag']}>{slide.tag}</span>
+            )}
             <h1 className={`${styles['hero-title']} ${styles['font-serif']}`}>{slide.title}</h1>
             <div className={styles['hero-subtitle']}>
               <span className={styles['subtitle-line']}></span>
