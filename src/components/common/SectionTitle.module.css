@@ -4,8 +4,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 1rem;
-  padding: 0rem 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 4rem 1.5rem 0.5rem;
   position: relative;
   z-index: 10;
 
@@ -43,12 +44,14 @@
   position: relative;
   opacity: 0.85;
 }
+
 .crownLineLeft::before {
   content: '';
   width: 90px;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(220, 179, 96, 0.7));
 }
+
 .crownLineLeft::after {
   content: '✦';
   color: #ffe8b1;
@@ -64,6 +67,7 @@
   position: relative;
   opacity: 0.85;
 }
+
 .crownLineRight::before {
   content: '✦';
   color: #ffe8b1;
@@ -71,6 +75,7 @@
   text-shadow: 0 0 6px #dcb360;
   line-height: 1;
 }
+
 .crownLineRight::after {
   content: '';
   width: 90px;
@@ -79,6 +84,7 @@
 }
 
 @media (max-width: 640px) {
+
   .crownLineLeft,
   .crownLineRight {
     display: none;
@@ -202,6 +208,7 @@
   justify-content: center;
   width: 100%;
   mix-blend-mode: screen;
+  margin-top: 0rem;
 }
 
 .dividerImage {
@@ -214,6 +221,7 @@
   .title {
     font-size: 1.5rem;
   }
+
   .subtitle {
     font-size: 0.75rem;
     margin-top: 0.5rem;

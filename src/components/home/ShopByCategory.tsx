@@ -47,8 +47,10 @@ const CATEGORIES = [
     image: '/categories/gemstones.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M16 20 Q 32 64 48 20" strokeDasharray="4 6" strokeWidth="6" strokeLinecap="round" />
-        <circle cx="32" cy="45" r="3" fill="currentColor" />
+        <g transform="translate(0, -5)">
+          <path d="M16 20 Q 32 64 48 20" strokeDasharray="4 6" strokeWidth="6" strokeLinecap="round" />
+          <circle cx="32" cy="45" r="3" fill="currentColor" />
+        </g>
       </svg>
     )
   },
@@ -58,9 +60,11 @@ const CATEGORIES = [
     image: '/categories/pendant.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M32 16 C 16 32 16 52 32 56 C 48 52 48 32 32 16 Z" />
-        <path d="M32 16 V 56 M 22 36 H 42 M 25 25 L 39 47 M 25 47 L 39 25" />
-        <circle cx="32" cy="8" r="4" />
+        <g transform="translate(0, -4)">
+          <path d="M32 16 C 16 32 16 52 32 56 C 48 52 48 32 32 16 Z" />
+          <path d="M32 16 V 56 M 22 36 H 42 M 25 25 L 39 47 M 25 47 L 39 25" />
+          <circle cx="32" cy="8" r="4" />
+        </g>
       </svg>
     )
   },
@@ -169,7 +173,7 @@ export default function ShopByCategory() {
 
               {/* Bottom Info Section */}
               <div className={styles['card-footer']}>
-                <IconCircle textColor="#dcb360" style={{ marginRight: '18px' }}>
+                <IconCircle textColor="#dcb360" size={44} style={{ marginRight: '12px' }}>
                   {cat.icon}
                 </IconCircle>
 

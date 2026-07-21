@@ -66,12 +66,13 @@ export default function Collection() {
             <div className={styles['rp-right']}>
               <div className={styles['rp-image-wrapper']}>
                 <Image 
-                  src="/final_royal_promise.webp" 
+                  src="/final_royal_promise.png" 
                   alt="The Royal Promise" 
                   width={800} 
                   height={600} 
                   className={styles['rp-image']}
                   loading="lazy"
+                  unoptimized={true}
                 />
               </div>
             </div>
@@ -124,19 +125,17 @@ export default function Collection() {
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
-                {/* Wrench */}
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                {/* Screwdriver Handle */}
-                <path d="M9 11l-3 3a2.83 2.83 0 0 0 0 4l0 0a2.83 2.83 0 0 0 4 0l3-3" />
-                {/* Screwdriver Shaft */}
-                <path d="M12 10l5-5" />
-                {/* Screwdriver Tip */}
-                <path d="M17 5l2-2" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+                <path d="M2 9h20" />
+                <path d="M12 21l-4-12" />
+                <path d="M12 21l4-12" />
+                <path d="M6 3l2 6" />
+                <path d="M18 3l-2 6" />
               </svg>
             </div>
-            <h3>Customization Options</h3>
-            <p>Buy jewellery that&apos;s customised<br />and personalised to the smallest<br />specifications.</p>
+            <h3>Master Craftsmanship</h3>
+            <p>Every Nayzora creation is<br />handcrafted by master<br />artisans with precision.</p>
             <div className={styles['rp-card-ornament']}>
               <Image
                 src="/new-divider-small.png"
@@ -150,17 +149,14 @@ export default function Collection() {
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
-                {/* Top arrow (ends pointing right) */}
-                <path d="M 7.05,16.95 A 7,7 0 0,1 12,5" />
-                <polyline points="8,1 12,5 8,9" />
-                {/* Bottom arrow (ends pointing left) */}
-                <path d="M 16.95,7.05 A 7,7 0 0,1 12,19" />
-                <polyline points="16,15 12,19 16,23" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2" />
+                <circle cx="12" cy="16" r="1" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
             </div>
-            <h3>100% Refund</h3>
-            <p>You can return your jewellery<br />easily within 15 days<br />of purchase.</p>
+            <h3>Fully Insured</h3>
+            <p>Enjoy complimentary and<br />fully insured secure shipping<br />on all your orders.</p>
             <div className={styles['rp-card-ornament']}>
               <Image
                 src="/new-divider-small.png"
@@ -174,17 +170,16 @@ export default function Collection() {
 
           <div className={styles['rp-feature-card']}>
             <div className={styles['rp-icon-circle']}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
-                {/* Top arrow (points right) */}
-                <path d="M 6 9 L 18 9" />
-                <polyline points="15 6 18 9 15 12" />
-                {/* Bottom arrow (points left) */}
-                <path d="M 18 15 L 6 15" />
-                <polyline points="9 12 6 15 9 18" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="34" height="34" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="21 8 21 21 3 21 3 8" />
+                <rect x="1" y="5" width="22" height="3" />
+                <line x1="12" y1="21" x2="12" y2="8" />
+                <path d="M12 5V3a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
+                <path d="M12 5V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
               </svg>
             </div>
-            <h3>Lifetime Exchange</h3>
-            <p>Experience a relationship<br />that will last a lifetime<br />with our exchange policies.</p>
+            <h3>Elegant Packaging</h3>
+            <p>Your jewellery arrives in<br />our signature luxury boxes<br />ready for gifting.</p>
             <div className={styles['rp-card-ornament']}>
               <Image
                 src="/new-divider-small.png"
@@ -218,11 +213,11 @@ export default function Collection() {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className={styles['cd-badge-icon']}>
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
-              <span>CUSTOM DESIGN SERVICE</span>
+              <span>THE NAYZORA EXPERIENCE</span>
             </div>
 
             <h2 className={`${styles['cd-heading']} font-serif`}>
-              Craft Your <br /> <span className={styles['text-primary']}>Unique Story</span>
+              Experience <br /> <span className={styles['text-primary']}>True Luxury</span>
             </h2>
 
             <div className={styles['cd-ornament']}>
@@ -232,7 +227,7 @@ export default function Collection() {
             </div>
 
             <p className={styles['cd-desc']}>
-              Transform your vision into reality with our bespoke jewelry design service. Every piece is a reflection of your style, crafted to be treasured forever.
+              Discover the elegance of Nayzora. Every piece is a reflection of timeless beauty, meticulously crafted to be treasured forever.
             </p>
 
             <div className={styles['cd-features-list']}>
@@ -245,7 +240,7 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
-                  <h4>Expert Craftsmanship</h4>
+                  <h4>Master Artisans</h4>
                   <p>Premium materials with meticulous attention to detail</p>
                 </div>
               </div>
@@ -258,8 +253,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
-                  <h4>Personalized Touch</h4>
-                  <p>Custom engravings and handpicked gemstone selection</p>
+                  <h4>Ethical Sourcing</h4>
+                  <p>Conflict-free diamonds and sustainable materials</p>
                 </div>
               </div>
 
@@ -273,8 +268,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['cd-feature-text']}>
-                  <h4>Master Designers</h4>
-                  <p>One-on-one consultation with our expert artisans</p>
+                  <h4>Unmatched Quality</h4>
+                  <p>Rigorous quality checks for lasting brilliance</p>
                 </div>
               </div>
             </div>
@@ -286,7 +281,7 @@ export default function Collection() {
           {/* RIGHT COLUMN: The Customization Process Timeline */}
           <div className={styles['cd-right']}>
             <div className={`${styles['cd-right-heading']} font-serif`}>
-              Your Vision, Our Creation
+              The Buying Journey
             </div>
             <div className={styles['cd-right-ornament']}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -310,8 +305,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['timeline-content']}>
-                  <h4>Share Your Idea</h4>
-                  <p>Tell us your inspiration <br /> and preferences</p>
+                  <h4>Browse Collections</h4>
+                  <p>Explore our exquisite <br /> range of jewelry</p>
                 </div>
               </div>
 
@@ -324,8 +319,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['timeline-content']}>
-                  <h4>Design & Approval</h4>
-                  <p>We create a 3D design <br /> for your approval</p>
+                  <h4>Select Your Piece</h4>
+                  <p>Find the perfect match <br /> for your unique style</p>
                 </div>
               </div>
 
@@ -337,8 +332,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['timeline-content']}>
-                  <h4>Handcrafted</h4>
-                  <p>Our artisans craft your <br /> piece with precision</p>
+                  <h4>Secure Checkout</h4>
+                  <p>Safe and encrypted <br /> payment processing</p>
                 </div>
               </div>
 
@@ -353,8 +348,8 @@ export default function Collection() {
                   </svg>
                 </div>
                 <div className={styles['timeline-content']}>
-                  <h4>Delivered to You</h4>
-                  <p>Your masterpiece, <br /> delivered with care</p>
+                  <h4>Fast Delivery</h4>
+                  <p>Insured shipping directly <br /> to your doorstep</p>
                 </div>
               </div>
             </div>
@@ -372,8 +367,8 @@ export default function Collection() {
                 </svg>
               </div>
               <div className={styles['cd-bottom-title']}>
-                Let's Create Something <br />
-                <span className={styles['text-primary']}>Extraordinary Together</span>
+                Start Your Nayzora <br />
+                <span className={styles['text-primary']}>Journey Today</span>
               </div>
             </div>
 
@@ -385,8 +380,8 @@ export default function Collection() {
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
               <div>
-                <h5>100% Confidential</h5>
-                <p>Your ideas are safe with us</p>
+                <h5>Secure Transactions</h5>
+                <p>Your data is safe with us</p>
               </div>
             </div>
 
@@ -398,8 +393,8 @@ export default function Collection() {
                 <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
               </svg>
               <div>
-                <h5>Quality Assurance</h5>
-                <p>Every piece meets the highest standards</p>
+                <h5>Certified Authenticity</h5>
+                <p>Every piece is certified authentic</p>
               </div>
             </div>
 
@@ -410,8 +405,8 @@ export default function Collection() {
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
               <div>
-                <h5>Timeless Value</h5>
-                <p>Designed to be loved for generations</p>
+                <h5>Lifetime Support</h5>
+                <p>We're here for you forever</p>
               </div>
             </div>
 
@@ -419,7 +414,7 @@ export default function Collection() {
 
             <div className={styles['cd-bottom-right']}>
               <button className={styles['btn-cd-start']}>
-                Start Your Custom Design
+                Explore Collections
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </button>
               <div className={styles['cd-free-consult']}>

@@ -2,7 +2,7 @@
    NAYZORA JEWELLERY — Redesigned Shop by Category Styles
    ========================================================= */
 .category-section {
-  padding: 2rem 2rem;
+  padding: 0 2rem;
   background-color: #010a07; /* Dark luxury background matching Hero */
   position: relative;
   overflow: hidden;
@@ -35,8 +35,8 @@
 
 .category-card {
   flex: 0 0 auto;
-  width: 290px;
-  height: 415px;
+  width: 260px;
+  height: 340px;
   background: #021108;
   border-radius: 6px;
   position: relative;
@@ -53,6 +53,21 @@
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7), 0 0 20px rgba(177, 141, 69, 0.1);
   border-color: #b18d45;
+}
+
+/* Top Center Glow on border */
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.4) 25%, #ffda6a 50%, rgba(212, 175, 55, 0.4) 75%, transparent 100%);
+  box-shadow: 0 0 10px rgba(255, 218, 106, 0.6), 0 -2px 15px rgba(212, 175, 55, 0.4), 0 2px 15px rgba(212, 175, 55, 0.4);
+  z-index: 20;
+  pointer-events: none;
 }
 
 /* Corner Accents */
@@ -72,7 +87,7 @@
 .card-image-wrapper {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 72%;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -144,15 +159,15 @@
   position: relative;
   width: 100%;
   flex: 1; 
-  padding: 16px;
+  padding: 0 16px 18px 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   background: transparent;
 }
 
 .text-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -161,7 +176,7 @@
 .category-title {
   font-family: var(--font-serif);
   color: #ffffff;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 1px;
   margin: 0 0 4px 0;
@@ -184,7 +199,7 @@
   flex-shrink: 0;
   width: 22px;
   height: 22px;
-  margin-left: auto;
+  margin-left: 12px;
   opacity: 0.9;
   transition: transform 0.3s ease;
 }
@@ -195,7 +210,7 @@
 /* Bottom Decor */
 .bottom-decor {
   position: absolute;
-  bottom: 24px;
+  bottom: 14px;
   left: 0;
   right: 0;
   display: flex;
