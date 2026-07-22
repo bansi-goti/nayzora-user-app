@@ -148,16 +148,16 @@
   display: flex;
   z-index: 0;
   border-radius: 0 20px 20px 0;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.05) 15%, rgba(0, 0, 0, 1) 40%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.05) 15%, rgba(0, 0, 0, 1) 40%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 15%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 15%);
 }
 
 .rp-image {
   width: 100%;
   height: 100%;
   position: relative;
-  object-fit: cover;
-  object-position: right center;
+  object-fit: contain;
+  object-position: center;
   border-radius: 0 20px 20px 0;
   display: block;
 }
@@ -416,7 +416,7 @@
   height: 9px;
   background: #dcb360;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 0 6px #dcb360,
     0 0 12px #dcb360,
     0 0 20px #dcb360;
@@ -494,9 +494,12 @@
 }
 
 @keyframes floatPendant {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -765,6 +768,7 @@
   .cd-main {
     gap: 20px;
   }
+
   .cd-bottom-panel {
     flex-direction: column;
     align-items: center;
@@ -772,13 +776,16 @@
     gap: 24px;
     text-align: center;
   }
+
   .cd-bottom-left {
     flex-direction: column;
     text-align: center;
   }
+
   .cd-bottom-divider {
     display: none;
   }
+
   .cd-bottom-middle {
     width: 100%;
   }
@@ -817,10 +824,15 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    height: 350px;
+    height: auto;
     border-radius: 0 0 20px 20px;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.05) 15%, rgba(0, 0, 0, 1) 40%);
-    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.05) 15%, rgba(0, 0, 0, 1) 40%);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .rp-image {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .rp-badge {
@@ -893,7 +905,7 @@
 
 @media (max-width: 640px) {
   .collection-section {
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .rp-left {
@@ -908,28 +920,28 @@
     font-size: 16px;
   }
 
-  .rp-image-wrapper {
-    height: 250px;
-  }
+
 
   .rp-features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .cd-section-wrapper {
     padding: 30px 20px;
+    margin-top: 2rem;
   }
 
   .cd-heading {
     font-size: 2rem;
   }
-  
+
   .cd-mini-feature {
     align-items: center;
     text-align: center;
     flex-direction: column;
     gap: 8px;
   }
+
   .cd-mini-icon {
     margin-bottom: 4px;
   }
