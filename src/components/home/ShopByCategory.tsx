@@ -12,7 +12,7 @@ const CATEGORIES = [
   {
     name: 'RINGS',
     subtitle: 'Elegance on Your Fingers',
-    image: '/categories/ring.jpeg',
+    image: '/categories/Ring.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <g transform="translate(-4, 0)">
@@ -31,7 +31,7 @@ const CATEGORIES = [
   {
     name: 'BRACELETS',
     subtitle: 'A Touch of Grace',
-    image: '/categories/bracelet.png',
+    image: '/categories/bracelete.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M26 16 A 18 18 0 1 0 38 16" />
@@ -44,7 +44,7 @@ const CATEGORIES = [
   {
     name: 'NECKLACES',
     subtitle: 'Close to Your Heart',
-    image: '/categories/gemstones.png',
+    image: '/categories/Necklace.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <g transform="translate(0, -5)">
@@ -57,7 +57,7 @@ const CATEGORIES = [
   {
     name: 'PENDANTS',
     subtitle: 'Your Signature Style',
-    image: '/categories/pendant.png',
+    image: '/categories/Pendalset.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <g transform="translate(0, -4)">
@@ -69,23 +69,9 @@ const CATEGORIES = [
     )
   },
   {
-    name: 'CUFFLINKS',
-    subtitle: "A Gentleman's Choice",
-    image: '/categories/cufflinks.png',
-    icon: (
-      <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="26" cy="30" r="10" />
-        <path d="M22 28 A 2 2 0 0 1 26 26 A 2 2 0 0 1 30 28 Q 26 32 26 34 Q 22 32 22 28 Z" fill="currentColor" />
-        <circle cx="44" cy="36" r="8" />
-        <circle cx="44" cy="36" r="2" />
-        <path d="M20 38 L 12 46 M 38 42 L 32 48" />
-      </svg>
-    )
-  },
-  {
     name: 'EARRINGS',
     subtitle: 'Shine With Every Move',
-    image: '/categories/earrings.png',
+    image: '/categories/Ernings.png',
     icon: (
       <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M22 32 C 16 42 16 52 22 56 C 28 52 28 42 22 32 Z" />
@@ -93,20 +79,6 @@ const CATEGORIES = [
         <path d="M22 32 C 22 20 28 16 28 10" />
         <path d="M42 32 C 42 20 48 16 48 10" />
         <path d="M22 40 V 48 M 42 40 V 48" />
-      </svg>
-    )
-  },
-  {
-    name: 'GEMSTONES',
-    subtitle: "Nature's Masterpiece",
-    image: '/categories/gemstones.png',
-    icon: (
-      <svg width="100%" height="100%" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <polygon points="32 12 12 28 32 56 52 28 32 12" />
-        <polygon points="32 12 22 28 32 56 42 28 32 12" />
-        <line x1="12" y1="28" x2="52" y2="28" />
-        <line x1="22" y1="28" x2="28" y2="44" />
-        <line x1="42" y1="28" x2="36" y2="44" />
       </svg>
     )
   }
@@ -155,6 +127,7 @@ export default function ShopByCategory() {
                   alt={cat.name}
                   fill
                   priority
+                  unoptimized={true}
                   className={styles['category-img']}
                 />
 
